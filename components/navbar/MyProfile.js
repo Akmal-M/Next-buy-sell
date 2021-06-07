@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import Link from "next/link";
 import {MdPersonOutline} from "react-icons/md";
-import {useTranslation} from "react-i18next";
 import {BiDownArrow} from "react-icons/bi";
+import useTranslation from "next-translate/useTranslation";
 
 
 const MyProfile = () => {
