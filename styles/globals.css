@@ -5,6 +5,12 @@
 @layer utilities {
 
    .search-width {
-       width: 1050px;
+       width: 1400px;
    }
+    .search-height {
+        width: 600px;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 }

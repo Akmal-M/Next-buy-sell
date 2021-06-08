@@ -6,10 +6,10 @@ const Category = ({img, name}) => {
         <div className='cursor-pointer '>
             <div className='relative'>
                 <div className='flex justify-center '>
-                    <img src="https://res.cloudinary.com/bulutvoy/image/upload/v1623018002/sold%20commerce/round_zlaont.png" alt="" className='max-h-28 -top-2 absolute z-10'/>
+                    <img src="https://res.cloudinary.com/bulutvoy/image/upload/v1623018002/sold%20commerce/round_zlaont.png" alt="" className='max-h-20 -top-2 absolute z-10'/>
                 </div>
                 <div className='flex justify-center bg-cover bg-center'>
-                    <img src={img} alt={name} className='max-h-24 z-20'/>
+                    <img src={img} alt={name} className='max-h-16 z-20'/>
                 </div>
             </div>
            <div>

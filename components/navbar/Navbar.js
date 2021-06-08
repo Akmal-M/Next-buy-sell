@@ -1,37 +1,49 @@
 import {AiOutlineHeart} from "react-icons/ai";
-import Language from "../Language";
 import MyProfile from "./MyProfile";
 import {useRouter} from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import Profile from "./Profile";
 import {useState} from "react";
+import DropdownLanguage from "../DropdownLanguage";
 
 
 const Navbar = () => {
     const router = useRouter()
-    const {locale} = router;
-    const [isUser] = useState(false)
+    const [isUser] = useState(true)
+
 
     let {t} = useTranslation()
 
-console.log(locale)
     return (
-        <div className='bg-gray-200 flex items-center container mx-auto'>
-            <div className='flex justify-between py-5'>
+        <div className='bg-gray-800 flex  items-center container mx-auto'>
+            <div className='flex justify-between lg:py-5 py-3'>
                 <Link href='/'>
                     <a href="">
-                        <p className='text-3xl text-white mx-40 '>{t("common:LOGO")}</p>
+                        <p className='lg:text-3xl text-white lg:mx-40 '>{t("common:LOGO")}</p>
                     </a>
                 </Link>
                 <div className='flex justify-between lg:ml-96 text-white'>
                     <div className='flex items-center '>
-                        <Language/>
+                        <DropdownLanguage/>
                     </div>
-                    <p className='text-4xl mx-10 flex items-center'><AiOutlineHeart/></p>
+                    <Link href='/cart'>
+                        <a>
+                            <p className='lg:text-4xl text-3xl mx-2 lg:mx-10 flex items-center'><AiOutlineHeart/></p>
+                        </a>
+                    </Link>
                     {
                         isUser ? <MyProfile/> : <Profile/>
                     }
+
+                   <div className='mr-2'>
+                       <Link href='/' className=''>
+                           <a href="#"
+                              className='lg:py-3  text-center lg:px-4 px-2 lg:text-lg text-xs flex justify-center items-center bg-white hover:bg-gray-600 rounded-lg text-black hover:text-white lg:ml-20'>
+                               {t('Подать объявление')}
+                           </a>
+                       </Link>
+                   </div>
 
                 </div>
             </div>

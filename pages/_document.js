@@ -6,6 +6,7 @@ class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <meta name="description" content="buy and sell your product"/>
+                    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
                 </Head>
                 <body>
                     <Main/>
