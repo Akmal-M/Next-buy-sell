@@ -2,7 +2,7 @@ import {IoMdHeartEmpty} from "react-icons/io";
 
 const Card = ({img, name, address, time, price }) => {
     return (
-        <div className='lg:p-3 p-1 shadow-xl hover:shadow-2xl lg:max-h-96 cursor-pointer bg-white'>
+        <div className='lg:p-3 p-1 smooth-shadow hover:smooth-hover lg:max-h-96 cursor-pointer rounded-lg bg-white'>
             <div>
                 <img src={img} alt="" className='w-full lg:h-56 h-36 object-cover'/>
             </div>

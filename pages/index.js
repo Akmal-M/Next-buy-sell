@@ -3,16 +3,18 @@ import Categories from "../components/category/Categories";
 import Footer from "../components/Footer";
 import Products from "../components/cards/Products";
 import SlideBanner from "../components/slideBanner";
-import MobileCategory from "../components/category/mobileCategory";
+import MobileCategory from "../components/category/MobileCategory";
 import React from "react";
+import CategoryCardAll from "../components/category/CategoryCardAll";
 
 const Home = () => {
 
     return (
-        <div className='text-gray-800 bg-yellow-50'>
+        <div style={{backgroundColor: '#ffffe8'}}>
             <Search/>
             <MobileCategory/>
-            <Categories/>
+            {/*<Categories/>*/}
+            <CategoryCardAll/>
             <Products/>
             <SlideBanner/>
             <Footer/>

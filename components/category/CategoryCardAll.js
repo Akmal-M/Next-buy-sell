@@ -1,9 +1,8 @@
-import Category from "./Category";
 import useTranslation from "next-translate/useTranslation";
 import React, {useState} from "react";
 import Link from "next/link";
 import {GrClose} from "react-icons/gr";
-import MobileCategory from "./MobileCategory";
+import CategoryCard from "./CategoryCard";
 
 const Categories = () => {
     const {t, lang} = useTranslation();
@@ -39,49 +38,50 @@ const Categories = () => {
                 {/*        </a>*/}
                 {/*    </Link>*/}
                 {/*</div>*/}
-                <div className='relative lg:block hidden mt-16'>
+                <div className='relative lg:block hidden mt-16 category-width mx-auto '>
 
 
                     <div className=' mt-10 container mx-auto'>
-                        <div className='grid lg:grid-cols-6 grid-cols-3 mb-16'>
+                        <div className='grid lg:grid-cols-6 grid-cols-3 '>
                             <div onClick={() => setMenu(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('electronic')}>
-                                    <Category
-                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
-                                        name={t('Электроника')}/>
+                                    <CategoryCard
+                                        img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
+                                        name={t('Электроника')}
+                                    menu={menu}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenu(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('vehicle')}>
-                                    <Category
+                                    <CategoryCard
                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081048/sold%20commerce/lambo-transparent-yellow-5_prlo8m.png'
                                         name={t('Транспорт')}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenu(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('job')}>
-                                    <Category
-                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
+                                    <CategoryCard
+                                        img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                         name={t('Работа')}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenu(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('property')}>
-                                    <Category
+                                    <CategoryCard
                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081488/sold%20commerce/gotov_uh90qg.png'
                                         name={t('Недвижимость')}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenu(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('services')}>
-                                    <Category
+                                    <CategoryCard
                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081949/sold%20commerce/png-transparent-computer-software-computer-icons-wallet-wallet-saving-service-payment_y678iu.png'
                                         name={t('Бизнес и Услуги')}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenu(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('children')}>
-                                    <Category
+                                    <CategoryCard
                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623082500/sold%20commerce/png-transparent-teddy-bear-gund-stuffed-toy-plush-plush-toy-blue-child-photography_b7qhv2.png'
                                         name={t('Детский мир')}/>
                                 </div>
@@ -93,29 +93,29 @@ const Categories = () => {
 
                             <div onClick={() => setMenus(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('style-fashion')}>
-                                    <Category
-                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
+                                    <CategoryCard
+                                        img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                         name={t('Мода и Стиль')}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenus(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('house')}>
-                                    <Category
-                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
+                                    <CategoryCard
+                                        img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                         name={t('Дом и дача')}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenus(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('hobbies')}>
-                                    <Category
-                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
+                                    <CategoryCard
+                                        img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                         name={t('Хобби и Отдых')}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenus(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('animals')}>
-                                    <Category
-                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
+                                    <CategoryCard
+                                        img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                         name={t('Животные')}/>
                                 </div>
                             </div>
@@ -123,8 +123,8 @@ const Categories = () => {
                             <Link href='/exchange' >
                                 <a>
                                     <div className='flex justify-center my-2' onClick={() => setCategory('exchange')}>
-                                        <Category
-                                            img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
+                                        <CategoryCard
+                                            img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                             name={t('Обмен')}/>
                                     </div>
                                 </a>
@@ -132,8 +132,8 @@ const Categories = () => {
                             <Link href='/as-a-gift'>
                                 <a>
                                     <div className='flex justify-center my-2' onClick={() => setCategory('as-a-gift')}>
-                                        <Category
-                                            img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
+                                        <CategoryCard
+                                            img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                             name={t('Отдам даром')}/>
                                     </div>
                                 </a>
@@ -147,7 +147,7 @@ const Categories = () => {
                                 {
                                     category === 'electronic' ?
                                         <div
-                                            className='absolute top-28 search-width left-1/2 transform -translate-x-1/2 bg-white shadow-2xl rounded-lg  text-gray-500 text-lg whitespace-nowrap'>
+                                            className='absolute top-40 search-width left-1/2 transform -translate-x-1/2 bg-white shadow-2xl rounded-lg  text-gray-500 text-lg whitespace-nowrap'>
 
                                             <div className='flex justify-between'>
                                                 <Link href='/electronic'>
@@ -246,7 +246,7 @@ const Categories = () => {
 
                                         category === 'vehicle' ?
                                             <div
-                                                className='absolute search-width left-1/2 transform -translate-x-1/2 top-28 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                                className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
                                                 <div className='flex justify-between'>
                                                     <Link href='/vehicle'>
                                                         <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
@@ -360,7 +360,7 @@ const Categories = () => {
 
                                             category === 'job' ?
                                                 <div
-                                                    className='absolute search-width left-1/2 transform -translate-x-1/2 top-28 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                                    className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
 
                                                     <div className='flex justify-between'>
                                                         <Link href='/job'>
@@ -513,7 +513,7 @@ const Categories = () => {
 
 
                                                     <div
-                                                        className='absolute search-width left-1/2 transform -translate-x-1/2 top-28 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                                        className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
 
                                                         <div className='flex justify-between'>
                                                             <Link href='/property'>
@@ -585,7 +585,7 @@ const Categories = () => {
 
 
                                                         <div
-                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-28 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
 
                                                             <div className='flex justify-between'>
                                                                 <Link href='/services'>
@@ -727,7 +727,7 @@ const Categories = () => {
 
                                                         category === 'children' &&
                                                         <div
-                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-28 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
 
                                                             <div className='flex justify-between'>
                                                                 <Link href='/children'>
