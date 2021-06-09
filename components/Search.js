@@ -26,7 +26,7 @@ const Search = () => {
 
     return (
         <div className='shadow  flex justify-center items-center z-40 relative text-gray-600 container mx-auto'>
-            <div className='grid lg:grid-cols-9 grid-cols-3 bg-white lg:px-6 py-3 search-width '>
+            <div className='grid lg:grid-cols-9 grid-cols-3 bg-white lg:px-6 py-3 w-full '>
 
 
 

@@ -8,7 +8,7 @@ import Cookie from 'js-cookie'
 import {useRouter} from "next/router";
 
 
-const MyProfile = () => {
+const AdminProfile = () => {
     const {t} = useTranslation();
     const [menu, setMenu] = useState(true)
     const router = useRouter();
@@ -43,14 +43,11 @@ const MyProfile = () => {
                        <div>
                            <div className='flex justify-center items-center'>
                                <div className='w-12 rounded-full mr-3'>
-                                   {
-                                       auth.user.avatar ?   <img src={auth.user.avatar} alt=""/>
-                                       :  <img src="https://res.cloudinary.com/bulutvoy/image/upload/v1622881055/sold%20commerce/people-default_wru4vb.svg" alt=""/>
-                                   }
+                                   <img src="https://res.cloudinary.com/bulutvoy/image/upload/v1622881055/sold%20commerce/people-default_wru4vb.svg" alt=""/>
                                </div>
                                <div className='text-xs lg:text-lg'>
-                                   <p>{auth.user.phone}</p>
-                                   <p>{auth.user.id}</p>
+                                   <p> phone number</p>
+                                   <p>id number</p>
                                </div>
                            </div>
 
@@ -115,4 +112,4 @@ const MyProfile = () => {
     );
 };
 
-export default MyProfile;
+export default AdminProfile;

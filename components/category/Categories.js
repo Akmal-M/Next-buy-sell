@@ -3,7 +3,7 @@ import useTranslation from "next-translate/useTranslation";
 import React, {useState} from "react";
 import Link from "next/link";
 import {GrClose} from "react-icons/gr";
-import SlideCategory from "./slideCategory";
+import MobileCategory from "./mobileCategory";
 
 const Categories = () => {
     const {t, lang} = useTranslation();
@@ -120,7 +120,7 @@ const Categories = () => {
                                 </div>
                             </div>
 
-                            <Link href='exchange' >
+                            <Link href='/exchange' >
                                 <a>
                                     <div className='flex justify-center my-2' onClick={() => setCategory('exchange')}>
                                         <Category

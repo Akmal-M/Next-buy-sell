@@ -3,15 +3,15 @@ import Categories from "../components/category/Categories";
 import Footer from "../components/Footer";
 import Products from "../components/cards/Products";
 import SlideBanner from "../components/slideBanner";
-import SlideCategory from "../components/category/slideCategory";
+import MobileCategory from "../components/category/mobileCategory";
 import React from "react";
 
 const Home = () => {
 
     return (
-        <div className='text-gray-800 '>
+        <div className='text-gray-800 bg-yellow-50'>
             <Search/>
-            <SlideCategory/>
+            <MobileCategory/>
             <Categories/>
             <Products/>
             <SlideBanner/>

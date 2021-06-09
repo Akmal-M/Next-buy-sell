@@ -4,6 +4,49 @@
 
 @layer utilities {
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield; /* Firefox */
+    }
+
+    /* Change the white to any color */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active
+    {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+    }
+
+    input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+        color:    #ddd;
+    }
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    #ddd;
+        opacity:  1;
+    }
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    #ddd;
+        opacity:  1;
+    }
+    input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color:    #ddd;
+    }
+    input::-ms-input-placeholder { /* Microsoft Edge */
+        color:    #ddd;
+    }
+    input::placeholder { /* Most modern browsers support this now. */
+        color:    #ddd;
+    }
+
+
+
    .search-width {
        width: 1400px;
    }
@@ -13,4 +56,6 @@
     .dropdown:hover .dropdown-content {
         display: block;
     }
+
+
 }

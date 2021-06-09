@@ -1,6 +1,4 @@
-import * as url from "url";
-
-const Category = ({img, name}) => {
+const  Category = ({img, name}) => {
 
     return (
         <div className='cursor-pointer '>

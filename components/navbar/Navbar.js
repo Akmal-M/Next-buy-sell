@@ -4,16 +4,20 @@ import {useRouter} from "next/router";
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import Profile from "./Profile";
-import {useState} from "react";
+import {useContext} from "react";
 import DropdownLanguage from "../DropdownLanguage";
+import {DataContext} from "../../store/GlobalState";
 
 
 const Navbar = () => {
     const router = useRouter()
-    const [isUser] = useState(true)
+    const {state, dispatch} = useContext(DataContext)
+    const { auth, cart } = state
 
 
     let {t} = useTranslation()
+
+
 
     return (
         <div className='bg-gray-800 flex  items-center container mx-auto'>
@@ -33,7 +37,7 @@ const Navbar = () => {
                         </a>
                     </Link>
                     {
-                        isUser ? <MyProfile/> : <Profile/>
+                        Object.keys(auth).length !== 0  ? <MyProfile/> : <Profile/>
                     }
 
                    <div className='mr-2'>
