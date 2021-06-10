@@ -3,7 +3,7 @@ import SwiperSliderForAll from "./swiper";
 
 const SlideBanner = () => {
     return (
-        <div>
+        <div className='lg:my-20 lg:mx-40 md:mx-3'>
             <SwiperSliderForAll slides={1}  swiperContent1={
                 <div>
                     <img

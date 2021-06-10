@@ -51,7 +51,28 @@
     }
 
 
+    .text-cut {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        overflow-wrap: break-word;
+    }
+    .text-line-cut {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
+    .text-small {
+        font-size: 9px;
+    }
+
+    .text-mid-small {
+        font-size: 10px;
+    }
+
+    .info-img-h {
+        height: 7.5rem;
+    }
 
    .search-width {
        width: 1400px;

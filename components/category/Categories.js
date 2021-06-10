@@ -15,8 +15,8 @@ const Categories = () => {
     console.log(menu)
 
     const closeMenuHandler = () => {
-        setMenu(false)
-        setMenu(false)
+        setMenu(!menu)
+        setMenus(!menu)
 
     }
 

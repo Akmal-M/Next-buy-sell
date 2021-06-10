@@ -9,7 +9,7 @@ const MobileCategory = () => {
     const {t, lang} = useTranslation();
     return (
 
-        <div className='lg:hidden grid grid-cols-4 gap-3 lg:mb-16 lg:m-0 m-3'>
+        <div className='lg:hidden grid grid-cols-4 gap-3  mt-6 m-3'>
 
 
                     <Link href='/electronic' className='m-5'>
