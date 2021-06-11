@@ -1,5 +1,4 @@
 import React from 'react';
-import Category from "./Category";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import CategoryCard from "./CategoryCard";
@@ -17,7 +16,7 @@ const MobileCategory = () => {
                             <div className='flex justify-center '>
                                 <CategoryCard
                                     img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    name={t('Бытовая Электроника')}/>
                             </div>
                         </a>
                     </Link>
@@ -47,7 +46,7 @@ const MobileCategory = () => {
                             <div className='flex justify-center ' >
                                 <CategoryCard
                                     img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    name={t('Недвижимость')}/>
                             </div>
                         </a>
                     </Link>
@@ -58,17 +57,17 @@ const MobileCategory = () => {
                             <div className='flex justify-center '>
                                 <CategoryCard
                                     img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    name={t('Для детей')}/>
                             </div>
                         </a>
                     </Link>
 
-                    <Link href='/business' className='m-5'>
+                    <Link href='/services' className='m-5'>
                         <a>
                             <div className='flex justify-center ' >
                                 <CategoryCard
                                     img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    name={t('Услуги')}/>
                             </div>
                         </a>
                     </Link>
@@ -77,8 +76,8 @@ const MobileCategory = () => {
                         <a>
                             <div className='flex justify-center '>
                                 <CategoryCard
-                                    img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    img='https://images.unsplash.com/photo-1492534513006-37715f336a39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80'
+                                    name={t('Животные')}/>
                             </div>
                         </a>
                     </Link>
@@ -88,7 +87,7 @@ const MobileCategory = () => {
                             <div className='flex justify-center ' >
                                 <CategoryCard
                                     img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    name={t('Стиль')}/>
                             </div>
                         </a>
                     </Link>
@@ -98,7 +97,7 @@ const MobileCategory = () => {
                             <div className='flex justify-center ' >
                                 <CategoryCard
                                     img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    name={t('Дом')}/>
                             </div>
                         </a>
                     </Link>
@@ -118,7 +117,7 @@ const MobileCategory = () => {
                             <div className='flex justify-center ' >
                                 <CategoryCard
                                     img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    name={t('Обмен')}/>
                             </div>
                         </a>
                     </Link>
@@ -128,7 +127,7 @@ const MobileCategory = () => {
                             <div className='flex justify-center ' >
                                 <CategoryCard
                                     img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                    name={t('Работа')}/>
+                                    name={t('Отдам даром')}/>
                             </div>
                         </a>
                     </Link>

@@ -10,7 +10,6 @@ const CardInfo = ({img, name, address, time, price }) => {
                 <p className='font-bold text-md lg:py-3 py-1'>{name}</p>
                <div className='flex justify-between text-xs'>
                    <p>{address}</p>
-
                    <p>{time}</p>
                </div>
                 <div className='flex justify-between lg:py-3 py-1 lg:px-3 px-1 '>

@@ -10,10 +10,10 @@ const CardInfo = ({img, name, address, time, price, description }) => {
                <div className='col-span-4 lg:col-span-3 lg:px-5 px-2'>
                    <p className='font-bold lg:text-md lg:text-lg text-sm lg:py-1 text-line-cut'>{name}</p>
 
-                   <div className='h-14 lg:h-auto overflow-hidden lg:overflow-auto'>
+                   <div className='h-14 lg:h-32 overflow-hidden'>
                        <p className='lg:text-sm text-mid-small lg:py-2  sm:text-cut '>{description}</p>
                    </div>
-                   <div className='flex justify-between lg:text-sm lg:pt-0 pt-1 text-small'>
+                   <div className='flex justify-between lg:text-sm lg:pt-5 pt-1 text-small'>
                        <p>{address}</p>
                        <p>{time}</p>
                    </div>

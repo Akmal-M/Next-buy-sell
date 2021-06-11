@@ -23,11 +23,11 @@ const SearchPlace = () => {
         setMenu(!menu)
     }
     return (
-        <div className='lg:flex items-center'>
+        <div className='lg:flex flex items-center text-left'>
             <GoLocation className='lg:text-4xl mx-2'/>
             {
                 !menu ?
-                    <p className='text-lg whitespace-nowrap' onClick={() => setMenu(!menu)}>
+                    <p className='lg:text-lg text-xs whitespace-nowrap' onClick={() => setMenu(!menu)}>
                         {district === 'all' &&
                         `${t('Весь Узбекистан')}` ||
                         district === 'samarkand' &&
@@ -56,7 +56,7 @@ const SearchPlace = () => {
                         `${city} ${t('Ферганская область')}` ||
                         district === 'khorezm' &&
                         `${city} ${t('Хорезмская область')}`}
-                    </p> : <p className='text-xl whitespace-nowrap text-white'
+                    </p> : <p className='text-xs lg:text-xl whitespace-nowrap text-white'
                               onClick={() => setMenu(!menu)}>{t('Весь Узбекистан')}</p>
 
 
@@ -66,7 +66,7 @@ const SearchPlace = () => {
                 <div>
                     {district === 'all' ?
                         <div
-                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-lg'>
+                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg lg:text-lg text-xs'>
                             <div
                                 className='flex justify-between'>
                                 <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
@@ -74,8 +74,8 @@ const SearchPlace = () => {
 
                             </div>
                             <div className='grid lg:grid-cols-4 grid-cols-2 justify-center border-t border-gray-400 '>
-                                <div className='m-4  flex justify-center'>
-                                    <div className='m-4 '>
+                                <div className='lg:m-4  flex justify-center'>
+                                    <div className='lg:m-4 '>
                                         <p className='my-5 cursor-pointer whitespace-nowrap'
                                            onClick={() => setDistrict('andijan')}>{t('Андижанская область')}</p>
                                         <p className='my-5 cursor-pointer'
@@ -86,8 +86,8 @@ const SearchPlace = () => {
                                            onClick={() => setDistrict('karakalpak')}>{t('Каракалпакстан')}</p>
                                     </div>
                                 </div>
-                                <div className='m-4  flex justify-center'>
-                                    <div className='m-4'>
+                                <div className='lg:m-4  flex justify-center'>
+                                    <div className='lg:m-4'>
                                         <p className='my-5 cursor-pointer whitespace-nowrap'
                                            onClick={() => setDistrict('kashkadarya')}>{t('Кашкадарьинская область')}</p>
                                         <p className='my-5 cursor-pointer'
@@ -98,9 +98,11 @@ const SearchPlace = () => {
                                            onClick={() => setDistrict('samarkand')}>{t('Самаркандская область')}</p>
                                     </div>
                                 </div>
-                                <div className='m-4  flex justify-center'>
-                                    <div className='m-4'>
-                                        <p className='my-5 cursor-pointer whitespace-nowrap'
+                                <div className='lg:m-4  flex justify-center'>
+                                    <div className='lg:m-4'>
+                                        <p className='my-5 lg:hidden  cursor-pointer whitespace-nowrap'
+                                           onClick={() => setDistrict('surkhandarya')}>{t('Сурхандарьинская обл')}</p>
+                                        <p className='my-5 lg:flex hidden cursor-pointer whitespace-nowrap'
                                            onClick={() => setDistrict('surkhandarya')}>{t('Сурхандарьинская область')}</p>
                                         <p className='my-5 cursor-pointer whitespace-nowrap'
                                            onClick={() => setDistrict('sirdarya')}>{t('Сырдарьинская область')}</p>
@@ -110,8 +112,8 @@ const SearchPlace = () => {
                                            onClick={() => setDistrict('ferghana')}>{t('Ферганская область')}</p>
                                     </div>
                                 </div>
-                                <div className='m-4  flex justify-center'>
-                                    <div className='m-4'>
+                                <div className='lg:m-4  flex justify-center'>
+                                    <div className='lg:m-4'>
                                         <p className='my-5 cursor-pointer'
                                            onClick={() => setDistrict('khorezm')}>{t('Хорезмская обл.')}</p>
                                     </div>
@@ -120,43 +122,43 @@ const SearchPlace = () => {
                         </div> :
                         district === 'samarkand' ?
                             <div
-                                className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                 <div className='flex justify-between'>
                                     <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300 bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                        onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
                                     <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300 bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Самаркандскую область')}</p>
                                 </div>
                                 <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
-                                    <div className='m-4  flex justify-center'>
+                                    <div className='lg:m-4  flex justify-center'>
                                         <div>
+                                            <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Samarqand') || setMenu(false) }>{t('Самарканд')}</p>
+                                            <p className='my-5 cursor-pointer' onClick={() => setCity('Payshanba') || setMenu(false) }>{t('Пайшанба')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Oqtosh') || setMenu(false) }>{t('Акташ')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Bulung'ur") || setMenu(false) }>{t('Булунгур')}</p>
-                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Chelak') || setMenu(false) }>{t('Чилек')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Darband') || setMenu(false) }>{t('Дарбанд')}</p>
-                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Jomboy') || setMenu(false) }>{t('Джамбай')}</p>
                                         </div>
                                     </div>
-                                    <div className='m-4 flex justify-center'>
+                                    <div className='lg:m-4 flex justify-center'>
                                         <div>
+                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Jomboy') || setMenu(false) }>{t('Джамбай')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Juma') || setMenu(false) }>{t('Джума')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Go'zalkent") || setMenu(false) }>{t('Гузалкент')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Gulobod') || setMenu(false) }>{t('Гюлабад')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Ishtixon') || setMenu(false) }>{t('Иштыхан')}</p>
-                                            <p className='my-5 cursor-pointer' onClick={() => setCity("Kattaqo'rg'on") || setMenu(false) }>{t('Каттакурган')}</p>
                                         </div>
                                     </div>
-                                    <div className='m-4 flex justify-center'>
+                                    <div className='lg:m-4 flex justify-center'>
                                         <div>
+                                            <p className='my-5 cursor-pointer' onClick={() => setCity("Kattaqo'rg'on") || setMenu(false) }>{t('Каттакурган')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Qoshrobod') || setMenu(false) }>{t('Кушрабад')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Loyish') || setMenu(false) }>{t('Лаиш')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Nurobod') || setMenu(false) }>{t('Нурабад')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Payariq') || setMenu(false) }>{t('Пайарык')}</p>
-                                            <p className='my-5 cursor-pointer' onClick={() => setCity('Payshanba') || setMenu(false) }>{t('Пайшанба')}</p>
                                         </div>
                                     </div>
-                                    <div className='m-4 flex justify-center'>
+                                    <div className='lg:m-4 flex justify-center'>
                                         <div>
-                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Samarqand') || setMenu(false) }>{t('Самарканд')}</p>
+                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Chelak') || setMenu(false) }>{t('Чилек')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Toyloq') || setMenu(false) }>{t('Тайлак')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Urgut') || setMenu(false) }>{t('Ургут')}</p>
                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Ziyodin') || setMenu(false) }>{t('Зиадин')}</p>
@@ -167,23 +169,23 @@ const SearchPlace = () => {
                             </div> :
                             district === 'andijan' ?
                                 <div
-                                    className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                     <div className='flex justify-between'>
                                         <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                            onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
                                         <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Андижанскую область')}</p>
                                     </div>
                                     <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
-                                        <div className='m-4  flex justify-center'>
+                                        <div className='lg:m-4  flex justify-center'>
                                             <div>
+                                                <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Andijon') || setMenu(false) }>{t('Андижан')}</p>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Oqoltin') || setMenu(false) }>{t('Акалтын')}</p>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity("Oltinko'l") || setMenu(false) }>{t('Алтынкуль')}</p>
-                                                <p className='my-5 cursor-pointer'  onClick={() => setCity('Andijon') || setMenu(false) }>{t('Андижан')}</p>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Asaka') || setMenu(false) }>{t('Асака')}</p>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Oxunboboyev') || setMenu(false) }>{t('Ахунбабаев')}</p>
                                             </div>
                                         </div>
-                                        <div className='m-4 flex justify-center'>
+                                        <div className='lg:m-4 flex justify-center'>
                                             <div>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Baliqchi') || setMenu(false) }>{t('Балыкчи')}</p>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity("Bo'z") || setMenu(false) }>{t('Боз')}</p>
@@ -192,7 +194,7 @@ const SearchPlace = () => {
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Kuyganyor') || setMenu(false) }>{t('Куйганъяр')}</p>
                                             </div>
                                         </div>
-                                        <div className='m-4 flex justify-center'>
+                                        <div className='lg:m-4 flex justify-center'>
                                             <div>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity("Qo'rg'ontepa") || setMenu(false) }>{t('Кургантепа')}</p>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('marhamat') || setMenu(false) }>{t('Мархамат')}</p>
@@ -201,7 +203,7 @@ const SearchPlace = () => {
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Shahrixon') || setMenu(false) }>{t('Шахрихан')}</p>
                                             </div>
                                         </div>
-                                        <div className='m-4 flex justify-center'>
+                                        <div className='lg:m-4 flex justify-center'>
                                             <div>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Xonobod') || setMenu(false) }>{t('Ханабад')}</p>
                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity("Xo'jaobod") || setMenu(false) }>{t('Ходжаабад')}</p>
@@ -211,35 +213,35 @@ const SearchPlace = () => {
                                 </div> :
                                 district === 'buhara' ?
                                     <div
-                                        className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                         <div className='flex justify-between'>
                                             <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
                                             <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Бухарскую область')}</p>
                                         </div>
                                         <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
-                                            <div className='m-4  flex justify-center'>
+                                            <div className='lg:m-4  flex justify-center'>
                                                 <div>
+                                                    <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Buxoro') || setMenu(false) }>{t('Бухара')}</p>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Olot') || setMenu(false) }>{t('Алат')}</p>
-                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Buxoro') || setMenu(false) }>{t('Бухара')}</p>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Galaosiyo') || setMenu(false) }>{t('Галаасия')}</p>
                                                 </div>
                                             </div>
-                                            <div className='m-4 flex justify-center'>
+                                            <div className='lg:m-4 flex justify-center'>
                                                 <div>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Gazli') || setMenu(false) }>{t('Газли')}</p>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("G'ijduvon") || setMenu(false) }>{t('Гиждуван')}</p>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Kogon') || setMenu(false) }>{t('Каган')}</p>
                                                 </div>
                                             </div>
-                                            <div className='m-4 flex justify-center'>
+                                            <div className='lg:m-4 flex justify-center'>
                                                 <div>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("Qorako'l") || setMenu(false) }>{t('Каракуль')}</p>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Qorovulbozor') || setMenu(false) }>{t('Караулбазар')}</p>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Romitan') || setMenu(false) }>{t('Ромитан')}</p>
                                                 </div>
                                             </div>
-                                            <div className='m-4 flex justify-center'>
+                                            <div className='lg:m-4 flex justify-center'>
                                                 <div>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Shofirkon') || setMenu(false) }>{t('Шафиркан')}</p>
                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Vobkent') || setMenu(false) }>{t('Вабкент')}</p>
@@ -250,30 +252,30 @@ const SearchPlace = () => {
                                     </div> :
                                     district === 'jizakh' ?
                                         <div
-                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                             <div className='flex justify-between'>
                                                 <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                    onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
                                                 <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Джизакскую область')}</p>
                                             </div>
                                             <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
-                                                <div className='m-4  flex justify-center'>
+                                                <div className='lg:m-4  flex justify-center'>
                                                     <div>
+                                                        <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Jizzax') || setMenu(false) }>{t('Джизак')}</p>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Aydarko'l") || setMenu(false) }>{t('Айдаркуль')}</p>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Balandchaqir') || setMenu(false) }>{t('Баландчакир')}</p>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Dashtobod') || setMenu(false) }>{t('Даштобод')}</p>
-                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity("Do'stlik") || setMenu(false) }>{t('Дустлик')}</p>
                                                     </div>
                                                 </div>
-                                                <div className='m-4 flex justify-center'>
+                                                <div className='lg:m-4 flex justify-center'>
                                                     <div>
-                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Jizzax') || setMenu(false) }>{t('Джизак')}</p>
+                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity("Do'stlik") || setMenu(false) }>{t('Дустлик')}</p>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Gagarin') || setMenu(false) }>{t('Гагарин')}</p>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("G'allaorol") || setMenu(false) }>{t('Галлаарал')}</p>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("G'oliblar") || setMenu(false) }>{t('Голиблар')}</p>
                                                     </div>
                                                 </div>
-                                                <div className='m-4 flex justify-center'>
+                                                <div className='lg:m-4 flex justify-center'>
                                                     <div>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Marjonbuloq') || setMenu(false) }>{t('Марджанбулак')}</p>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Paxtakor') || setMenu(false) }>{t('Пахтакор')}</p>
@@ -281,7 +283,7 @@ const SearchPlace = () => {
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("O'smat") || setMenu(false) }>{t('Усмат')}</p>
                                                     </div>
                                                 </div>
-                                                <div className='m-4 flex justify-center'>
+                                                <div className='lg:m-4 flex justify-center'>
                                                     <div>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Yangiqishloq") || setMenu(false) }>{t('Янгикишлак')}</p>
                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Zomin') || setMenu(false) }>{t('Заамин')}</p>
@@ -294,38 +296,38 @@ const SearchPlace = () => {
                                         :
                                         district === 'karakalpak' ?
                                             <div
-                                                className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                 <div className='flex justify-between'>
                                                     <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                        onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
                                                     <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Каракалпакстан')}</p>
                                                 </div>
                                                 <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
-                                                    <div className='m-4  flex justify-center'>
+                                                    <div className='lg:m-4  flex justify-center'>
                                                         <div>
+                                                            <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Nukus') || setMenu(false) }>{t('Нукус')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Oqmang'it") || setMenu(false) }>{t('Акмангит')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Beruniy') || setMenu(false) }>{t('Беруни')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Bo'ston") || setMenu(false) }>{t('Бустан')}</p>
-                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Chimboy') || setMenu(false) }>{t('Чимбай')}</p>
                                                         </div>
                                                     </div>
-                                                    <div className='m-4 flex justify-center'>
+                                                    <div className='lg:m-4 flex justify-center'>
                                                         <div>
+                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Chimboy') || setMenu(false) }>{t('Чимбай')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Qanliko'l") || setMenu(false) }>{t('Канлыкуль')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Qorao'zak") || setMenu(false) }>{t('Караузяк')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Kegeyli') || setMenu(false) }>{t('Кегейли')}</p>
-                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity("Qo'ng'irot") || setMenu(false) }>{t('Кунград')}</p>
                                                         </div>
                                                     </div>
-                                                    <div className='m-4 flex justify-center'>
+                                                    <div className='lg:m-4 flex justify-center'>
                                                         <div>
+                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity("Qo'ng'irot") || setMenu(false) }>{t('Кунград')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Mang'it") || setMenu(false) }>{t('Мангит')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Mo'ynoq") || setMenu(false) }>{t('Муйнак')}</p>
-                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Nukus') || setMenu(false) }>{t('Нукус')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Shumanay') || setMenu(false) }>{t('Шуманай')}</p>
                                                         </div>
                                                     </div>
-                                                    <div className='m-4 flex justify-center'>
+                                                    <div className='lg:m-4 flex justify-center'>
                                                         <div>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Taxiatosh') || setMenu(false) }>{t('Тахиаташ')}</p>
                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Taxtako'pir") || setMenu(false) }>{t('Тахтакупыр')}</p>
@@ -338,32 +340,32 @@ const SearchPlace = () => {
                                             :
                                             district === 'kashkadarya' ?
                                                 <div
-                                                    className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                     <div className='flex justify-between'>
                                                         <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                            onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
                                                         <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Кашкадарьинскую область')}</p>
                                                     </div>
                                                     <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
-                                                        <div className='m-4  flex justify-center'>
+                                                        <div className='lg:m-4  flex justify-center'>
                                                             <div>
+                                                                <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Qarshi') || setMenu(false) }>{t('Карши')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Beshkent') || setMenu(false) }>{t('Бешкент')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Chiroqchi') || setMenu(false) }>{t('Чиракчи')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Dehqonobod') || setMenu(false) }>{t('Дехканабад')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity("G'uzor") || setMenu(false) }>{t('Гузар')}</p>
-                                                                <p className='my-5 cursor-pointer'  onClick={() => setCity('Qamashi') || setMenu(false) }>{t('Камаши')}</p>
                                                             </div>
                                                         </div>
-                                                        <div className='m-4 flex justify-center'>
+                                                        <div className='lg:m-4 flex justify-center'>
                                                             <div>
+                                                                <p className='my-5 cursor-pointer'  onClick={() => setCity('Qamashi') || setMenu(false) }>{t('Камаши')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Karashina') || setMenu(false) }>{t('Карашина')}</p>
-                                                                <p className='my-5 cursor-pointer'  onClick={() => setCity('Qarshi') || setMenu(false) }>{t('Карши')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Koson') || setMenu(false) }>{t('Касан')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Kasbi') || setMenu(false) }>{t('Касби')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Kitob') || setMenu(false) }>{t('Китаб')}</p>
                                                             </div>
                                                         </div>
-                                                        <div className='m-4 flex justify-center'>
+                                                        <div className='lg:m-4 flex justify-center'>
                                                             <div>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Muborak') || setMenu(false) }>{t('Мубарек')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity("Mug'lan") || setMenu(false) }>{t('Муглан')}</p>
@@ -372,7 +374,7 @@ const SearchPlace = () => {
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity("Yakkabog'") || setMenu(false) }>{t('Яккабаг')}</p>
                                                             </div>
                                                         </div>
-                                                        <div className='m-4 flex justify-center'>
+                                                        <div className='lg:m-4 flex justify-center'>
                                                             <div>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Yangi-Mirishkor') || setMenu(false) }>{t('Янги Миришкор')}</p>
                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Yangi-Nishon') || setMenu(false) }>{t('Янги-Нишан')}</p>
@@ -383,7 +385,7 @@ const SearchPlace = () => {
                                                 :
                                                 district === 'navai' ?
                                                     <div
-                                                        className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                         <div className='flex justify-between'>
                                                             <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                                onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
@@ -391,28 +393,28 @@ const SearchPlace = () => {
                                                         </div>
                                                         <div
                                                             className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
-                                                            <div className='m-4  flex justify-center'>
+                                                            <div className='lg:m-4  flex justify-center'>
                                                                 <div>
+                                                                    <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Navoi') || setMenu(false) }>{t('Навои')}</p>
                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Beshrabot') || setMenu(false) }>{t('Бешрабат')}</p>
                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Konimeh') || setMenu(false) }>{t('Канимех')}</p>
-                                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Karmana') || setMenu(false) }>{t('Кармана')}</p>
                                                                 </div>
                                                             </div>
-                                                            <div className='m-4 flex justify-center'>
+                                                            <div className='lg:m-4 flex justify-center'>
                                                                 <div>
+                                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Karmana') || setMenu(false) }>{t('Кармана')}</p>
                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Qiziltepa') || setMenu(false) }>{t('Кызылтепа')}</p>
-                                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Navoi') || setMenu(false) }>{t('Навои')}</p>
                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Nurota') || setMenu(false) }>{t('Нурата')}</p>
                                                                 </div>
                                                             </div>
-                                                            <div className='m-4 flex justify-center'>
+                                                            <div className='lg:m-4 flex justify-center'>
                                                                 <div>
                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Tomdibuloq') || setMenu(false) }>{t('Тамдыбулак')}</p>
                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Uchquduq') || setMenu(false) }>{t('Учкудук')}</p>
                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Yangirabot') || setMenu(false) }>{t('Янгирабат')}</p>
                                                                 </div>
                                                             </div>
-                                                            <div className='m-4 flex justify-center'>
+                                                            <div className='lg:m-4 flex justify-center'>
                                                                 <div>
                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Zarafshon') || setMenu(false) }>{t('Зарафшан')}</p>
                                                                 </div>
@@ -422,7 +424,7 @@ const SearchPlace = () => {
                                                     :
                                                     district === 'namangan' ?
                                                         <div
-                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                             <div className='flex justify-between'>
                                                                 <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                                    onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
@@ -430,28 +432,28 @@ const SearchPlace = () => {
                                                             </div>
                                                             <div
                                                                 className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
-                                                                <div className='m-4  flex justify-center'>
+                                                                <div className='lg:m-4  flex justify-center'>
                                                                     <div>
+                                                                        <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Namangan') || setMenu(false) }>{t('Наманган')}</p>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Chortoq') || setMenu(false) }>{t('Чартак')}</p>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Chelak') || setMenu(false) }>{t('Челак')}</p>
-                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Chust') || setMenu(false) }>{t('Чуст')}</p>
                                                                     </div>
                                                                 </div>
-                                                                <div className='m-4 flex justify-center'>
+                                                                <div className='lg:m-4 flex justify-center'>
                                                                     <div>
+                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Chust') || setMenu(false) }>{t('Чуст')}</p>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Jumashuy') || setMenu(false) }>{t('Джумашуй')}</p>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Kosonsoy') || setMenu(false) }>{t('Касансай')}</p>
-                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Namangan') || setMenu(false) }>{t('Наманган')}</p>
                                                                     </div>
                                                                 </div>
-                                                                <div className='m-4 flex justify-center'>
+                                                                <div className='lg:m-4 flex justify-center'>
                                                                     <div>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Pop') || setMenu(false) }>{t('Пап')}</p>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Toshbuloq') || setMenu(false) }>{t('Ташбулак')}</p>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("To'raqo'rg'on") || setMenu(false) }>{t('Туракурган')}</p>
                                                                     </div>
                                                                 </div>
-                                                                <div className='m-4 flex justify-center'>
+                                                                <div className='lg:m-4 flex justify-center'>
                                                                     <div>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Uchqo'rg'on") || setMenu(false) }>{t('Учкурган')}</p>
                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Xaqqulobod') || setMenu(false) }>{t('Хаккулабад')}</p>
@@ -462,7 +464,7 @@ const SearchPlace = () => {
                                                         :
                                                         district === 'surkhandarya' ?
                                                             <div
-                                                                className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                                 <div className='flex justify-between'>
                                                                     <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                                        onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
@@ -471,37 +473,37 @@ const SearchPlace = () => {
                                                                 <div
                                                                     className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                                                     <div
-                                                                        className='m-4  flex justify-center'>
+                                                                        className='lg:m-4  flex justify-center'>
                                                                         <div>
+                                                                            <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Termiz') || setMenu(false) }>{t('Термез')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Angor') || setMenu(false) }>{t('Ангор')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Boysun') || setMenu(false) }>{t('Байсун')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Bandixon') || setMenu(false) }>{t('Бандихон')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Denov') || setMenu(false) }>{t('Денау')}</p>
-                                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity("Jarqo'rg'on") || setMenu(false) }>{t('Джаркурган')}</p>
                                                                         </div>
                                                                     </div>
                                                                     <div
-                                                                        className='m-4 flex justify-center'>
+                                                                        className='lg:m-4 flex justify-center'>
                                                                         <div>
+                                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity("Jarqo'rg'on") || setMenu(false) }>{t('Джаркурган')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Qarluq') || setMenu(false) }>{t('Карлук')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Qiziriq') || setMenu(false) }>{t('Кизирик')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Qumqo'rg'on") || setMenu(false) }>{t('Кумкурган')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Muzrobod') || setMenu(false) }>{t('Музрабад')}</p>
-                                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Sariosiyo') || setMenu(false) }>{t('Сариасия')}</p>
                                                                         </div>
                                                                     </div>
                                                                     <div
-                                                                        className='m-4 flex justify-center'>
+                                                                        className='lg:m-4 flex justify-center'>
                                                                         <div>
+                                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Sariosiyo') || setMenu(false) }>{t('Сариасия')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Sariq') || setMenu(false) }>{t('Сарык')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Sharg'un") || setMenu(false) }>{t('Шаргунь')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Sherobod') || setMenu(false) }>{t('Шерабад')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity("Sho'rchi") || setMenu(false) }>{t('Шурчи')}</p>
-                                                                            <p className='my-5 cursor-pointer'  onClick={() => setCity('Termiz') || setMenu(false) }>{t('Термез')}</p>
                                                                         </div>
                                                                     </div>
                                                                     <div
-                                                                        className='m-4 flex justify-center'>
+                                                                        className='lg:m-4 flex justify-center'>
                                                                         <div>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Uchqizil') || setMenu(false) }>{t('Учкызыл')}</p>
                                                                             <p className='my-5 cursor-pointer'  onClick={() => setCity('Uzun') || setMenu(false) }>{t('Узун')}</p>
@@ -513,7 +515,7 @@ const SearchPlace = () => {
                                                             :
                                                             district === 'sirdarya' ?
                                                                 <div
-                                                                    className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                                     <div className='flex justify-between'>
                                                                         <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                                            onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
@@ -522,16 +524,16 @@ const SearchPlace = () => {
                                                                     <div
                                                                         className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                                                         <div
-                                                                            className='m-4  flex justify-center'>
+                                                                            className='lg:m-4  flex justify-center'>
                                                                             <div>
+                                                                                <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Guliston') || setMenu(false) }>{t('Гулистан')}</p>
                                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Baxt') || setMenu(false) }>{t('Бахт')}</p>
                                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Boyovut') || setMenu(false) }>{t('Баяут')}</p>
                                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Sirdaryo') || setMenu(false) }>{t('Cырдарья')}</p>
-                                                                                <p className='my-5 cursor-pointer'  onClick={() => setCity('Guliston') || setMenu(false) }>{t('Гулистан')}</p>
                                                                             </div>
                                                                         </div>
                                                                         <div
-                                                                            className='m-4 flex justify-center'>
+                                                                            className='lg:m-4 flex justify-center'>
                                                                             <div>
                                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity("Navro'z") || setMenu(false) }>{t('Навруз')}</p>
                                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Sayhun') || setMenu(false) }>{t('Сайхун')}</p>
@@ -540,7 +542,7 @@ const SearchPlace = () => {
                                                                             </div>
                                                                         </div>
                                                                         <div
-                                                                            className='m-4 flex justify-center'>
+                                                                            className='lg:m-4 flex justify-center'>
                                                                             <div>
                                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Sirdaryo') || setMenu(false) }>{t('Сырдарья')}</p>
                                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Terinozik') || setMenu(false) }>{t('Теренозек')}</p>
@@ -549,7 +551,7 @@ const SearchPlace = () => {
                                                                             </div>
                                                                         </div>
                                                                         <div
-                                                                            className='m-4 flex justify-center'>
+                                                                            className='lg:m-4 flex justify-center'>
                                                                             <div>
                                                                                 <p className='my-5 cursor-pointer'  onClick={() => setCity('Yangiyor') || setMenu(false) }>{t('Янгиёр')}</p>
                                                                             </div>
@@ -560,7 +562,7 @@ const SearchPlace = () => {
 
                                                                 district === 'tashkent' ?
                                                                     <div
-                                                                        className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                                         <div className='flex justify-between'>
                                                                             <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
                                                                                onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
@@ -569,8 +571,9 @@ const SearchPlace = () => {
                                                                         <div
                                                                             className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                                                             <div
-                                                                                className='m-4  flex justify-center'>
+                                                                                className='lg:m-4  flex justify-center'>
                                                                                 <div>
+                                                                                    <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Toshkent') || setMenu(false) }>{t('Ташкент')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("Oqqo'rg'on") || setMenu(false) }>{t('Аккурган')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Olmaliq') || setMenu(false) }>{t('Алмалык')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Angren') || setMenu(false) }>{t('Ангрен')}</p>
@@ -580,12 +583,12 @@ const SearchPlace = () => {
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("Bo'ka") || setMenu(false) }>{t('Бука')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Chorvoq') || setMenu(false) }>{t('Чарвак')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Chinoz') || setMenu(false) }>{t('Чиназ')}</p>
-                                                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Chirchiq') || setMenu(false) }>{t('Чирчик')}</p>
                                                                                 </div>
                                                                             </div>
                                                                             <div
-                                                                                className='m-4 flex justify-center'>
+                                                                                className='lg:m-4 flex justify-center'>
                                                                                 <div>
+                                                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Chirchiq') || setMenu(false) }>{t('Чирчик')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("So'qoq") || setMenu(false) }>{t('Cукок')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("Do'rmon") || setMenu(false) }>{t('Дурмень')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("Do'stobod") || setMenu(false) }>{t('Дустабад')}</p>
@@ -595,12 +598,12 @@ const SearchPlace = () => {
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Iskandar') || setMenu(false) }>{t('Искандар')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Qorasuv') || setMenu(false) }>{t('Карасу')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Keles') || setMenu(false) }>{t('Келес')}</p>
-                                                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Qibray') || setMenu(false) }>{t('Кибрай')}</p>
                                                                                 </div>
                                                                             </div>
                                                                             <div
-                                                                                className='m-4 flex justify-center'>
+                                                                                className='lg:m-4 flex justify-center'>
                                                                                 <div>
+                                                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Qibray') || setMenu(false) }>{t('Кибрай')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("Ko'ksaroy") || setMenu(false) }>{t('Коксарай')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Krasnogorsk') || setMenu(false) }>{t('Красногорск')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Mirobod') || setMenu(false) }>{t('Мирабад')}</p>
@@ -609,12 +612,11 @@ const SearchPlace = () => {
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Parkent') || setMenu(false) }>{t('Паркент')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Pskent') || setMenu(false) }>{t('Пскент')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Salar') || setMenu(false) }>{t('Салар')}</p>
-                                                                                    <p className='my-5 cursor-pointer'  onClick={() => setCity('Toshkent') || setMenu(false) }>{t('Ташкент')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Tashmore') || setMenu(false) }>{t('Ташморе')}</p>
                                                                                 </div>
                                                                             </div>
                                                                             <div
-                                                                                className='m-4 flex justify-center'>
+                                                                                className='lg:m-4 flex justify-center'>
                                                                                 <div>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity('Turkiston') || setMenu(false) }>{t('Туркестан')}</p>
                                                                                     <p className='my-5 cursor-pointer'  onClick={() => setCity("O'rtaovul") || setMenu(false) }>{t('Уртааул')}</p>
@@ -631,7 +633,7 @@ const SearchPlace = () => {
                                                                     :
                                                                     district === 'ferghana' ?
                                                                         <div
-                                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                                             <div
                                                                                 className='flex justify-between'>
                                                                                 <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
@@ -641,18 +643,18 @@ const SearchPlace = () => {
                                                                             <div
                                                                                 className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                                                                 <div
-                                                                                    className='m-4  flex justify-center'>
+                                                                                    className='lg:m-4  flex justify-center'>
                                                                                     <div>
+                                                                                        <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity("Farg'ona") || setMenu(false) }>{t('Фергана')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Oltiariq') || setMenu(false) }>{t('Алтыарык')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Bog'dod") || setMenu(false) }>{t('Багдад')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Beshariq') || setMenu(false) }>{t('Бешарык')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Dang'ara") || setMenu(false) }>{t('Дангара')}</p>
-                                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity("Farg'ona") || setMenu(false) }>{t('Фергана')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Qo'qon") || setMenu(false) }>{t('Коканд')}</p>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
-                                                                                    className='m-4 flex justify-center'>
+                                                                                    className='lg:m-4 flex justify-center'>
                                                                                     <div>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Quva') || setMenu(false) }>{t('Кува')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Quvasoy') || setMenu(false) }>{t('Кувасай')}</p>
@@ -663,7 +665,7 @@ const SearchPlace = () => {
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
-                                                                                    className='m-4 flex justify-center'>
+                                                                                    className='lg:m-4 flex justify-center'>
                                                                                     <div>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Rishton') || setMenu(false) }>{t('Риштан')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Shoximardon') || setMenu(false) }>{t('Шахимардан')}</p>
@@ -674,7 +676,7 @@ const SearchPlace = () => {
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
-                                                                                    className='m-4 flex justify-center'>
+                                                                                    className='lg:m-4 flex justify-center'>
                                                                                     <div>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Yaypan') || setMenu(false) }>{t('Яйпан')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Yangi Marg'ilon") || setMenu(false) }>{t('Янги Маргилан')}</p>
@@ -687,7 +689,7 @@ const SearchPlace = () => {
                                                                         :
                                                                         district === 'khorezm' &&
                                                                         <div
-                                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-16 bg-white shadow-lg text-xl'>
+                                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
                                                                             <div
                                                                                 className='flex justify-between'>
                                                                                 <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
@@ -697,31 +699,31 @@ const SearchPlace = () => {
                                                                             <div
                                                                                 className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                                                                 <div
-                                                                                    className='m-4  flex justify-center'>
+                                                                                    className='lg:m-4  flex justify-center'>
                                                                                     <div>
+                                                                                        <p className='my-5 cursor-pointer font-semibold'  onClick={() => setCity('Urganch') || setMenu(false) }>{t('Ургенч')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Bog'ot") || setMenu(false) }>{t('Багат')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Cholish') || setMenu(false) }>{t('Чалыш')}</p>
-                                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Gurlan') || setMenu(false) }>{t('Гурлен')}</p>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
-                                                                                    className='m-4 flex justify-center'>
+                                                                                    className='lg:m-4 flex justify-center'>
                                                                                     <div>
+                                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Gurlan') || setMenu(false) }>{t('Гурлен')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Qorovul') || setMenu(false) }>{t('Караул')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity("Qo'shko'pir") || setMenu(false) }>{t('Кошкупыр')}</p>
-                                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Pitnak') || setMenu(false) }>{t('Питнак')}</p>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
-                                                                                    className='m-4 flex justify-center'>
+                                                                                    className='lg:m-4 flex justify-center'>
                                                                                     <div>
+                                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Pitnak') || setMenu(false) }>{t('Питнак')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Shovot') || setMenu(false) }>{t('Шават')}</p>
-                                                                                        <p className='my-5 cursor-pointer'  onClick={() => setCity('Urganch') || setMenu(false) }>{t('Ургенч')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Xonqa') || setMenu(false) }>{t('Ханка')}</p>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div
-                                                                                    className='m-4 flex justify-center'>
+                                                                                    className='lg:m-4 flex justify-center'>
                                                                                     <div>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Hazorasp') || setMenu(false) }>{t('Хазарасп')}</p>
                                                                                         <p className='my-5 cursor-pointer'  onClick={() => setCity('Xiva') || setMenu(false) }>{t('Хива')}</p>
@@ -730,8 +732,6 @@ const SearchPlace = () => {
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-
-
                     }
                 </div>
             }

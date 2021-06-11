@@ -48,7 +48,16 @@ const Categories = () => {
                                     <CategoryCard
                                         img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                         name={t('Электроника')}
-                                    menu={menu}/>
+                                    />
+                                </div>
+                            </div>
+
+
+                            <div onClick={() => setMenu(true)}>
+                                <div className='flex justify-center my-2' onClick={() => setCategory('property')}>
+                                    <CategoryCard
+                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081488/sold%20commerce/gotov_uh90qg.png'
+                                        name={t('Недвижимость')}/>
                                 </div>
                             </div>
                             <div onClick={() => setMenu(true)}>
@@ -59,6 +68,13 @@ const Categories = () => {
                                 </div>
                             </div>
                             <div onClick={() => setMenu(true)}>
+                                <div className='flex justify-center my-2' onClick={() => setCategory('children')}>
+                                    <CategoryCard
+                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623082500/sold%20commerce/png-transparent-teddy-bear-gund-stuffed-toy-plush-plush-toy-blue-child-photography_b7qhv2.png'
+                                        name={t('Детский мир')}/>
+                                </div>
+                            </div>
+                            <div onClick={() => setMenu(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('job')}>
                                     <CategoryCard
                                         img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
@@ -66,30 +82,26 @@ const Categories = () => {
                                 </div>
                             </div>
                             <div onClick={() => setMenu(true)}>
-                                <div className='flex justify-center my-2' onClick={() => setCategory('property')}>
-                                    <CategoryCard
-                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081488/sold%20commerce/gotov_uh90qg.png'
-                                        name={t('Недвижимость')}/>
-                                </div>
-                            </div>
-                            <div onClick={() => setMenu(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('services')}>
                                     <CategoryCard
                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081949/sold%20commerce/png-transparent-computer-software-computer-icons-wallet-wallet-saving-service-payment_y678iu.png'
-                                        name={t('Бизнес и Услуги')}/>
+                                        name={t('Услуги')}/>
                                 </div>
                             </div>
-                            <div onClick={() => setMenu(true)}>
-                                <div className='flex justify-center my-2' onClick={() => setCategory('children')}>
-                                    <CategoryCard
-                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623082500/sold%20commerce/png-transparent-teddy-bear-gund-stuffed-toy-plush-plush-toy-blue-child-photography_b7qhv2.png'
-                                        name={t('Детский мир')}/>
-                                </div>
-                            </div>
+
+
                         </div>
 
-                        <div className={menu ? 'grid lg:grid-cols-6 grid-cols-3 mt-96' : 'grid lg:grid-cols-6 grid-cols-3'}
-                             onClick={() => setMenu(false)}>
+                        <div
+                            className={menu ? 'grid lg:grid-cols-6 grid-cols-3 mt-96' : 'grid lg:grid-cols-6 grid-cols-3'}
+                            onClick={() => setMenu(false)}>
+                            <div onClick={() => setMenu(true)}>
+                                <div className='flex justify-center my-2' onClick={() => setCategory('business')}>
+                                    <CategoryCard
+                                        img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081048/sold%20commerce/lambo-transparent-yellow-5_prlo8m.png'
+                                        name={t('Бизнес')}/>
+                                </div>
+                            </div>
 
                             <div onClick={() => setMenus(true)}>
                                 <div className='flex justify-center my-2' onClick={() => setCategory('style-fashion')}>
@@ -120,24 +132,16 @@ const Categories = () => {
                                 </div>
                             </div>
 
-                            <Link href='/exchange' >
-                                <a>
-                                    <div className='flex justify-center my-2' onClick={() => setCategory('exchange')}>
-                                        <CategoryCard
-                                            img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                            name={t('Обмен')}/>
-                                    </div>
-                                </a>
-                            </Link>
-                            <Link href='/as-a-gift'>
-                                <a>
-                                    <div className='flex justify-center my-2' onClick={() => setCategory('as-a-gift')}>
-                                        <CategoryCard
-                                            img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                                            name={t('Отдам даром')}/>
-                                    </div>
-                                </a>
-                            </Link>
+                            <div onClick={() => setMenus(true)}>
+                                <div className='flex justify-center my-2' onClick={() => setCategory('exchange')}>
+                                    <CategoryCard
+                                        img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
+                                        name={t('Обмен / даром')}/>
+                                </div>
+                            </div>
+
+
+
                         </div>
 
 
@@ -146,12 +150,12 @@ const Categories = () => {
                             <div>
                                 {
                                     category === 'electronic' ?
-                                        <div
-                                            className='absolute top-40 search-width left-1/2 transform -translate-x-1/2 bg-white shadow-2xl rounded-lg  text-gray-500 text-lg whitespace-nowrap'>
+                                        <div className='absolute top-40 search-width left-1/2 transform -translate-x-1/2 bg-white shadow-2xl rounded-lg  text-gray-500 text-md whitespace-nowrap'>
 
                                             <div className='flex justify-between'>
                                                 <Link href='/electronic'>
-                                                    <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                    <a><p
+                                                        className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
                                                         {lang === "ru" ? "Посмотреть все в категорие электроники" : "Elektronika bo'limining barcha e'lonlarini  ko'rish"}
                                                     </p>
                                                     </a>
@@ -163,7 +167,8 @@ const Categories = () => {
                                                 </div>
                                             </div>
 
-                                            <div className='grid lg:grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
+                                            <div
+                                                className='grid lg:grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
                                                 <div className='mx-4  flex justify-center'>
                                                     <div className='mx-4 '>
                                                         <Link href='/electronic/phones'>
@@ -244,578 +249,580 @@ const Categories = () => {
                                             </div>
                                         </div> :
 
-                                        category === 'vehicle' ?
-                                            <div
-                                                className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
-                                                <div className='flex justify-between'>
-                                                    <Link href='/vehicle'>
-                                                        <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
-                                                            {lang === "ru" ? "Посмотреть все в категорие транспорт" : "Transport bo'limining barcha e'lonlarini  ko'rish"}
-                                                        </p>
-                                                        </a>
-                                                    </Link>
-                                                    <div
-                                                        className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
-                                                        onClick={() => setMenu(false)}>
-                                                        <div className='bg-gray-400 p-3 rounded-md'><GrClose/></div>
-                                                    </div>
-                                                </div>
 
-                                                <div
-                                                    className='grid grid-cols-4 gap-5 justify-center border-t border-gray-400 mb-5'>
-                                                    <div className='mx-4  flex justify-center'>
-                                                        <div className='mx-4 '>
-                                                            <Link href='/vehicle/car'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Легковые автомобили')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/spare-parts'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Автозапчасти и аксессуары')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/special-equipment'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Спецтехника')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/water-transport'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Водный транспорт')}</p>
-                                                                </a>
-                                                            </Link>
-                                                        </div>
-                                                    </div>
+                                category === 'vehicle' ?
+                                <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
+                                    <div className='flex justify-between'>
+                                        <Link href='/vehicle'>
+                                            <a><p
+                                                className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                {lang === "ru" ? "Посмотреть все в категорие транспорт" : "Transport bo'limining barcha e'lonlarini  ko'rish"}
+                                            </p>
+                                            </a>
+                                        </Link>
+                                        <div
+                                            className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
+                                            onClick={() => setMenu(false)}>
+                                            <div className='bg-gray-400 p-3 rounded-md'><GrClose/></div>
+                                        </div>
+                                    </div>
 
-                                                    <div className='mx-4  flex justify-center'>
-                                                        <div className='mx-4 '>
-                                                            <Link href='/vehicle/truck'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Грузовые автомобили')}</p>
-                                                                </a>
-                                                            </Link>
+                                    <div
+                                        className='grid grid-cols-4 gap-5 justify-center border-t border-gray-400 mb-5'>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/vehicle/car'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Легковые автомобили')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/spare-parts'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Автозапчасти и аксессуары')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/special-equipment'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Спецтехника')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/water-transport'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Водный транспорт')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
 
-                                                            <Link href='/vehicle/agricultural-machinery'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Сельхозтехника')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/special-agricultural-machinery-parts'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Запчасти спец / с.х. техники')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/trailer'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Прицепы')}</p>
-                                                                </a>
-                                                            </Link>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/vehicle/truck'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Грузовые автомобили')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                        </div>
-                                                    </div>
-                                                    <div className='mx-4  flex justify-center'>
-                                                        <div className='mx-4 '>
-                                                            <Link href='/vehicle/moto'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Мото')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/moto-parts'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Мотозапчасти и аксессуары')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/tires'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Шины, диски и колёса')}</p>
-                                                                </a>
-                                                            </Link>
+                                                <Link href='/vehicle/agricultural-machinery'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Сельхозтехника')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/special-agricultural-machinery-parts'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Запчасти спец / с.х. техники')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/trailer'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Прицепы')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                        </div>
-                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/vehicle/moto'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Мото')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/moto-parts'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Мотозапчасти и аксессуары')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/tires'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Шины, диски и колёса')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                    <div className='mx-4  flex justify-center'>
-                                                        <div className='mx-4 '>
-                                                            <Link href='/vehicle/bus'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Автобусы')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/other-vehicles'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Другой транспорт')}</p>
-                                                                </a>
-                                                            </Link>
-                                                            <Link href='/vehicle/other-spare-parts'>
-                                                                <a>
-                                                                    <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Прочие запчасти')}</p>
-                                                                </a>
-                                                            </Link>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            </div>
+                                        </div>
 
-                                            </div> :
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/vehicle/bus'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Автобусы')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/other-vehicles'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Другой транспорт')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/vehicle/other-spare-parts'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Прочие запчасти')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                            category === 'job' ?
-                                                <div
-                                                    className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                </div> :
 
-                                                    <div className='flex justify-between'>
-                                                        <Link href='/job'>
-                                                            <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
-                                                                {lang === "ru" ? "Посмотреть все в категорие работа" : "Ish bo'limining barcha e'lonlarini  ko'rish"}
-                                                            </p></a>
-                                                        </Link>
-                                                        <div
-                                                            className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
-                                                            onClick={() => setMenu(false)}>
-                                                            <div className='bg-gray-400 p-3 rounded-md'><GrClose/></div>
-                                                        </div>
-                                                    </div>
+                                category === 'job' ?
+                                <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
 
-                                                    <div
-                                                        className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
-                                                        <div className='mx-4  flex justify-center'>
-                                                            <div className='mx-4 '>
-                                                                <Link href='/job/jurisprudence-and-accounting'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Юриспруденция и бухгалтерия')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/restaurants'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Рестораны / Кафе')}</p>
-                                                                    </a>
-                                                                </Link>
+                                    <div className='flex justify-between'>
+                                        <Link href='/job'>
+                                            <a>
+                                                <p
+                                                className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                {lang === "ru" ? "Посмотреть все в категорие работа" : "Ish bo'limining barcha e'lonlarini  ko'rish"}
+                                            </p></a>
+                                        </Link>
+                                        <div
+                                            className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
+                                            onClick={() => setMenu(false)}>
+                                            <div className='bg-gray-400 p-3 rounded-md'><GrClose/></div>
+                                        </div>
+                                    </div>
 
-                                                                <Link href='/job/retail-sale'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Продажа / Розничная Торговля ')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/education'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Образование')}</p>
-                                                                    </a>
-                                                                </Link>
+                                    <div
+                                        className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/job/jurisprudence-and-accounting'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Юриспруденция и бухгалтерия')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/restaurants'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Рестораны / Кафе')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                                <Link href='/job/marketing-advertising-design'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Реклама / Маркетинг / Дизайн')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/manufacturing'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Производство / энергетика')}</p>
-                                                                    </a>
-                                                                </Link>
+                                                <Link href='/job/retail-sale'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Продажа / Розничная Торговля ')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/education'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Образование')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                            </div>
-                                                        </div>
+                                                <Link href='/job/marketing-advertising-design'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Реклама / Маркетинг / Дизайн')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/manufacturing'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Производство / энергетика')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                        <div className='mx-4  flex justify-center'>
-                                                            <div className='mx-4 '>
-                                                                <Link href='/job/it-computer-telecom'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('IT / компьютеры / телеком')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/fitness-beauty-sports'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Спорт / фитнес / красота')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/tourism-entertainment'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Туризм / отдых / развлечения')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/md-secretary'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('AХC / Секретариат')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/building'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Строительство')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                            </div>
-                                                        </div>
-                                                        <div className='mx-4  flex justify-center'>
-                                                            <div className='mx-4 '>
-                                                                <Link href='/job/medicine-pharmacy'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Медицина / Фармация')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/service-and-life'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Сервис и быт')}</p>
-                                                                    </a>
-                                                                </Link>
+                                            </div>
+                                        </div>
 
-                                                                <Link href='/job/security'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Охрана и Безопасность')}</p>
-                                                                    </a>
-                                                                </Link>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/job/it-computer-telecom'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('IT / компьютеры / телеком')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/fitness-beauty-sports'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Спорт / фитнес / красота')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/tourism-entertainment'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Туризм / отдых / развлечения')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/md-secretary'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('AХC / Секретариат')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/building'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Строительство')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/job/medicine-pharmacy'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Медицина / Фармация')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/service-and-life'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Сервис и быт')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                                <Link href='/job/property'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Недвижимость')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/career-start'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Начало карьеры / Студенты')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                            </div>
-                                                        </div>
-                                                        <div className='mx-4  flex justify-center'>
-                                                            <div className='mx-4 '>
-                                                                <Link href='/job/transport-logistics'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Транспорт / логистика')}</p>
-                                                                    </a>
-                                                                </Link>
+                                                <Link href='/job/security'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Охрана и Безопасность')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                                <Link href='/job/domestic-staff'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Домашний персонал')}</p>
-                                                                    </a>
-                                                                </Link>
+                                                <Link href='/job/property'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Недвижимость')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/career-start'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Начало карьеры / Студенты')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/job/transport-logistics'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Транспорт / логистика')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                                <Link href='/job/culture-art'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Культура / искусство')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/part-time'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Частичная занятость')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                                <Link href='/job/other-areas'>
-                                                                    <a>
-                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Другие сферы')}</p>
-                                                                    </a>
-                                                                </Link>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> :
+                                                <Link href='/job/domestic-staff'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Домашний персонал')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                category === 'property' ?
+                                                <Link href='/job/culture-art'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Культура / искусство')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/part-time'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Частичная занятость')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/job/other-areas'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Другие сферы')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> :
 
+                                category === 'property' ?
+                                    <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
 
-                                                    <div
-                                                        className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                    <div className='flex justify-between'>
+                                        <Link href='/property'>
+                                            <a><p
+                                                className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                {lang === "ru" ? "Посмотреть все в категорие недвижимость" : "Ko'chmas mulk bo'limining barcha e'lonlarini  ko'rish"}
+                                            </p>
+                                            </a>
+                                        </Link>
+                                        <div
+                                            className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
+                                            onClick={() => setMenu(false)}>
+                                            <div className='bg-gray-400 p-3 rounded-md'><GrClose/>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                                        <div className='flex justify-between'>
-                                                            <Link href='/property'>
-                                                                <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
-                                                                    {lang === "ru" ? "Посмотреть все в категорие недвижимость" : "Ko'chmas mulk bo'limining barcha e'lonlarini  ko'rish"}
-                                                                </p>
-                                                                </a>
-                                                            </Link>
-                                                            <div
-                                                                className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
-                                                                onClick={() => setMenu(false)}>
-                                                                <div className='bg-gray-400 p-3 rounded-md'><GrClose/></div>
-                                                            </div>
-                                                        </div>
+                                    <div
+                                        className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/property/flats'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Квартиры')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/property/houses'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Дома')}</p>
+                                                    </a>
+                                                </Link>
 
-                                                        <div
-                                                            className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
-                                                            <div className='mx-4  flex justify-center'>
-                                                                <div className='mx-4 '>
-                                                                    <Link href='/property/flats'>
-                                                                        <a>
-                                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Квартиры')}</p>
-                                                                        </a>
-                                                                    </Link>
-                                                                    <Link href='/property/houses'>
-                                                                        <a>
-                                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Дома')}</p>
-                                                                        </a>
-                                                                    </Link>
+                                            </div>
+                                        </div>
 
-                                                                </div>
-                                                            </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
 
-                                                            <div className='mx-4  flex justify-center'>
-                                                                <div className='mx-4 '>
+                                                <Link href='/property/commercial-use'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Коммерческие помещения')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
 
-                                                                    <Link href='/property/commercial-use'>
-                                                                        <a>
-                                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Коммерческие помещения')}</p>
-                                                                        </a>
-                                                                    </Link>
-                                                                </div>
-                                                            </div>
-                                                            <div className='mx-4  flex justify-center'>
-                                                                <div className='mx-4 '>
-
-                                                                    <Link href='/property/area'>
-                                                                        <a>
-                                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Земля')}</p>
-                                                                        </a>
-                                                                    </Link>
-                                                                </div>
-                                                            </div>
-                                                            <div className='mx-4  flex justify-center'>
-                                                                <div className='mx-4 '>
-                                                                    <Link href='/property/garage'>
-                                                                        <a>
-                                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Гаражи / стоянки')}</p>
-                                                                        </a>
-                                                                    </Link>
-                                                                </div>
-                                                            </div>
-
-
-                                                        </div>
-                                                    </div> :
-
-                                                    category === 'services' ?
+                                                <Link href='/property/area'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Земля')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/property/garage'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Гаражи / стоянки')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
 
 
-                                                        <div
-                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                    </div>
+                                </div> :
 
-                                                            <div className='flex justify-between'>
-                                                                <Link href='/services'>
-                                                                    <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
-                                                                        {lang === "ru" ? "Посмотреть все в категорие сервисы" : "Maishiy xizmat bo'limining barcha e'lonlarini  ko'rish"}
-                                                                    </p>
-                                                                    </a>
-                                                                </Link>
-                                                                <div
-                                                                    className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
-                                                                    onClick={() => setMenu(false)}>
-                                                                    <div className='bg-gray-400 p-3 rounded-md'><GrClose/></div>
-                                                                </div>
-                                                            </div>
+                                category === 'services' ?
+                                    <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
 
-                                                            <div
-                                                                className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
-                                                                <div className='mx-4  flex justify-center'>
-                                                                    <div className='mx-4 '>
-                                                                        <Link href='/services/equipment'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Оборудование')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/selling-business'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Продажа бизнеса')}</p>
-                                                                            </a>
-                                                                        </Link>
+                                    <div className='flex justify-between'>
+                                        <Link href='/services'>
+                                            <a><p
+                                                className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                {lang === "ru" ? "Посмотреть все в категорие сервисы" : "Maishiy xizmat bo'limining barcha e'lonlarini  ko'rish"}
+                                            </p>
+                                            </a>
+                                        </Link>
+                                        <div
+                                            className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
+                                            onClick={() => setMenu(false)}>
+                                            <div className='bg-gray-400 p-3 rounded-md'>
+                                                <GrClose/></div>
+                                        </div>
+                                    </div>
 
-                                                                        <Link href='/services/repair'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Обслуживание, ремонт техники')}</p>
-                                                                            </a>
-                                                                        </Link>
-
-                                                                        <Link href='/services/sport-edu'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Образование / Спорт')}</p>
-                                                                            </a>
-                                                                        </Link>
-
-                                                                        <Link href='/services/rent-delivery'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Перевозки / аренда транспорта')}</p>
-                                                                            </a>
-                                                                        </Link>
-
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className='mx-4  flex justify-center'>
-                                                                    <div className='mx-4 '>
-                                                                        <Link href='/services/jurisdiction'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Юридические услуги')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/translate-text'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('перевод / набор текста')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/tourism'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Туризм')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/auto-moto'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Авто / мото услуги')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/raw'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Сырьё / материалы')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                    </div>
-                                                                </div>
-                                                                <div className='mx-4  flex justify-center'>
-                                                                    <div className='mx-4 '>
-                                                                        <Link href='/services/adv-poly-internet'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Реклама / полиграфия / интернет')}</p>
-                                                                            </a>
-                                                                        </Link>
-
-                                                                        <Link href='/services/babysitter'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Няни / сиделки')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/beauty-health'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Красота / здоровье')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/partner-finance'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Партнерство / Финансовые услуги')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/ent-art-pho'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Развлечения / Искусство / Фото')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                    </div>
-                                                                </div>
-                                                                <div className='mx-4  flex justify-center'>
-                                                                    <div className='mx-4 '>
-                                                                        <Link href='/services/building-cleaning'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Строительство / ремонт / уборка')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/animals'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Услуги для животных')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/rent'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Прокат товаров')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/services/others'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Другие услуги')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                    </div>
-                                                                </div>
+                                    <div
+                                        className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
 
 
-                                                            </div>
-                                                        </div> :
-
-                                                        category === 'children' &&
-                                                        <div
-                                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
-
-                                                            <div className='flex justify-between'>
-                                                                <Link href='/children'>
-                                                                    <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
-                                                                        {lang === "ru" ? "Посмотреть все в категорие в детский мир" : "Bolalar dunyosi bo'limining barcha e'lonlarini  ko'rish"}
-                                                                    </p>
-                                                                    </a>
-                                                                </Link>
-                                                                <div
-                                                                    className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
-                                                                    onClick={() => setMenu(false)}>
-                                                                    <div className='bg-gray-400 p-3 rounded-md'><GrClose/></div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div
-                                                                className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
-                                                                <div className='mx-4  flex justify-center'>
-                                                                    <div className='mx-4 '>
-                                                                        <Link href='/children/children-cloth'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детская одежда')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/children/children-shoes'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детская обувь')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/children/children-cart'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детские коляски')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className='mx-4  flex justify-center'>
-                                                                    <div className='mx-4 '>
-                                                                        <Link href='/children/children-auto-seat'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детские автокресла')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/children/children-furniture'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детская мебель')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/children/children-toys'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Игрушки')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                    </div>
-                                                                </div>
-                                                                <div className='mx-4  flex justify-center'>
-                                                                    <div className='mx-4 '>
-                                                                        <Link href='/children/children-vehicle'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детский транспорт')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/children/feeding'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Кормление')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                        <Link href='/children/school-preparement'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Товары для школьников')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                    </div>
-                                                                </div>
-                                                                <div className='mx-4  flex justify-center'>
-                                                                    <div className='mx-4 '>
-                                                                        <Link href='/children/other-goods-for-children'>
-                                                                            <a>
-                                                                                <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Прочие детские товары')}</p>
-                                                                            </a>
-                                                                        </Link>
-                                                                    </div>
-                                                                </div>
+                                                <Link href='/services/repair'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Установка, Ремонт техники')}</p>
+                                                    </a>
+                                                </Link>
 
 
-                                                            </div>
-                                                        </div>
+                                                <Link href='/services/sport-edu'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Образование / Спорт')}</p>
+                                                    </a>
+                                                </Link>
+
+                                                <Link href='/services/rent'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Аренда транспорта')}</p>
+                                                    </a>
+                                                </Link>
+
+
+                                                <Link href='/services/building-improvement'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Строительство / Ремонт')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/services/it'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('IT, интернет, телеком')}</p>
+                                                    </a>
+                                                </Link>
+
+                                                <Link href='/services/adv-poly-internet'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Реклама / полиграфия / фото и видео')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/services/translate-text'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('перевод / набор текста')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/services/tourism'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Туризм')}</p>
+                                                    </a>
+                                                </Link>
+
+
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+
+                                                <Link href='/services/jurisdiction'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Юридические услуги')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/services/transport-delivery'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Транспорт , перевозки')}</p>
+                                                    </a>
+                                                </Link>
+
+                                                <Link href='/services/delivery'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Доставка, курьеры')}</p>
+                                                    </a>
+                                                </Link>
+
+                                                <Link href='/services/babysitter'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Няни / Сиделки / Домашные работы')}</p>
+                                                    </a>
+                                                </Link>
+
+                                                <Link href='/services/ent-art-pho'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t(' Искусство / Развлечения ')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/services/beauty-health'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Красота / Здоровье')}</p>
+                                                    </a>
+                                                </Link>
+
+
+                                                <Link href='/services/animals'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Услуги для животных')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/services/rent'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Прокат товаров')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/services/others'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Другие услуги')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div> :
+
+                                category === 'children' &&
+                                <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-40 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
+
+                                    <div className='flex justify-between'>
+                                        <Link href='/children'>
+                                            <a><p
+                                                className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                {lang === "ru" ? "Посмотреть все в категорие в детский мир" : "Bolalar dunyosi bo'limining barcha e'lonlarini  ko'rish"}
+                                            </p>
+                                            </a>
+                                        </Link>
+                                        <div
+                                            className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
+                                            onClick={() => setMenu(false)}>
+                                            <div className='bg-gray-400 p-3 rounded-md'>
+                                                <GrClose/></div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/children/children-cloth'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детская одежда')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/children/children-shoes'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детская обувь')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/children/children-cart'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детские коляски')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/children/children-auto-seat'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детские автокресла')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/children/children-furniture'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детская мебель')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/children/children-toys'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Игрушки')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/children/children-vehicle'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Детский транспорт')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/children/feeding'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Кормление')}</p>
+                                                    </a>
+                                                </Link>
+                                                <Link href='/children/school-preparement'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Товары для школьников')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                        <div className='mx-4  flex justify-center'>
+                                            <div className='mx-4 '>
+                                                <Link href='/children/other-goods-for-children'>
+                                                    <a>
+                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Прочие детские товары')}</p>
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
 
                                 }
                             </div>
@@ -823,14 +830,94 @@ const Categories = () => {
                         {menus &&
                         <div>
                             {
+                                category === 'business' ?
+                                    <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
+
+                                        <div className='flex justify-between'>
+                                            <Link href='/business'>
+                                                <a>
+                                                    <p
+                                                        className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                        {lang === "ru" ? "Посмотреть все в категорие в бизнес" : "Biznes bo'limining barcha e'lonlarini  ko'rish"}
+                                                    </p>
+                                                </a>
+                                            </Link>
+                                            <div
+                                                className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
+                                                onClick={() => setMenus(false)}>
+                                                <div
+                                                    className='bg-gray-400 p-3 rounded-md hover:bg-gray-300 text-white'>
+                                                    <GrClose/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
+                                            <div className='mx-4  flex justify-center'>
+                                                <div className='mx-4 '>
+
+
+                                                    <Link href='/business/equipment'>
+                                                        <a>
+                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Оборудование')}</p>
+                                                        </a>
+                                                    </Link>
+                                                    <Link href='/business/beauty-health'>
+                                                        <a>
+                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Красота / Здоровье')}</p>
+                                                        </a>
+                                                    </Link>
+
+                                                </div>
+                                            </div>
+
+                                            <div className='mx-4  flex justify-center'>
+                                                <div className='mx-4 '>
+                                                    <Link href='/business/selling-business'>
+                                                        <a>
+                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Продажа бизнеса')}</p>
+                                                        </a>
+                                                    </Link>
+
+
+                                                </div>
+                                            </div>
+                                            <div className='mx-4  flex justify-center'>
+                                                <div className='mx-4 '>
+
+                                                    <Link href='/business/partner-finance'>
+                                                        <a>
+                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Финансы / Партнерство')}</p>
+                                                        </a>
+                                                    </Link>
+
+                                                </div>
+                                            </div>
+                                            <div className='mx-4  flex justify-center'>
+                                                <div className='mx-4 '>
+                                                    <Link href='/business/others'>
+                                                        <a>
+                                                            <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Другие')}</p>
+                                                        </a>
+                                                    </Link>
+
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    :
 
                                 category === 'style-fashion' ?
-                                    <div
-                                        className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                    <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
 
                                         <div className='flex justify-between'>
                                             <Link href='/style-fashion'>
-                                                <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                <a><p
+                                                    className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
                                                     {lang === "ru" ? "Посмотреть все в категорие мода и стиль" : "Moda va Stil bo'limining barcha e'lonlarini  ko'rish"}
                                                 </p>
                                                 </a>
@@ -907,12 +994,12 @@ const Categories = () => {
                                     </div> :
 
                                     category === 'house' ?
-                                        <div
-                                            className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                        <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
 
                                             <div className='flex justify-between'>
                                                 <Link href='/house'>
-                                                    <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                    <a><p
+                                                        className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
                                                         {lang === "ru" ? "Посмотреть все в категорие дом и сад" : "Uy va bog' bo'limining barcha e'lonlarini  ko'rish"}
                                                     </p>
                                                     </a>
@@ -1018,12 +1105,12 @@ const Categories = () => {
                                         </div> :
 
                                         category === 'hobbies' ?
-                                            <div
-                                                className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                            <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
 
                                                 <div className='flex justify-between'>
                                                     <Link href='/hobbies'>
-                                                        <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                        <a><p
+                                                            className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
                                                             {lang === "ru" ? "Посмотреть все в категорие в хобби и отдых" : "Hobbi va dam olish bo'limining barcha e'lonlarini  ko'rish"}
                                                         </p>
                                                         </a>
@@ -1098,13 +1185,13 @@ const Categories = () => {
                                                 </div>
                                             </div> :
 
-                                            category === 'animals' &&
-                                            <div
-                                                className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-lg text-gray-500  whitespace-nowrap'>
+                                            category === 'animals' ?
+                                            <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
 
                                                 <div className='flex justify-between'>
                                                     <Link href='/animals'>
-                                                        <a><p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                        <a><p
+                                                            className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
                                                             {lang === "ru" ? "Посмотреть все в категорие в животные" : "Jonivorlar bo'limining barcha e'lonlarini  ko'rish"}
                                                         </p>
                                                         </a>
@@ -1112,7 +1199,9 @@ const Categories = () => {
                                                     <div
                                                         className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
                                                         onClick={() => setMenus(false)}>
-                                                        <div className='bg-gray-400 p-3 rounded-md hover:bg-gray-300 text-white'><GrClose /></div>
+                                                        <div
+                                                            className='bg-gray-400 p-3 rounded-md hover:bg-gray-300 text-white'>
+                                                            <GrClose/></div>
                                                     </div>
                                                 </div>
 
@@ -1120,14 +1209,6 @@ const Categories = () => {
                                                     className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
                                                     <div className='mx-4  flex justify-center'>
                                                         <div className='mx-4 '>
-
-
-
-
-
-
-
-
 
 
                                                             <Link href='/animals/cats'>
@@ -1201,8 +1282,67 @@ const Categories = () => {
 
                                                 </div>
                                             </div>
+:
+                                                category === 'exchange' &&
+                                                <div className='absolute search-width left-1/2 transform -translate-x-1/2 top-54 bg-white shadow-2xl rounded-lg text-md text-gray-500  whitespace-nowrap'>
+
+                                                    <div className='flex justify-between'>
+                                                        <Link href='/exchange'>
+                                                            <a><p
+                                                                className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'>
+                                                                {lang === "ru" ? "Посмотреть все в категорие в животные" : "Jonivorlar bo'limining barcha e'lonlarini  ko'rish"}
+                                                            </p>
+                                                            </a>
+                                                        </Link>
+                                                        <div
+                                                            className='flex justify-center items-center text-gray-800 mx-5 cursor-pointer'
+                                                            onClick={() => setMenus(false)}>
+                                                            <div
+                                                                className='bg-gray-400 p-3 rounded-md hover:bg-gray-300 text-white'>
+                                                                <GrClose/></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div
+                                                        className='grid grid-cols-4 justify-center border-t border-gray-400 mb-5 '>
+                                                        <div className='mx-4  flex justify-center'>
+                                                            <div className='mx-4 '>
 
 
+                                                                <Link href='/exchange/as-a-gift'>
+                                                                    <a>
+                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Отдам даром')}</p>
+                                                                    </a>
+                                                                </Link>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div className='mx-4  flex justify-center'>
+                                                            <div className='mx-4 '>
+                                                                <Link href='/exchange'>
+                                                                    <a>
+                                                                        <p className='my-4 cursor-pointer whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>{t('Обмен')}</p>
+                                                                    </a>
+                                                                </Link>
+
+
+                                                            </div>
+                                                        </div>
+                                                        <div className='mx-4  flex justify-center'>
+                                                            <div className='mx-4 '>
+
+                                                            </div>
+                                                        </div>
+                                                        <div className='mx-4  flex justify-center'>
+                                                            <div className='mx-4 '>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </div>
 
                             }
                         </div>

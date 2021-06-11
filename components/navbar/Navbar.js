@@ -20,7 +20,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='bg-gray-800 flex  items-center container mx-auto'>
+        <div className='bg-gray-500 flex  items-center container mx-auto'>
             <div className='flex justify-between lg:py-5 py-3'>
                 <Link href='/'>
                     <a href="">

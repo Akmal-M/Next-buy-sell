@@ -9,7 +9,7 @@ import MainProducts from "../components/MainProducts";
 const Home = () => {
 
     return (
-        <div>
+        <div style={{backgroundColor: ''}}>
             <Search/>
             <MobileCategory/>
             {/*<Categories/>*/}
