@@ -1,9 +1,9 @@
-const Exchange = () => {
+const ExchangeAll = () => {
     return (
         <div>
-            Exchange
+            Exchange All
         </div>
     );
 };
 
-export default Exchange;
+export default ExchangeAll;

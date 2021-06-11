@@ -1,10 +1,11 @@
-import Search from "../components/search/Search";
-import Footer from "../components/Footer";
-import SlideBanner from "../components/slideBanner";
-import MobileCategory from "../components/category/MobileCategory";
+import Search from "../Components/search/Search";
+import Footer from "../Components/Footer";
+import SlideBanner from "../Components/slideBanner";
+import MobileCategory from "../Components/category/MobileCategory";
 import React from "react";
-import CategoryCardAll from "../components/category/CategoryCardAll";
-import MainProducts from "../components/MainProducts";
+import CategoryCardAll from "../Components/category/CategoryCardAll";
+import MainProducts from "../Components/MainProducts";
+import CategoryMenu from "../Components/CategoryMain/categoryMenu";
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
             <MainProducts/>
             <SlideBanner/>
             <Footer/>
+            <CategoryMenu/>
         </div>
     );
 };
