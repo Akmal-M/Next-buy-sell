@@ -25,6 +25,7 @@ const Users = () => {
                     <th>Phone</th>
                     <th>Admin</th>
                     <th>Action</th>
+
                 </tr>
                 </thead>
 

@@ -200,11 +200,11 @@ const categoriesData = {
     ],
     'job': [
         {
-            name: 'Обмен',
+            name: 'Вакансии',
             link: '/vacancy'
         },
         {
-            name: 'Даром',
+            name: 'Резюме',
             link: '/resume'
         },
 
@@ -824,6 +824,278 @@ const categoriesData = {
 
     ],
     'electronic': [
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+
+
+    ],
+    'hobbies': [
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+
+
+    ],
+    'house': [
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+
+
+    ],
+    'stylefashion': [
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+        {
+            name: '',
+            link: '/electronic/'
+        },
+
+
+    ],
+    'vehicle': [
         {
             name: '',
             link: '/electronic/'

@@ -8,7 +8,7 @@ import {DataContext} from "../store/GlobalState";
 import {postData} from "../utils/fetchingData";
 import {BiHide, BiShow} from "react-icons/bi";
 
-const SigIn = () => {
+const Login = () => {
     const {t} = useTranslation();
     const initialState = {phone: '', password: ''}
     const [userData, setUserData] = useState(initialState)
@@ -16,7 +16,7 @@ const SigIn = () => {
     const {phone, password} = userData
 
     const {state, dispatch} = useContext(DataContext)
-    const {auth} = state
+    const {auth, notify} = state
 
     const router = useRouter()
 
@@ -70,8 +70,11 @@ const SigIn = () => {
                         <div className="mt-12">
                             <form onSubmit={handleSubmit}>
                                 <div>
-                                    <div className="text-sm font-bold text-gray-700 tracking-wide">
+                                    <div className="text-sm font-bold text-gray-700 tracking-wide flex justify-between">
                                         {t('Номер телефона')}
+                                        <div className='xl:text-red-600 flex justify-end'>
+                                            {notify.error}
+                                        </div>
                                     </div>
                                     <input
                                         className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-yellow-400"
@@ -128,5 +131,5 @@ const SigIn = () => {
     );
 }
 
-export default SigIn
+export default Login
 

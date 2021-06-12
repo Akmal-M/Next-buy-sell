@@ -1,9 +1,9 @@
 import React from 'react';
-import CategoryCard from "./categoryCard";
+import CategoryCard from "../category/CategoryCard";
 import {createStore, useStore} from "react-hookstore";
 import useTranslation from "next-translate/useTranslation";
 
-const CategoryMenu = () => {
+const CategoryMain = () => {
     createStore('categoryStore', '');
     createStore('menuStore', false);
     createStore('menusStore', false);
@@ -13,12 +13,14 @@ const CategoryMenu = () => {
     const [menus, setMenus] = useStore('menusStore')
     const [menu, setMenu] = useStore('menuStore')
     const [category, setCategory] = useStore('categoryStore')
+
+
     return (
-        <div className=' '>
+        <div className='relative lg:block hidden mt-16 category-width mx-auto '>
             <div className=' mt-10 container mx-auto'>
                 <div className='grid lg:grid-cols-6 grid-cols-3 '>
                     <div onClick={() => setMenu(true)}>
-                        <div className='flex justify-center my-2' onClick={()=>setCategory('electronic')}>
+                        <div className='flex justify-center my-2' onClick={() => setCategory('electronic')}>
                             <CategoryCard
                                 img='https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
                                 name={t('Электроника')}
@@ -62,7 +64,8 @@ const CategoryMenu = () => {
                     </div>
                 </div>
 
-                <div className={menu ? 'grid lg:grid-cols-6 grid-cols-3 mt-96' : 'grid lg:grid-cols-6 grid-cols-3'} onClick={() => setMenu(false)}>
+                <div className={menu ? 'grid lg:grid-cols-6 grid-cols-3 ' : 'grid lg:grid-cols-6 grid-cols-3'}
+                     onClick={() => setMenu(false)}>
                     <div onClick={() => setMenu(true)}>
                         <div className='flex justify-center my-2' onClick={() => setCategory('business')}>
                             <CategoryCard
@@ -70,6 +73,7 @@ const CategoryMenu = () => {
                                 name={t('Бизнес')}/>
                         </div>
                     </div>
+
                     <div onClick={() => setMenus(true)}>
                         <div className='flex justify-center my-2' onClick={() => setCategory('style-fashion')}>
                             <CategoryCard
@@ -98,6 +102,7 @@ const CategoryMenu = () => {
                                 name={t('Животные')}/>
                         </div>
                     </div>
+
                     <div onClick={() => setMenus(true)}>
                         <div className='flex justify-center my-2' onClick={() => setCategory('exchange')}>
                             <CategoryCard
@@ -105,10 +110,14 @@ const CategoryMenu = () => {
                                 name={t('Обмен / даром')}/>
                         </div>
                     </div>
+
+
                 </div>
             </div>
+            <CategoryCard/>
+
         </div>
     );
 };
 
-export default CategoryMenu;
+export default CategoryMain;

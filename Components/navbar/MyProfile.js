@@ -70,6 +70,13 @@ const MyProfile = () => {
                                        </a>
                                    </Link>
                                </div>
+                               <div className='lg:my-4 my-3'>
+                                   <Link href='/categories' className=''>
+                                       <a href="#" className='hover:text-gray-400'>
+                                           {t('Категории')}
+                                       </a>
+                                   </Link>
+                               </div>
 
                                <div className='lg:my-4 my-3'>
                                    <Link href='/settings' className=''>

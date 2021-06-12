@@ -5,10 +5,15 @@ const valid = (name, phone, password, cf_password) => {
     // if(!validateEmail(email))
     //     return 'Invalid emails.'
 
-    // if(!validateEmail(email))
-    //     return 'Invalid emails.'
+    // if(!phonenumber(phone))
+    //     return 'Invalid Phone number.'
+
+
     if(password.length < 6)
         return 'Password must be at least 6 characters.'
+
+    if(phone.length < 9)
+        return 'Phone number must be at least 9 characters.'
 
     if(password !== cf_password)
         return 'Confirm password did not match.'
@@ -20,7 +25,7 @@ function phonenumber(inputtxt) {
         return true;
     }
     else {
-        alert("иииInvalid phone number.");
+        alert("Invalid phone number.");
         return false;
     }
 }

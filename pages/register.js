@@ -18,7 +18,7 @@ const Register = () => {
     const { name, phone, password, cf_password } = userData
 
     const {state, dispatch} = useContext(DataContext)
-    const { auth } = state
+    const { auth, notify } = state
     console.log(state)
 
     const router = useRouter()
@@ -46,6 +46,7 @@ const Register = () => {
     useEffect(() => {
         if(Object.keys(auth).length !== 0) router.push("/")
     }, [auth])
+
 
     return (
         <div>
@@ -84,8 +85,9 @@ const Register = () => {
                                             {t('Ваш пароль')}
                                         </div>
                                         <div className='text-right'>
-                                                <a className="text-xs font-display font-semibold  text-yellow-400 hover:text-yellow-400 cursor-pointer">
-                                                    {t('Пароль должен содержать не менее 6 символов')}
+                                                <a className="text-xs font-display font-semibold  text-red-500 cursor-pointer">
+                                                    <p >{notify.error}</p>
+                                                    {/*{t('Пароль должен содержать не менее 6 символов')}*/}
                                                 </a>
                                         </div>
                                     </div>

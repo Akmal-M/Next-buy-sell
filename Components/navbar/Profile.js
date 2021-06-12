@@ -27,7 +27,7 @@ const Profile = () => {
                              <div className=' text-gray-600'>
                                  <p className='lg:text-lg text-gray-400'>{t('Гость:')}</p>
                                  <div className='my-5'>
-                                     <Link href='/signin' className=''>
+                                     <Link href='/login' className=''>
                                          <a href="#" className='hover:text-gray-400'>
                                              {t('Вход')}
                                          </a>

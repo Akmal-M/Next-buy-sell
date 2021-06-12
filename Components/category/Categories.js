@@ -1,4 +1,4 @@
-// import Category from "./Category";
+// import Index from "./Index";
 // import useTranslation from "next-translate/useTranslation";
 // import React, {useState} from "react";
 // import Link from "next/link";
@@ -46,42 +46,42 @@
 //                         <div className='grid lg:grid-cols-6 grid-cols-3 mb-16'>
 //                             <div onClick={() => setMenu(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('electronic')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
 //                                         name={t('Электроника')}/>
 //                                 </div>
 //                             </div>
 //                             <div onClick={() => setMenu(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('vehicle')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081048/sold%20commerce/lambo-transparent-yellow-5_prlo8m.png'
 //                                         name={t('Транспорт')}/>
 //                                 </div>
 //                             </div>
 //                             <div onClick={() => setMenu(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('job')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
 //                                         name={t('Работа')}/>
 //                                 </div>
 //                             </div>
 //                             <div onClick={() => setMenu(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('property')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081488/sold%20commerce/gotov_uh90qg.png'
 //                                         name={t('Недвижимость')}/>
 //                                 </div>
 //                             </div>
 //                             <div onClick={() => setMenu(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('services')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623081949/sold%20commerce/png-transparent-computer-software-computer-icons-wallet-wallet-saving-service-payment_y678iu.png'
 //                                         name={t('Бизнес и Услуги')}/>
 //                                 </div>
 //                             </div>
 //                             <div onClick={() => setMenu(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('children')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623082500/sold%20commerce/png-transparent-teddy-bear-gund-stuffed-toy-plush-plush-toy-blue-child-photography_b7qhv2.png'
 //                                         name={t('Детский мир')}/>
 //                                 </div>
@@ -93,28 +93,28 @@
 //
 //                             <div onClick={() => setMenus(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('style-fashion')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
 //                                         name={t('Мода и Стиль')}/>
 //                                 </div>
 //                             </div>
 //                             <div onClick={() => setMenus(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('house')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
 //                                         name={t('Дом и дача')}/>
 //                                 </div>
 //                             </div>
 //                             <div onClick={() => setMenus(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('hobbies')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
 //                                         name={t('Хобби и Отдых')}/>
 //                                 </div>
 //                             </div>
 //                             <div onClick={() => setMenus(true)}>
 //                                 <div className='flex justify-center my-2' onClick={() => setCategory('animals')}>
-//                                     <Category
+//                                     <Index
 //                                         img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
 //                                         name={t('Животные')}/>
 //                                 </div>
@@ -123,7 +123,7 @@
 //                             <Link href='/exchange' >
 //                                 <a>
 //                                     <div className='flex justify-center my-2' onClick={() => setCategory('exchange')}>
-//                                         <Category
+//                                         <Index
 //                                             img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
 //                                             name={t('Обмен')}/>
 //                                     </div>
@@ -132,7 +132,7 @@
 //                             <Link href='/as-a-gift'>
 //                                 <a>
 //                                     <div className='flex justify-center my-2' onClick={() => setCategory('as-a-gift')}>
-//                                         <Category
+//                                         <Index
 //                                             img='https://res.cloudinary.com/bulutvoy/image/upload/v1623013099/sold%20commerce/unnamed_rnzije.png'
 //                                             name={t('Отдам даром')}/>
 //                                     </div>

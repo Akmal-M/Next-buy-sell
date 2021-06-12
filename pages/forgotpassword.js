@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 
-const Forgotpassword = () => {
+const ForgotPassword = () => {
     const {t} = useTranslation();
 
     return (
@@ -48,4 +48,4 @@ const Forgotpassword = () => {
     );
 }
 
-export default Forgotpassword
+export default ForgotPassword
