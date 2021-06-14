@@ -24,7 +24,7 @@ const SearchPlace = () => {
     }
     return (
         <div className='lg:flex flex items-center text-left'>
-            <GoLocation className='lg:text-4xl mx-2'/>
+            <GoLocation className='lg:text-2xl mx-2'/>
             {
                 !menu ?
                     <p className='lg:text-lg text-xs whitespace-nowrap' onClick={() => setMenu(!menu)}>
@@ -66,10 +66,10 @@ const SearchPlace = () => {
                 <div>
                     {district === 'all' ?
                         <div
-                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg lg:text-lg text-xs'>
+                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg lg:text-lg text-xs'>
                             <div
                                 className='flex justify-between'>
-                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                    onClick={() => setMenu(!menu)}>{t('Весь Узбекистан')}</p>
 
                             </div>
@@ -122,11 +122,11 @@ const SearchPlace = () => {
                         </div> :
                         district === 'samarkand' ?
                             <div
-                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                 <div className='flex justify-between'>
-                                    <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300 bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                    <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300 bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                        onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                    <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300 bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Самаркандскую область')}</p>
+                                    <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300 bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Самаркандскую область')}</p>
                                 </div>
                                 <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                     <div className='lg:m-4  flex justify-center'>
@@ -169,11 +169,11 @@ const SearchPlace = () => {
                             </div> :
                             district === 'andijan' ?
                                 <div
-                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                     <div className='flex justify-between'>
-                                        <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                        <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                            onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                        <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Андижанскую область')}</p>
+                                        <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Андижанскую область')}</p>
                                     </div>
                                     <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                         <div className='lg:m-4  flex justify-center'>
@@ -213,11 +213,11 @@ const SearchPlace = () => {
                                 </div> :
                                 district === 'buhara' ?
                                     <div
-                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                         <div className='flex justify-between'>
-                                            <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                            <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                            <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Бухарскую область')}</p>
+                                            <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Бухарскую область')}</p>
                                         </div>
                                         <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                             <div className='lg:m-4  flex justify-center'>
@@ -252,11 +252,11 @@ const SearchPlace = () => {
                                     </div> :
                                     district === 'jizakh' ?
                                         <div
-                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                             <div className='flex justify-between'>
-                                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                    onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Джизакскую область')}</p>
+                                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Джизакскую область')}</p>
                                             </div>
                                             <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                                 <div className='lg:m-4  flex justify-center'>
@@ -296,11 +296,11 @@ const SearchPlace = () => {
                                         :
                                         district === 'karakalpak' ?
                                             <div
-                                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                 <div className='flex justify-between'>
-                                                    <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                    <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                        onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                    <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Каракалпакстан')}</p>
+                                                    <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Каракалпакстан')}</p>
                                                 </div>
                                                 <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                                     <div className='lg:m-4  flex justify-center'>
@@ -340,11 +340,11 @@ const SearchPlace = () => {
                                             :
                                             district === 'kashkadarya' ?
                                                 <div
-                                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                     <div className='flex justify-between'>
-                                                        <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                        <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                            onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                        <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Кашкадарьинскую область')}</p>
+                                                        <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Кашкадарьинскую область')}</p>
                                                     </div>
                                                     <div className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
                                                         <div className='lg:m-4  flex justify-center'>
@@ -385,11 +385,11 @@ const SearchPlace = () => {
                                                 :
                                                 district === 'navai' ?
                                                     <div
-                                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                         <div className='flex justify-between'>
-                                                            <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                            <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                                onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                            <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Навоийскую область')}</p>
+                                                            <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Навоийскую область')}</p>
                                                         </div>
                                                         <div
                                                             className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
@@ -424,11 +424,11 @@ const SearchPlace = () => {
                                                     :
                                                     district === 'namangan' ?
                                                         <div
-                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                             <div className='flex justify-between'>
-                                                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                                    onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Наманганскую область')}</p>
+                                                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Наманганскую область')}</p>
                                                             </div>
                                                             <div
                                                                 className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
@@ -464,11 +464,11 @@ const SearchPlace = () => {
                                                         :
                                                         district === 'surkhandarya' ?
                                                             <div
-                                                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                                className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                                 <div className='flex justify-between'>
-                                                                    <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                                    <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                                        onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                                    <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Сурхандарьинскую область')}</p>
+                                                                    <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Сурхандарьинскую область')}</p>
                                                                 </div>
                                                                 <div
                                                                     className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
@@ -515,11 +515,11 @@ const SearchPlace = () => {
                                                             :
                                                             district === 'sirdarya' ?
                                                                 <div
-                                                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                                    className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                                     <div className='flex justify-between'>
-                                                                        <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                                        <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                                            onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                                        <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Сирдарьинскую область')}</p>
+                                                                        <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Сирдарьинскую область')}</p>
                                                                     </div>
                                                                     <div
                                                                         className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
@@ -562,11 +562,11 @@ const SearchPlace = () => {
 
                                                                 district === 'tashkent' ?
                                                                     <div
-                                                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                                        className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                                         <div className='flex justify-between'>
-                                                                            <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                                            <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                                                onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                                            <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Ташкентскую область')}</p>
+                                                                            <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Ташкентскую область')}</p>
                                                                         </div>
                                                                         <div
                                                                             className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
@@ -633,12 +633,12 @@ const SearchPlace = () => {
                                                                     :
                                                                     district === 'ferghana' ?
                                                                         <div
-                                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                                             <div
                                                                                 className='flex justify-between'>
-                                                                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                                                    onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Ферганскую область')}</p>
+                                                                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Ферганскую область')}</p>
                                                                             </div>
                                                                             <div
                                                                                 className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>
@@ -689,12 +689,12 @@ const SearchPlace = () => {
                                                                         :
                                                                         district === 'khorezm' &&
                                                                         <div
-                                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-16  bg-white shadow-lg text-xs lg:text-xl'>
+                                                                            className='absolute w-full  left-1/2 transform -translate-x-1/2 lg:top-14  bg-white shadow-lg text-xs lg:text-xl'>
                                                                             <div
                                                                                 className='flex justify-between'>
-                                                                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300'
+                                                                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300'
                                                                                    onClick={() => setDistrict('all')}>{t('Выбрать другой регион')}</p>
-                                                                                <p className='m-5 cursor-pointer bg-gray-400 rounded-md py-2 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Хорезмскую область')}</p>
+                                                                                <p className='m-4 cursor-pointer bg-gray-400 rounded-md py-1 px-4 text-white hover:bg-gray-300' onClick={searchDistrict}>{t('Искать весь Хорезмскую область')}</p>
                                                                             </div>
                                                                             <div
                                                                                 className='grid lg:grid-cols-4 grid-cols-2 border-t border-gray-400'>

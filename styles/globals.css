@@ -70,6 +70,9 @@
         font-size: 11px;
     }
 
+    .top-42{
+        top: 11rem;
+    }
     .text-mid-small {
         font-size: 10px;
     }
@@ -88,15 +91,26 @@
     .search-height {
         width: 600px;
     }
+
     .dropdown:hover .dropdown-content {
         display: block;
     }
 
+    .dropdown-menu:hover .dropdown-menu-content {
+        display: block;
+    }
     .smooth-shadow {
         box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         transition: all 0.3s cubic-bezier(.25,.8,.25,1)
     }
 
+    .orange{
+        /*background-color: #FBB369;*/
+        background-color: #E5B27F;
+    }
+    .mid-text{
+        font-size: 16px;
+    }
     .smooth-hover {
         box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
@@ -104,6 +118,11 @@
     .top-custom {
       top: 200px;
     }
+
+.four-oh-four {
+  background-image: url("https://res.cloudinary.com/bulutvoy/image/upload/v1623675915/buyandsell/228-2280416_oops-error-500-png_qqjcij.jpg");
+
+}
 
 
 

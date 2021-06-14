@@ -31,6 +31,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    top: {
+        type: Boolean,
+        default: false
+    },
     checked: {
         type: Boolean,
         default: false

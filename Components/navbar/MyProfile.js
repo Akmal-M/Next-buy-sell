@@ -6,17 +6,17 @@ import useTranslation from "next-translate/useTranslation";
 import {DataContext} from "../../store/GlobalState";
 import Cookie from 'js-cookie'
 import {useRouter} from "next/router";
+import {addToCart} from "../../store/Actions";
 
 
 const MyProfile = () => {
     const {t} = useTranslation();
     const [menu, setMenu] = useState(true)
     const router = useRouter();
-
-
     const {state, dispatch} = useContext(DataContext)
     const { auth, cart } = state
 
+    console.log(auth.role)
     console.log(auth)
 
     const handleLogout = () => {
@@ -27,12 +27,128 @@ const MyProfile = () => {
         return router.push('/')
     }
 
+    const userLink = () => {
+        return(
+            <div className='lg:pt-7 text-gray-600'>
+                <p className='lg:text-lg text-gray-400 lg:flex hidden'>{t('Мой профиль:')}</p>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/myads' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Мои объявления')}
+                        </a>
+                    </Link>
+                </div>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/messages' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Сообшения')}
+                        </a>
+                    </Link>
+                </div>
+
+                <div className='lg:my-4 my-3'>
+                    <Link href='/settings' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Настройки')}
+                        </a>
+                    </Link>
+                </div>
+
+                <p className='lg:text-lg text-gray-400 lg:pt-3 pt-2'>{t('Избранные:')}</p>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/cart' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Oбъявления')}
+                        </a>
+                    </Link>
+                </div>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/mysearch' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Поиски')}
+                        </a>
+                    </Link>
+                </div>
+                <div className='lg:mt-10 mt-5 pt-3 lg:pt-5 border-t border-gray-300'>
+                    <Link href='/' className=''>
+                        <a href="#" className='hover:text-gray-400 '  onClick={handleLogout}>
+                            {t('Выйти')}
+                        </a>
+                    </Link>
+                </div>
+            </div>
+
+        )
+    }
+
+    const adminLink = () => {
+        return(
+            <div className='lg:pt-7 text-gray-600'>
+                <p className='lg:text-lg text-gray-400 lg:flex hidden'>{t('Мой профиль:')}</p>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/all-ads' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Все объявления')}
+                        </a>
+                    </Link>
+                </div>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/users' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Пользователи')}
+                        </a>
+                    </Link>
+                </div>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/categories' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Категории')}
+                        </a>
+                    </Link>
+                </div>
+
+                <div className='lg:my-4 my-3'>
+                    <Link href='/settings' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Настройки')}
+                        </a>
+                    </Link>
+                </div>
+
+                <p className='lg:text-lg text-gray-400 lg:pt-3 pt-2'>{t('Избранные:')}</p>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/cart' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Oбъявления')}
+                        </a>
+                    </Link>
+                </div>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/mysearch' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Поиски')}
+                        </a>
+                    </Link>
+                </div>
+                <div className='lg:mt-10 mt-5 pt-3 lg:pt-5 border-t border-gray-300'>
+                    <Link href='/' className=''>
+                        <a href="#" className='hover:text-gray-400 '  onClick={handleLogout}>
+                            {t('Выйти')}
+                        </a>
+                    </Link>
+                </div>
+            </div>
+
+        )
+    }
+
+
     return (
-        <div className='flex items-center cursor-pointer'>
+        <div className='flex items-center cursor-pointer '>
            <div className='inline-block relative dropdown' onClick={() => setMenu(!menu)}>
-               <div className='flex mr-5' >
+               <div className='flex mr-5 items-center' >
                    <MdPersonOutline className='text-3xl mx-2'/>
-                   <p className='lg:text-lg text-xs'>{t('Мой профиль')}</p>
+                   <p className='lg:text-md text-xs'>{t('Мой профиль')}</p>
                    <p  className='lg:mx-2 lg:flex hidden'><BiDownArrow/></p>
                </div>
 
@@ -49,66 +165,14 @@ const MyProfile = () => {
                                    }
                                </div>
                                <div className='text-xs lg:text-lg'>
+                                   <p>{auth.user.name}</p>
                                    <p>{auth.user.phone}</p>
                                    <p>{auth.user.id}</p>
                                </div>
                            </div>
-
-                           <div className='lg:pt-7 text-gray-600'>
-                               <p className='lg:text-lg text-gray-400 lg:flex hidden'>{t('Мой профиль:')}</p>
-                               <div className='lg:my-4 my-3'>
-                                   <Link href='/myads' className=''>
-                                       <a href="#" className='hover:text-gray-400'>
-                                           {t('Oбъявления')}
-                                       </a>
-                                   </Link>
-                               </div>
-                               <div className='lg:my-4 my-3'>
-                                   <Link href='/messages' className=''>
-                                       <a href="#" className='hover:text-gray-400'>
-                                           {t('Сообшения')}
-                                       </a>
-                                   </Link>
-                               </div>
-                               <div className='lg:my-4 my-3'>
-                                   <Link href='/categories' className=''>
-                                       <a href="#" className='hover:text-gray-400'>
-                                           {t('Категории')}
-                                       </a>
-                                   </Link>
-                               </div>
-
-                               <div className='lg:my-4 my-3'>
-                                   <Link href='/settings' className=''>
-                                       <a href="#" className='hover:text-gray-400'>
-                                           {t('Настройки')}
-                                       </a>
-                                   </Link>
-                               </div>
-
-                               <p className='lg:text-lg text-gray-400 lg:pt-3 pt-2'>{t('Избранные:')}</p>
-                               <div className='lg:my-4 my-3'>
-                                   <Link href='/cart' className=''>
-                                       <a href="#" className='hover:text-gray-400'>
-                                           {t('Oбъявления')}
-                                       </a>
-                                   </Link>
-                               </div>
-                               <div className='lg:my-4 my-3'>
-                                   <Link href='/mysearch' className=''>
-                                       <a href="#" className='hover:text-gray-400'>
-                                           {t('Поиски')}
-                                       </a>
-                                   </Link>
-                               </div>
-                               <div className='lg:mt-10 mt-5 pt-3 lg:pt-5 border-t border-gray-300'>
-                                   <Link href='/' className=''>
-                                       <a href="#" className='hover:text-gray-400 '  onClick={handleLogout}>
-                                           {t('Выйти')}
-                                       </a>
-                                   </Link>
-                               </div>
-                           </div>
+                           {
+                               auth.user && auth.user.role === 'admin' ? adminLink() : userLink()
+                           }
 
                        </div>
                    </div>

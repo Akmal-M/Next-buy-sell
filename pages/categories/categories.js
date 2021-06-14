@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import {useContext, useState} from 'react'
-import {DataContext} from '../store/GlobalState'
-import {updateItem} from '../store/Actions'
-import { postData, putData } from "../utils/fetchingData";
+import {DataContext} from '../../store/GlobalState'
+import {updateItem} from '../../store/Actions'
+import { postData, putData } from "../../utils/fetchingData";
 import {FaEdit, FaTrash} from "react-icons/fa";
 
 const Categories = () => {

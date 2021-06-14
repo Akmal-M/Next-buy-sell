@@ -43,9 +43,12 @@ const Register = () => {
         return dispatch({ type: 'NOTIFY', payload: {success: res.msg} })
     }
 
+    // useEffect(() => {
+    //     if(Object.keys(auth).length !== 0) router.push("/")
+    // }, [auth])
     useEffect(() => {
-        if(Object.keys(auth).length !== 0) router.push("/")
-    }, [auth])
+        if (notify.success) router.push("/login")
+    }, [notify])
 
 
     return (
@@ -84,12 +87,7 @@ const Register = () => {
                                         <div className="text-sm font-bold text-gray-700 tracking-wide">
                                             {t('Ваш пароль')}
                                         </div>
-                                        <div className='text-right'>
-                                                <a className="text-xs font-display font-semibold  text-red-500 cursor-pointer">
-                                                    <p >{notify.error}</p>
-                                                    {/*{t('Пароль должен содержать не менее 6 символов')}*/}
-                                                </a>
-                                        </div>
+
                                     </div>
                                     <div className='flex justify-center items-center'>
                                         <input
@@ -124,6 +122,11 @@ const Register = () => {
                                             <div onClick={() => setSecondHide(!secondHide)} className='text-yellow-300 cursor-pointer'><BiHide size={25}/></div>}
                                     </div>
                                 </div>
+                                <div className='text-center pt-5'>
+                                    <a className="text-xs font-display font-semibold  text-red-500 cursor-pointer">
+                                        <p >{notify.error} {notify.success}</p>
+                                    </a>
+                                </div>
                                 <div className="lg:mt-10 mt-5">
                                     <button
                                         className="bg-yellow-200  text-white p-4 w-full rounded-md tracking-wide  font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-yellow-300 shadow-lg">
@@ -133,7 +136,7 @@ const Register = () => {
                             </form>
                             <div className="lg:mt-12 mt-5 text-sm font-display font-semibold text-gray-700 text-center">
                                 <p>{t('Уже зарегистрирован?')}</p>
-                                <Link href='/signin'>
+                                <Link href='/login'>
                                     <a className="cursor-pointer text-yellow-300 hover:text-indigo-400">{t('вход')}</a>
                                 </Link>
                             </div>

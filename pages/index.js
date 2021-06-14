@@ -1,28 +1,20 @@
-import Search from "../Components/search/Search";
 import Footer from "../Components/Footer";
-import SlideBanner from "../Components/slideBanner";
-import MobileCategory from "../Components/category/MobileCategory";
 import React from "react";
-import CategoryCardAll from "../Components/category/CategoryCardAll";
 import MainProducts from "../Components/MainProducts";
-import CategoryMenu from "../Components/CategoryMain/categoryMenu";
-import CategoryCard from "../Components/CategoryMain/categoryCard";
-import Kategoriya from "../Components/CategoryMain/Kategoriya";
+import SlideBanner from "../Components/slideBanner";
+import Header from "../Components/navbar/Header";
+import SimpleSlider from "../Components/slick";
 
 const Home = () => {
 
     return (
-        <div>
-            <Search/>
-            {/*<MobileCategory/>*/}
-            {/*<Categories/>*/}
-            {/*<CategoryCardAll/>*/}
-            {/*<MainProducts/>*/}
+        <div className='container mx-auto'>
+            <Header/>
+            {/*<SimpleSlider/>*/}
             {/*<SlideBanner/>*/}
-            <Kategoriya/>
+            {/*<MainProducts/>*/}
             <Footer/>
-            {/*<CategoryMenu/>*/}
-            {/*<CategoryCard/>*/}
+
         </div>
     );
 };

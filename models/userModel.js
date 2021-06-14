@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    products: {
+        type:Array,
+        required:false
+    },
     role: {
         type: String,
         default: 'user'
@@ -23,6 +27,10 @@ const userSchema = new mongoose.Schema({
     root: {
         type: Boolean,
         default: false
+    },
+    favourites:{
+        type:Array,
+        required:false
     },
     avatar: {
         type: String,

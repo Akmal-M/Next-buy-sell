@@ -22,7 +22,7 @@ const DropdownLanguage = () => {
     return (
         <div className='dropdown relative inline-block cursor-pointer'>
             <div className='text-md text-gray-400' onClick={() => setLanguage(!Language)}>
-                <div className='flex text-white justify-center lg:w-20 w-16 '>
+                <div className='flex  justify-center lg:w-20 w-16 '>
                     <div>
                         {lang === 'uz' ? <span>UZ</span> : lang === 'ru' && <span>RU</span>}
                     </div>

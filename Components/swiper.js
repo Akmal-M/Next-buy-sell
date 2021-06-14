@@ -31,7 +31,7 @@ const SwiperSliderForAll = ({slides,
                     speed: 3000,
                     disableOnInteraction: false,
                     disableKeyboardControls: false,
-                }} className=" container mx-auto  bg-no-repeat  my-10">
+                }} className=" container mx-auto  bg-no-repeat  ">
 
 
                 {swiperContent1 && <SwiperSlide>

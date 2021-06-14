@@ -2,18 +2,15 @@ const valid = (name, phone, password, cf_password) => {
     if(!name || !phone || !password)
         return 'Please add all fields.'
 
-    // if(!validateEmail(email))
-    //     return 'Invalid emails.'
-
-    // if(!phonenumber(phone))
-    //     return 'Invalid Phone number.'
-
 
     if(password.length < 6)
         return 'Password must be at least 6 characters.'
 
     if(phone.length < 9)
         return 'Phone number must be at least 9 characters.'
+
+    if(phone.length !== 12 && phone.length !== 9)
+        return 'Incorrect phone number.'
 
     if(password !== cf_password)
         return 'Confirm password did not match.'

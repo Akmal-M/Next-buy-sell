@@ -8,7 +8,7 @@ export const DataContext = createContext()
 
 export const DataProvider = ({children}) => {
     const initialState = {
-        notify: {}, auth: {}, users: [], cart: [], categories:[]
+        notify: {}, auth: {}, users: [], cart: [], categories:[], minicategory: {}
 
     }
 
