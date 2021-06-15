@@ -3,6 +3,7 @@ import useTranslation from "next-translate/useTranslation";
 import SearchPlace from "./SearchPlace";
 
 const Search = () => {
+
     const {t} = useTranslation();
 
     return (

@@ -34,6 +34,7 @@ const reducers = (state, action) => {
                 ...state,
                 categories: action.payload
             };
+
         default:
             return state;
     }

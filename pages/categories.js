@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import {useContext, useState} from 'react'
-import {DataContext} from '../../store/GlobalState'
-import {updateItem} from '../../store/Actions'
-import { postData, putData } from "../../utils/fetchingData";
+import {DataContext} from '../store/GlobalState'
+import {updateItem} from '../store/Actions'
+import { postData, putData } from "../utils/fetchingData";
 import {FaEdit, FaTrash} from "react-icons/fa";
 
 const Categories = () => {
@@ -15,11 +15,13 @@ const Categories = () => {
 
     const createCategory = async () => {
         if(auth.user.role !== 'admin')
-            return dispatch({type: 'NOTIFY', payload: {error: 'Authentication is not valid.'}})
+            return dispatch({type: 'NOTIFY', payload: {error: 'Authentication is not vaild.'}})
 
         if(!name) return dispatch({type: 'NOTIFY', payload: {error: 'Name can not be left blank.'}})
 
         dispatch({type: 'NOTIFY', payload: {loading: true}})
+
+
 
         let res;
         if(id){
@@ -36,6 +38,8 @@ const Categories = () => {
         setId('')
         return dispatch({type: 'NOTIFY', payload: {success: res.msg}})
     }
+
+
 
     const handleEditCategory = (category) => {
         setId(category._id)
@@ -67,17 +71,17 @@ const Categories = () => {
 
                             <div className='cursor-pointer flex '>
                               <div className='mx-5'>
-                                  <FaEdit/>
+                                  <FaEdit onClick={() => handleEditCategory(category)}/>
                               </div>
                                 <FaTrash
-                                   data-toggle="modal" data-target="#exampleModal"
-                                   onClick={() => dispatch({
-                                       type: 'ADD_MODAL',
-                                       payload: [{
-                                           data: categories, id: category._id,
-                                           title: category.name, type: 'ADD_CATEGORIES'
-                                       }]
-                                   })}/>
+                                    data-toggle="modal" data-target="#exampleModal"
+                                    onClick={() => dispatch({
+                                        type: 'ADD_MODAL',
+                                        payload: [{
+                                            data: categories, id: category._id,
+                                            title: category.name, type: 'ADD_CATEGORIES'
+                                        }]
+                                    })} />
                             </div>
 
                         </div>
@@ -90,3 +94,5 @@ const Categories = () => {
 }
 
 export default Categories
+
+

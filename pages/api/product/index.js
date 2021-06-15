@@ -55,12 +55,28 @@ class APIfeatures {
     }
 }
 
+// const getProducts = async (req, res) => {
+//     try {
+//         const features = new APIfeatures(Products.find(), req.query)
+//             .filtering().sorting().paginating()
+//
+//         const products = await features.query
+//
+//         res.json({
+//             status: 'success',
+//             result: products.length,
+//             products
+//         })
+//     } catch (err) {
+//         return res.status(500).json({err: err.message})
+//     }
+// }
+
 const getProducts = async (req, res) => {
     try {
-        const features = new APIfeatures(Products.find(), req.query)
-            .filtering().sorting().paginating()
 
-        const products = await features.query
+
+        const products = await Products.find()
 
         res.json({
             status: 'success',

@@ -4,14 +4,13 @@ import CardOne from "./CardOne";
 import productsData from "../../productsData";
 import {IoMdHeartEmpty} from "react-icons/io";
 
-const CardTop = ({img,address,name,time,price}) => {
+const CardTop = () => {
     const {t,lang} = useTranslation();
 
     return (
         <div>
             <div className='lg:flex hidden '>
-
-                    <div key={name}
+                    <div key={product._id}
                          className=' mx-5 p-2 lg:mb-10 mb-5 smooth-shadow hover:smooth-hover w-44    cursor-pointer rounded-lg bg-white '>
                         <div>
                             <img src={img} alt="" className='w-40 h-32 object-cover'/>

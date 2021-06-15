@@ -9,7 +9,7 @@ import {BiGridAlt} from "react-icons/bi";
 import SearchPlace from "./search/SearchPlace";
 import useTranslation from "next-translate/useTranslation";
 
-const MainProducts = () => {
+const MainProducts = ({product}) => {
     const {t, lang} = useTranslation();
     const [grid,setGrid] =useState('')
 
@@ -32,7 +32,7 @@ const MainProducts = () => {
             </div>
             <p className='lg:hidden flex text-center text-sm lg:text-2xl text-gray-700 lg:mb-10 mb-5'>{t('Все объявления')}</p>
 
-            {grid === 'one' && <ProductsOne/>}  {grid === 'two' && <ProductsTwo/>}  { grid === 'three' && <ProductsInfo/> } { grid === '' && <ProductsTwo/> }
+            {grid === 'one' && <ProductsOne product={product}/>}  {grid === 'two' && <ProductsTwo product={product}/>}  { grid === 'three' && <ProductsInfo product={product}/> } { grid === '' && <ProductsTwo product={product}/> }
 
 
         </div>

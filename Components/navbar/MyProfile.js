@@ -106,6 +106,13 @@ const MyProfile = () => {
                         </a>
                     </Link>
                 </div>
+                <div className='lg:my-4 my-3'>
+                    <Link href='/minicategories' className=''>
+                        <a href="#" className='hover:text-gray-400'>
+                            {t('Подкатегории')}
+                        </a>
+                    </Link>
+                </div>
 
                 <div className='lg:my-4 my-3'>
                     <Link href='/settings' className=''>

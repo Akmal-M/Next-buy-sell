@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const CategoriesSchema = new mongoose.Schema({
     name: {
-        type: Array,
+        type: String,
         required: true,
         trim: true
     }
@@ -12,3 +12,4 @@ const CategoriesSchema = new mongoose.Schema({
 
 let Dataset = mongoose.models.categories || mongoose.model('categories', CategoriesSchema)
 export default Dataset
+

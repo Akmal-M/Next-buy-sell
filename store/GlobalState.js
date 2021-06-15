@@ -8,7 +8,7 @@ export const DataContext = createContext()
 
 export const DataProvider = ({children}) => {
     const initialState = {
-        notify: {}, auth: {}, users: [], cart: [], categories:[], minicategory: {}
+        notify: {}, auth: {}, users: [], cart: [], modal: [], categories:[]
 
     }
 
@@ -30,6 +30,7 @@ export const DataProvider = ({children}) => {
             })
         }
 
+
         getData('categories').then(res => {
             if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
 
@@ -40,6 +41,8 @@ export const DataProvider = ({children}) => {
         })
 
     },[])
+
+
 
     useEffect(() => {
         const buy_sold_by_Akmal = JSON.parse(localStorage.getItem('buy_sold_by_Akmal'))

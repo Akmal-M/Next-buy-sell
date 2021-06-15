@@ -4,7 +4,7 @@ import Link from "next/link";
 import {useContext} from "react";
 import {DataContext} from "../../store/GlobalState";
 
-const Card = ({product, handleCheck}) => {
+const CardTwo = ({product, handleCheck}) => {
     const { state, dispatch } = useContext(DataContext)
     const { cart, auth } = state
 
@@ -31,31 +31,32 @@ const Card = ({product, handleCheck}) => {
         )
     }
     return (
-        <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5 lg:max-w-7xl  container mx-auto  '>
-            {productsData.top.map(item => (
-                <div key={item.name}
+        <div className=' lg:px-0 px-2 '  key={product._id}>
+        <div className='  '>
+                <div
                     className='lg:p-3 p-1 lg:mb-10 mb-5 smooth-shadow hover:smooth-hover lg:max-h-96 cursor-pointer rounded-lg bg-white '>
                     <div>
-                        <img src={item.img[0].url} alt="" className='w-full lg:h-56 h-36 object-cover'/>
+                        <img src={product.images[0].url} alt="" className='w-full lg:h-56 h-36 object-cover'/>
                     </div>
                     <div>
-                        <p className='font-bold lg:text-md text-xs  lg:py-3 py-1'>{item.name}</p>
+                        <p className='font-bold lg:text-md text-xs  lg:py-3 py-1'>{product.title}</p>
                         <div className='flex justify-between lg:text-xs text-small'>
-                            <p>{item.address}</p>
+                            <p>{product.address}</p>
 
-                            <p>{item.time}</p>
+                            <p>{product.time}</p>
                         </div>
                         {!auth.user || auth.user.role !== "admin" ? adminLink() :
                         <div className='flex justify-between lg:py-3 py-1 lg:px-3 px-1 '>
-                            <p className='lg:text-xl text-md font-bold'>${item.price}</p>
+                            <p className='lg:text-xl text-md font-bold'>${product.price}</p>
                             <div>
                                 <IoMdHeartEmpty className='lg:text-3xl text-xl'/>
                             </div>
                         </div>}
                     </div>
-                </div>))}
+                </div>
+        </div>
         </div>
     );
 };
 
-export default Card;
+export default CardTwo;
