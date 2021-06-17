@@ -55,27 +55,9 @@ class APIfeatures {
     }
 }
 
-// const getProducts = async (req, res) => {
-//     try {
-//         const features = new APIfeatures(Products.find(), req.query)
-//             .filtering().sorting().paginating()
-//
-//         const products = await features.query
-//
-//         res.json({
-//             status: 'success',
-//             result: products.length,
-//             products
-//         })
-//     } catch (err) {
-//         return res.status(500).json({err: err.message})
-//     }
-// }
 
 const getProducts = async (req, res) => {
     try {
-
-
         const products = await Products.find()
 
         res.json({
@@ -93,14 +75,14 @@ const createProduct = async (req, res) => {
         const result = await auth(req, res)
         if(result.role !== 'user') return res.status(400).json({err: 'Authentication is not valid.'})
 
-        const {title, price, description, content, category, images, minicategory} = req.body
+        const {title, price, description, phone, category, images} = req.body
 
-        if(!title || !price || !minicategory || !description || !content || category === 'all' || images.length === 0)
+        if(!title || !price || !description || !phone || category === 'all' || images.length === 0)
             return res.status(400).json({err: 'Please add all the fields.'})
 
 
         const newProduct = new Products({
-            title: title.toLowerCase(), price, minicategory, description, content, category, images
+            title: title.toLowerCase(), price, description, phone, category, images
         })
 
         await newProduct.save()

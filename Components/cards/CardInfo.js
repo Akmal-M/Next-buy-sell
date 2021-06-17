@@ -1,5 +1,4 @@
 import {IoMdHeartEmpty} from "react-icons/io";
-import productsData from "../../productsData";
 
 const CardInfo = ({product}) => {
     return (

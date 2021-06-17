@@ -33,13 +33,16 @@ const Navbar = () => {
                             <DropdownLanguage/>
                         </div>
 
-                        <div className={auth.user && auth.user.role === 'admin' ? 'hidden' : 'flex'}>
-                            <Link href='/cart'>
+                        <div className={auth.user && auth.user.role === 'admin' ? 'hidden' : 'flex relative'}>
+                            <Link href='/cart' className=''>
                                 <a>
-                                    <p className='lg:text-4xl text-3xl mr-2 lg:mx-10 flex items-center'>
+                                    <p className='lg:text-4xl text-3xl mr-2 lg:mx-10 flex items-center '>
                                         <AiOutlineHeart/></p>
                                 </a>
                             </Link>
+                            <span className="absolute bg-red-400 text-white rounded-full lg:px-1.5 lg:py-0.5 lg:right-8 right-0 px-1">
+                                        <p className='lg:text-xs text-smaller font-bold'>{cart.length}</p>
+                            </span>
                         </div>
 
                         {
@@ -49,7 +52,7 @@ const Navbar = () => {
                         <div
                             className={auth.user && auth.user.role === 'admin' ? 'hidden' : 'mr-2 flex justify-center items-center'}>
                             {auth.user && auth.user.role === 'user' ?
-                                <Link href='/createproduct' className=''>
+                                <Link href='/create' className=''>
                                     <a href="#"
                                        className='lg:py-1  text-center lg:px-4 px-1 lg:text-lg ml-2 text-small   flex justify-center items-center bg-green-200 text-white hover:bg-gray-300 rounded-md hover:text-white lg:ml-20'>
                                         {t('Подать объявление')}

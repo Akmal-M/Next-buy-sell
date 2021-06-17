@@ -1,206 +1,88 @@
-import Head from 'next/head'
-import {useState, useContext, useEffect} from 'react'
-import {DataContext} from '../../store/GlobalState'
-import {imageUpload} from '../../utils/imageUpload'
-import {postData, getData, putData} from '../../utils/fetchingData'
-import {useRouter} from 'next/router'
+import React, {useContext} from 'react';
+import useTranslation from "next-translate/useTranslation";
+import {FcAddImage} from "react-icons/fc";
+import {DataContext} from "../../store/GlobalState";
 
-const ProductsManager = () => {
-    const initialState = {
-        title: '',
-        price: 0,
-        inStock: 0,
-        description: '',
-        content: '',
-        category: ''
-    }
-    const [product, setProduct] = useState(initialState)
-    const {title, price, inStock, description, content, category} = product
-
-    const [images, setImages] = useState([])
-
+const Id = () => {
+    const {t} = useTranslation()
     const {state, dispatch} = useContext(DataContext)
-    const {categories, auth} = state
+    const {auth, notify} = state
 
-    const router = useRouter()
-    const {id} = router.query
-    const [onEdit, setOnEdit] = useState(false)
-
-    useEffect(() => {
-        if(id){
-            setOnEdit(true)
-            getData(`product/${id}`).then(res => {
-                setProduct(res.product)
-                setImages(res.product.images)
-            })
-        }else{
-            setOnEdit(false)
-            setProduct(initialState)
-            setImages([])
-        }
-    },[id])
-
-    const handleChangeInput = e => {
-        const {name, value} = e.target
-        setProduct({...product, [name]:value})
-        dispatch({type: 'NOTIFY', payload: {}})
-    }
-
-    const handleUploadInput = e => {
-        dispatch({type: 'NOTIFY', payload: {}})
-        let newImages = []
-        let num = 0
-        let err = ''
-        const files = [...e.target.files]
-
-        if(files.length === 0)
-            return dispatch({type: 'NOTIFY', payload: {error: 'Files does not exist.'}})
-
-        files.forEach(file => {
-            if(file.size > 1024 * 1024)
-                return err = 'The largest image size is 1mb'
-
-            if(file.type !== 'image/jpeg' && file.type !== 'image/png')
-                return err = 'Image format is incorrect.'
-
-            num += 1;
-            if(num <= 5) newImages.push(file)
-            return newImages;
-        })
-
-        if(err) dispatch({type: 'NOTIFY', payload: {error: err}})
-
-        const imgCount = images.length
-        if(imgCount + newImages.length > 5)
-            return dispatch({type: 'NOTIFY', payload: {error: 'Select up to 5 images.'}})
-        setImages([...images, ...newImages])
-    }
-
-    const deleteImage = index => {
-        const newArr = [...images]
-        newArr.splice(index, 1)
-        setImages(newArr)
-    }
-
-    const handleSubmit = async(e) => {
-        e.preventDefault()
-        if(auth.user.role !== 'admin')
-            return dispatch({type: 'NOTIFY', payload: {error: 'Authentication is not valid.'}})
-
-        if(!title || !price || !inStock || !description || !content || category === 'all' || images.length === 0)
-            return dispatch({type: 'NOTIFY', payload: {error: 'Please add all the fields.'}})
-
-
-        dispatch({type: 'NOTIFY', payload: {loading: true}})
-        let media = []
-        const imgNewURL = images.filter(img => !img.url)
-        const imgOldURL = images.filter(img => img.url)
-
-        if(imgNewURL.length > 0) media = await imageUpload(imgNewURL)
-
-        let res;
-        if(onEdit){
-            res = await putData(`product/${id}`, {...product, images: [...imgOldURL, ...media]}, auth.token)
-            if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
-        }else{
-            res = await postData('product', {...product, images: [...imgOldURL, ...media]}, auth.token)
-            if(res.err) return dispatch({type: 'NOTIFY', payload: {error: res.err}})
-        }
-
-        return dispatch({type: 'NOTIFY', payload: {success: res.msg}})
-
-    }
-
-    return(
-        <div className="products_manager">
-            <Head>
-                <title>Products Manager</title>
-            </Head>
-            <form className="row" onSubmit={handleSubmit}>
-                <div className="col-md-6">
-
-                    <input type="text" name="title" value={title}
-                           placeholder="Title" className="d-block my-4 w-100 p-2"
-                           onChange={handleChangeInput} />
-
-                    <div className="row">
-                        <div className="col-sm-6">
-                            <label htmlFor="price">Price</label>
-                            <input type="number" name="price" value={price}
-                                   placeholder="Price" className="d-block w-100 p-2"
-                                   onChange={handleChangeInput} />
-                        </div>
-
-                        <div className="col-sm-6">
-                            <label htmlFor="price">In Stock</label>
-                            <input type="number" name="inStock" value={inStock}
-                                   placeholder="inStock" className="d-block w-100 p-2"
-                                   onChange={handleChangeInput} />
-                        </div>
-                    </div>
-
-                    <textarea name="description" id="description" cols="30" rows="4"
-                              placeholder="Description" onChange={handleChangeInput}
-                              className="d-block my-4 w-100 p-2" value={description} />
-
-                    <textarea name="content" id="content" cols="30" rows="6"
-                              placeholder="Content" onChange={handleChangeInput}
-                              className="d-block my-4 w-100 p-2" value={content} />
-
-                    <div className="input-group-prepend px-0 my-2">
-                        <select name="category" id="category" value={category}
-                                onChange={handleChangeInput} className="custom-select text-capitalize">
-                            <option value="all">All Products</option>
-                            {
-                                categories.map(item => (
-                                    <option key={item._id} value={item._id}>
-                                        {item.name}
-                                    </option>
-                                ))
-                            }
+    return (
+        <div>
+            <div className="bg-gray-50">
+                <form className="lg:w-2/3 mx-auto ">
+                    <p className="text-gray-600 text-3xl font-bold">Создать объявление</p>
+                    <div className="bg-white mt-6 p-4">
+                        <p className="text-xl font-bold"> Описание объявления</p>
+                        <p className="text-lg mt-3">Название*</p>
+                        <input className="outline-none mt-2 bg-gray-50 p-2 lg:w-3/4 w-full h-12" type="text"
+                               placeholder="Например, iPhone 8"/>
+                        <p className="mt-4">Категория*</p>
+                        <select className="max-w-80 text-lg mt-3 p-2 outline-none bg-gray-50" name="" id="">
+                            <option value="">Выберите категорию</option>
+                            <option value="">Выберите категорию</option>
+                            <option value="">Выберите категорию</option>
+                            <option value="">Выберите категорию</option>
+                            <option value="">Выберите категорию</option>
                         </select>
-                    </div>
+                        <p className="mt-4 text-xl font-bold">Фото
+                        </p>
+                        <p className="text-base"> Первое фото будет на обложке. </p>
 
-                    <button type="submit" className="btn btn-info my-2 px-4">
-                        {onEdit ? 'Update': 'Create'}
-                    </button>
 
-                </div>
-
-                <div className="col-md-6 my-4">
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">Upload</span>
+                        <div className="grid lg:grid-cols-4 grid-cols-2 gap-5 mt-4">
+                            <button className="flex justify-center items-center p-14 bg-gray-100">
+                                <FcAddImage size={40}/>
+                            </button>
+                            <button className="flex justify-center items-center p-14 bg-gray-100">
+                                <FcAddImage size={40}/>
+                            </button>
+                            <button className="flex justify-center items-center p-14 bg-gray-100">
+                                <FcAddImage size={40}/>
+                            </button>
+                            <button className="flex justify-center items-center p-14 bg-gray-100">
+                                <FcAddImage size={40}/>
+                            </button>
                         </div>
-                        <div className="custom-file border rounded">
-                            <input type="file" className="custom-file-input"
-                                   onChange={handleUploadInput} multiple accept="image/*" />
+                        <p className="mt-3">Описание*</p>
+                        <textarea className="bg-gray-100 p-3 border outline-none w-full" rows="7"
+                                  placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления. И добавьте их в описание">
+
+  </textarea>
+                        <p className="text-gray-500">Напишите еще 80 символов</p>
+                        <p className="text-xl font-bold mt-3">Контактная информация</p>
+                        <p className="text-base mt-2">Местоположение*</p>
+                        <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
+                               placeholder="Название города или индекс"/>
+                        <p className="text-base mt-4">Контактное лицо*</p>
+                        <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
+                               placeholder={auth.user.name}/>
+                        <p className="text-base mt-4">Контактное лицо*</p>
+                        <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
+                               placeholder="+998  ***  **"/>
+                        <div className="flex gap-2 mt-4">
+                            <input type="checkbox"
+                                   className="block mt-3  bg-red-500 checked:bg-blue-600 checked:border-transparent"/>
+                            <p className="text-xs mt-2">
+                                Я согласен и даю согласие на получение коммерческих и маркетинговых сообщений (например,
+                                информационного бюллетеня, SMS) от innoveder Group, связанных с ними организаций и их деловых
+                                партнеров посредством электронной связи и телекоммуникаций на мое устройство.
+                            </p>
                         </div>
-
                     </div>
-
-                    <div className="row img-up mx-0">
-                        {
-                            images.map((img, index) => (
-                                <div key={index} className="file_img my-1">
-                                    <img src={img.url ? img.url : URL.createObjectURL(img)}
-                                         alt="" className="img-thumbnail rounded" />
-
-                                    <span onClick={() => deleteImage(index)}>X</span>
-                                </div>
-                            ))
-                        }
+                    <div className="flex justify-end mt-6 gap-3">
+                        <button
+                            className="p-3 font-bold hover:bg-gray-600 hover:text-white border-gray-600 border-2 focus:outline-none outline-none rounded-md">Предпросмотр
+                        </button>
+                        <button
+                            className="p-3 font-bold hover:bg-white bg-gray-700 text-white hover:text-gray-700 border-gray-600 border-2 focus:outline-none outline-none rounded-md">Опубликовать
+                        </button>
                     </div>
-
-
-                </div>
-
-
-            </form>
-
-
+                </form>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default ProductsManager
+export default Id;

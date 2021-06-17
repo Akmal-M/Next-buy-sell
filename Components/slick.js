@@ -1,38 +1,29 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Slider from "react-slick";
 import CardTop from "./cards/CardTop";
-import productsData from "../productsData";
 
-export default class AutoPlay extends Component {
+export default class SimpleSlider extends Component {
     render() {
         const settings = {
-            dots: false,
+            dots: true,
             infinite: true,
+            speed: 500,
             slidesToShow: 1,
-            slidesToScroll: 10,
-            autoplay: true,
-            speed: 2000,
-            autoplaySpeed: 2000,
-            cssEase: "linear"
-        };
+            slidesToScroll: 1
+        }
         return (
-            <div>
-                <h2>Auto Play</h2>
-                <Slider {...settings}>
+            <Slider {...settings}>
+                <div>
+                    <h2 className='text-center pt-5'>Топ объявлений</h2>
                     <div>
-                        {
-                            productsData.top.map(item => (
-                                <CardTop img={top.img[0].url}
-                                         address={item.address}
-                                         name={item.name}
-                                         time={item.time}
-                                         price={item.price}/>
-                            ))
-                        }
+                        <div className='flex'>
+                            <div className='flex'>
+                                <CardTop products={this.props.products}/>
+                            </div>
+                        </div>
                     </div>
-
-                </Slider>
-            </div>
+                </div>
+            </Slider>
         );
     }
 }

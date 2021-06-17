@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    content: {
+    phone: {
         type: String,
         required: true
     },
@@ -30,6 +30,14 @@ const productSchema = new mongoose.Schema({
     miniCategory: {
         type: String,
         required: false
+    },
+    district: {
+        type:String,
+        required:true
+    },
+    city: {
+        type:String,
+        required:true
     },
     top: {
         type: Boolean,

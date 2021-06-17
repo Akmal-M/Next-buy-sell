@@ -3,65 +3,57 @@ import { useState, useContext } from 'react'
 import { getData } from '../../utils/fetchingData'
 import { DataContext } from '../../store/GlobalState'
 import { addToCart } from '../../store/Actions'
+import DetailsSlider from "../../Components/DetailsSlider";
 
 const DetailProduct = (props) => {
     const [product] = useState(props.product)
     const [tab, setTab] = useState(0)
+    const [open, setOpen] = useState(false)
 
     const { state, dispatch } = useContext(DataContext)
-    const { cart } = state
+    const {  auth } = state
 
-    const isActive = (index) => {
-        if(tab === index) return " active";
-        return ""
-    }
+
+console.log(state)
+
 
     return(
-        <div className="row detail_page">
+        <div className="row detail_page container mx-auto lg:px-40">
             <Head>
                 <title>Detail Product</title>
             </Head>
 
-            <div className="col-md-6">
-                <img src={ product.images[tab].url } alt={ product.images[tab].url }
-                     className="d-block img-thumbnail rounded mt-4 w-100"
-                     style={{height: '350px'}} />
+            <div className="">
 
-                <div className="row mx-0" style={{cursor: 'pointer'}} >
+                <div className="flex justify-center"  >
 
                     {product.images.map((img, index) => (
-                        <img key={index} src={img.url} alt={img.url}
-                             className={`img-thumbnail rounded ${isActive(index)}`}
-                             style={{height: '80px', width: '20%'}}
-                             onClick={() => setTab(index)} />
+                       <DetailsSlider img={img}/>
                     ))}
 
                 </div>
             </div>
 
-            <div className="col-md-6 mt-3">
-                <h2 className="text-uppercase">{product.title}</h2>
-                <h5 className="text-danger">${product.price}</h5>
+            <div className="col-md-6 mt-3 px-3">
+                <h2 className="text-uppercase font-bold lg:text-3xl text-xl">{product.title}</h2>
+                <h5 className="lg:py-5 py-3 lg:text-2xl text-lg text-semibold">{product.price} $</h5>
 
-                <div className="row mx-0 d-flex justify-content-between">
-                    {
-                        product.inStock > 0
-                            ? <h6 className="text-danger">In Stock: {product.inStock}</h6>
-                            : <h6 className="text-danger">Out Stock</h6>
-                    }
-
-                    <h6 className="text-danger">Sold: {product.sold}</h6>
-                </div>
 
                 <div className="my-2">{product.description}</div>
-                <div className="my-2">
-                    {product.content}
-                </div>
 
-                <button type="button" className="btn btn-dark d-block my-3 px-5"
-                        onClick={() => dispatch(addToCart(product, cart))} >
-                    Buy
-                </button>
+               <div className='font-bold flex justify-end'>
+                   {
+                       open ?
+
+                           <div className='text-2xl'>
+                                <a href={`tel: '${product.phone}'`} >{product.phone}</a>
+                           </div>
+                           :
+                           <button type="button" className="bg-gray-700 rounded-md text-white my-3 px-5" onClick={() => setOpen(!open)}>
+                               Show Phone Number
+                           </button>
+                   }
+               </div>
 
             </div>
         </div>

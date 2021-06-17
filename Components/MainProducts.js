@@ -10,7 +10,7 @@ import SearchPlace from "./search/SearchPlace";
 import useTranslation from "next-translate/useTranslation";
 
 const MainProducts = ({product}) => {
-    const {t, lang} = useTranslation();
+    const {t} = useTranslation();
     const [grid,setGrid] =useState('')
 
     return (

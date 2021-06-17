@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 
 const ForgotPassword = () => {
@@ -11,10 +10,7 @@ const ForgotPassword = () => {
                 <title>Forgot password</title>
             </Head>
             <div>
-
-
                 <div className="lg:w-1/2 xl:max-w-screen-sm">
-
                     <div className="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
                         <h2 className="text-center text-4xl text-yellow-300 font-display font-semibold lg:text-left xl:text-5xl xl:text-bold">
                             {t('Восстановление пароля')}
