@@ -1,4 +1,4 @@
-const Babysitter = () => {
+const Cleaning = () => {
     return (
         <div>
             Babysitter
@@ -6,4 +6,4 @@ const Babysitter = () => {
     );
 };
 
-export default Babysitter;
+export default Cleaning;

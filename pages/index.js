@@ -1,5 +1,5 @@
 import {getData} from "../utils/fetchingData";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import CardTwo from "../Components/cards/CardTwo";
 import CardInfo from "../Components/cards/CardInfo";
 import CardOne from "../Components/cards/CardOne";
@@ -10,13 +10,16 @@ import {AiOutlineTable} from "react-icons/ai";
 import {CgToggleSquare} from "react-icons/cg";
 import useTranslation from "next-translate/useTranslation";
 import Header from "../Components/navbar/Header";
+import {DataContext} from "../store/GlobalState";
 
 const Home = (props) => {
     const [products] = useState(props.products)
     const {t} = useTranslation()
     const [grid, setGrid] = useState('')
 
-    console.log(products)
+    const {state, dispatch} = useContext(DataContext)
+    const {categories, auth} = state
+    console.log(categories[0])
     return (
         <div>
             <Header/>

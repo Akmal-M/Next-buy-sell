@@ -18,13 +18,17 @@ const DropdownLanguage = () => {
         router.push("/", "/", {locale: "uz"})
     }
 
+    const setOZ = () => {
+        router.push("/", "/", {locale: "oz"})
+    }
+
 
     return (
         <div className='dropdown relative inline-block cursor-pointer'>
             <div className='text-md text-gray-400' onClick={() => setLanguage(!Language)}>
                 <div className='flex  justify-center lg:w-20 w-16 '>
                     <div>
-                        {lang === 'uz' ? <span>UZ</span> : lang === 'ru' && <span>RU</span>}
+                        {lang === 'uz' ? <span>UZ</span> : lang === 'ru' ? <span>RU</span> : lang === 'oz' && <span>УЗ</span>}
                     </div>
                 </div>
             </div>
@@ -41,6 +45,11 @@ const DropdownLanguage = () => {
                         <img className='max-h-10'
                              src="https://res.cloudinary.com/bulutvoy/image/upload/v1622300753/innoveder/main/ru_mkggzl.png"
                              alt="ru" onClick={() => setLanguage(!Language)}/>
+                    </p>
+                    <p className=' cursor-pointer pb-1' onClick={setOZ}>
+                        <img className='max-h-10'
+                             src="https://res.cloudinary.com/bulutvoy/image/upload/v1622300753/innoveder/main/uz_nykcg6.png"
+                             alt="uz" onClick={() => setLanguage(!Language)}/>
                     </p>
                 </div>
             }

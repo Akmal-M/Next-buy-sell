@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Consulting = () => {
+const Service = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Consulting = () => {
     );
 };
 
-export default Consulting;
+export default Service;

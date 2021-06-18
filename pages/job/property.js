@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Administrative = () => {
+const Property = () => {
     return (
         <div>
-            
+            Property
         </div>
     );
 };
 
-export default Administrative;
+export default Property;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NoExp = () => {
+const Career = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const NoExp = () => {
     );
 };
 
-export default NoExp;
+export default Career;

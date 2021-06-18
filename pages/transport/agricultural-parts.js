@@ -1,4 +1,4 @@
-const SpecialAgriculturalMachineryParts = () => {
+const AgriculturalParts = () => {
     return (
         <div>
             SpecialAgriculturalMachineryParts
@@ -6,4 +6,4 @@ const SpecialAgriculturalMachineryParts = () => {
     );
 };
 
-export default SpecialAgriculturalMachineryParts;
+export default AgriculturalParts;

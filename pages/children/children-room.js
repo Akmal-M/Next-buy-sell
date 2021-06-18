@@ -1,4 +1,4 @@
-const ChildrenFurniture = () => {
+const ChildrenRoom = () => {
     return (
         <div>
             ChildrenFurniture
@@ -6,4 +6,4 @@ const ChildrenFurniture = () => {
     );
 };
 
-export default ChildrenFurniture;
+export default ChildrenRoom;

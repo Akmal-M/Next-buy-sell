@@ -1,4 +1,4 @@
-const ChildrenVehicle = () => {
+const ChildrenCart = () => {
     return (
         <div>
             ChildrenVehicle
@@ -6,4 +6,4 @@ const ChildrenVehicle = () => {
     );
 };
 
-export default ChildrenVehicle;
+export default ChildrenCart;

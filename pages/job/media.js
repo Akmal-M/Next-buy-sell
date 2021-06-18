@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Public = () => {
+const Media = () => {
     return (
         <div>
-            
+            Media
         </div>
     );
 };
 
-export default Public;
+export default Media;
