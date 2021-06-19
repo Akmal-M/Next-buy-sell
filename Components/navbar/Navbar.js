@@ -13,8 +13,6 @@ const Navbar = () => {
     const router = useRouter()
     const {state, dispatch} = useContext(DataContext)
     const {auth, cart} = state
-
-
     let {t} = useTranslation()
 
 
