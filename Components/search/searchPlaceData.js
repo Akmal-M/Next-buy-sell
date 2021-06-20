@@ -2,16 +2,21 @@ import React, {useState} from 'react';
 import {GoLocation} from "react-icons/go";
 import useTranslation from "next-translate/useTranslation";
 import location from "../../location";
+import { createStore, useStore } from 'react-hookstore';
 
+createStore('cityStore', '');
 const SearchPlaceData = () => {
     const {t, lang} = useTranslation();
     const [menu, setMenu] = useState(false)
     const [district, setDistrict] = useState('all')
-    const [city, setCity] = useState('')
+    // const [city, setCity] = useState('')
+    const [ city, setCity ] = useStore('cityStore');
+
+
 
     // console.log(menu)
     // console.log(district)
-    console.log(city)
+    // console.log(city)
 
     const searchDistrict = () => {
         setDistrict(district)

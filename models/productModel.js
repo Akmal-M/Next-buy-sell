@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
         type: Array,
         required: true
     },
-    category: {
+    productcategory: {
         type: Array,
         required: true
     },
@@ -31,12 +31,8 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-    district: {
-        type:String,
-        required:true
-    },
-    city: {
-        type:String,
+    location: {
+        type:Array,
         required:true
     },
     top: {
