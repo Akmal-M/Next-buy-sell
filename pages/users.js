@@ -2,8 +2,7 @@ import Head from 'next/head'
 import { useContext } from 'react'
 import {DataContext} from '../store/GlobalState'
 import Link from 'next/link'
-import {BsTrash} from "react-icons/bs";
-import {FaCheck, FaEdit, FaTimes} from "react-icons/fa";
+import {FaCheck, FaEdit, FaTimes, FaTrashAlt} from "react-icons/fa";
 
 const Users = () => {
     const {state, dispatch} = useContext(DataContext)
@@ -11,28 +10,28 @@ const Users = () => {
 
     if(!auth.user) return null;
     return(
-        <div className="table-responsive">
+        <div className="container mx-auto">
             <Head>
                 <title>Users</title>
             </Head>
 
-            <table className="table w-100">
+            <table className="table w-full">
                 <thead>
                 <tr>
+                    <th>N</th>
                     <th>ID</th>
                     <th>Avatar</th>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Admin</th>
                     <th>Action</th>
-
                 </tr>
                 </thead>
 
                 <tbody>
                 {
                     users.map((user, index)=> (
-                        <tr key={user._id} style={{cursor: 'pointer'}}>
+                        <tr key={user._id} className='cursor-pointer'>
                             <th>{index + 1}</th>
                             <th>{user._id}</th>
                             <th>
@@ -47,30 +46,30 @@ const Users = () => {
                             <th>
                                 {
                                     user.role === 'admin'
-                                        ? user.root ? <i className="fas fa-check text-success"> Root</i>
-                                        : <FaCheck/>
+                                        ? user.root ? <FaCheck className=" fa-check text-green-500"> Root</FaCheck>
+                                        : <FaCheck className=" fa-check text-green-500"/>
 
-                                        :<FaTimes/>
+                                        :<FaTimes className=" fa-times text-red-500"/>
                                 }
                             </th>
-                            <th>
+                            <th className='flex justify-between px-5'>
                                 <Link href={
                                     auth.user.root && auth.user.phone !== user.phone
                                         ? `/edit_user/${user._id}` : '#!'
                                 }>
-                                    <a><FaEdit/></a>
+                                    <a><FaEdit className=" fa-edit text-blue-500 mr-2" title="Edit"/></a>
                                 </Link>
 
                                 {
                                     auth.user.root && auth.user.phone !== user.phone
-                                        ? <i className="fas fa-trash-alt text-danger ml-2" title="Remove"
-                                             data-toggle="modal" data-target="#exampleModal"
-                                             onClick={() => dispatch({
-                                                 type: 'ADD_MODAL',
-                                                 payload: [{ data: users, id: user._id, title: user.name, type: 'ADD_USERS' }]
-                                             })}/>
+                                        ? <FaTrashAlt className="  text-red-500 ml-2" title="Remove"
+                                                      data-toggle="modal" data-target="#exampleModal"
+                                                      onClick={() => dispatch({
+                                                          type: 'ADD_MODAL',
+                                                          payload: [{ data: users, id: user._id, title: user.name, type: 'ADD_USERS' }]
+                                                      })}/>
 
-                                        : <BsTrash title="Remove"/>
+                                        : <FaTrashAlt className="  text-danger ml-2" title="Remove"/>
                                 }
 
                             </th>
@@ -85,3 +84,4 @@ const Users = () => {
 }
 
 export default Users
+

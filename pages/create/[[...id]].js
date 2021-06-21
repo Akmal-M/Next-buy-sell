@@ -8,6 +8,7 @@ import {getData, postData, putData} from "../../utils/fetchingData";
 import {imageUpload} from "../../utils/imageUpload";
 import {useStore} from "react-hookstore";
 import {AiOutlineClose} from "react-icons/ai";
+import Head from 'next/head'
 
 const Id = () => {
     const {t, lang} = useTranslation()
@@ -16,13 +17,12 @@ const Id = () => {
     const [agree, setAgree] = useState(false)
     console.log(category)
 
-    const {state, dispatch} = useContext(DataContext)
-    const {categories, auth} = state
 
     const initialState = {
         title: '',
         price: 0,
         description: '',
+        maincategory: '',
         productcategory: '',
         location:'',
         phone: '',
@@ -31,11 +31,14 @@ const Id = () => {
 
     const [product, setProduct] = useState(initialState)
 
-    const {title, price, description,name, phone, productcategory, location} = product
+    const {title, price, description,name, phone,maincategory,  productcategory, location} = product
 
     const [images, setImages] = useState([])
 
 
+
+    const {state, dispatch} = useContext(DataContext)
+    const {categories, auth} = state
 
     const router = useRouter()
     const {id} = router.query
@@ -60,6 +63,7 @@ const Id = () => {
         setProduct({...product, [name]:value})
         dispatch({type: 'NOTIFY', payload: {}})
     }
+
 
     const handleUploadInput = e => {
         dispatch({type: 'NOTIFY', payload: {}})
@@ -131,11 +135,14 @@ const Id = () => {
     console.log(location)
     return (
         <div>
+            <Head>
+                <title>Products Manager</title>
+            </Head>
             <div className="bg-gray-50">
                 <form className="lg:w-3/4 mx-auto p-1" onSubmit={handleSubmit}>
                     <p className="text-gray-600 text-3xl font-bold">Создать объявление</p>
                     <div className="bg-white mt-6 p-4">
-                        <p className="text-xl font-bold"> Описание объявления</p>
+                        <p className="text-xl font-bold">Описание объявления</p>
 
                         <div>
                             <p className="text-lg mt-3">Название*</p>
@@ -188,93 +195,178 @@ const Id = () => {
                                   <p>{t('Обмен, Даром')}</p>
                               </div>
                           </div>
-                          <div>
-                              { category === '' ? null :
-                                  <div>
-                                      <select className="w-80  lg:text-lg text-sm mt-3 p-2 outline-none bg-gray-50"
-                                              id=""
-                                              onChange={handleChangeInput}
-                                              value={productcategory}
-                                              name="productcategory">
-                                          {
-                                              category === 'electronic' &&
-                                              categories[0].electronic.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'children' &&
-                                              categories[0].children.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'transport' &&
-                                              categories[0].transport.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'property' &&
-                                              categories[0].property.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'job' &&
-                                              categories[0].job.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'services' &&
-                                              categories[0].services.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'style' &&
-                                              categories[0].stylefashion.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'business' &&
-                                              categories[0].business.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'house' &&
-                                              categories[0].house.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'hobbies' &&
-                                              categories[0].hobbies.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'animals' &&
-                                              categories[0].animals.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                          {
-                                              category === 'exchange' &&
-                                              categories[0].charity.map(item => (
-                                                  <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                              ))
-                                          }
-                                      </select>
-                                  </div>
-                              }
-                          </div>
-                      </div>
 
-                       <div className='my-5 lg:my-20'>
+                          {/*<div>*/}
+                          {/*    { category === '' ? null :*/}
+                          {/*        <div>*/}
+                          {/*            <select className="w-80  lg:text-lg text-sm mt-3 p-2 outline-none bg-gray-50"*/}
+                          {/*                    id="productcategory"*/}
+                          {/*                    onChange={handleChangeInput}*/}
+                          {/*                    value={productcategory}*/}
+                          {/*                    name="productcategory">*/}
+                          {/*                {*/}
+                          {/*                    category === 'electronic' &&*/}
+                          {/*                    categories[0].electronic.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'children' &&*/}
+                          {/*                    categories[0].children.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'transport' &&*/}
+                          {/*                    categories[0].transport.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'property' &&*/}
+                          {/*                    categories[0].property.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'job' &&*/}
+                          {/*                    categories[0].job.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'services' &&*/}
+                          {/*                    categories[0].services.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'style' &&*/}
+                          {/*                    categories[0].stylefashion.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'business' &&*/}
+                          {/*                    categories[0].business.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'house' &&*/}
+                          {/*                    categories[0].house.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'hobbies' &&*/}
+                          {/*                    categories[0].hobbies.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'animals' &&*/}
+                          {/*                    categories[0].animals.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*                {*/}
+                          {/*                    category === 'exchange' &&*/}
+                          {/*                    categories[0].charity.map(item => (*/}
+                          {/*                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>*/}
+                          {/*                    ))*/}
+                          {/*                }*/}
+                          {/*            </select>*/}
+                          {/*        </div>*/}
+                          {/*    }*/}
+                          {/*</div>*/}
+
+
+                        <div className="input-group-prepend px-0 my-2">
+                            <select name="productcategory" id="productcategory" value={productcategory}
+                                    onChange={handleChangeInput} className="custom-select text-capitalize">
+                                <option value="all">All Products</option>
+                                {
+                                    category === 'electronic' &&
+                                    categories[0].electronic.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'children' &&
+                                    categories[0].children.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'transport' &&
+                                    categories[0].transport.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'property' &&
+                                    categories[0].property.map(item => (
+                                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'job' &&
+                                    categories[0].job.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'services' &&
+                                    categories[0].services.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'style' &&
+                                    categories[0].stylefashion.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'business' &&
+                                    categories[0].business.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'house' &&
+                                    categories[0].house.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'hobbies' &&
+                                    categories[0].hobbies.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'animals' &&
+                                    categories[0].animals.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                                {
+                                    category === 'exchange' &&
+                                    categories[0].charity.map(item => (
+                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div className='my-5 lg:my-20'>
                            <p className="mt-4 text-xl font-bold">Фото</p>
                            <p className="text-sm text-gray-500"> Первое фото будет на обложке. </p>
 
@@ -387,7 +479,7 @@ const Id = () => {
                                <SearchPlaceData/>
                                <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
                                       placeholder="Ваше местополежение"
-                                      value={location}
+                                      value={city}
                                       name="location"
                                       onChange={handleChangeInput}/>
                            </div>

@@ -128,7 +128,7 @@ const MainDropdown = () => {
                                                 <div className='lg:mx-4 '>
                                                     <Link href={item.link}>
                                                         <a className=''>
-                                                            <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                            <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                                 {lang === 'ru' && `${item.name_ru}`}
                                                                 {lang === 'uz' && `${item.name_uz}`}
                                                                 {lang === 'oz' && `${item.name_oz}`}
@@ -147,11 +147,11 @@ const MainDropdown = () => {
                         <div className='lg:grid lg:grid-cols-4 grid-cols-2 grid '>
                             {categories[0].business.map(item => (
                                 <div key={item.name} className=' '>
-                                    <div className='   mb-3'>
+                                    <div className='mb-3'>
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -173,7 +173,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -195,7 +195,7 @@ const MainDropdown = () => {
                                             <div className='lg:mx-4 '>
                                                 <Link href={item.link}>
                                                     <a>
-                                                        <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                        <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                             {lang === 'ru' && `${item.name_ru}`}
                                                             {lang === 'uz' && `${item.name_uz}`}
                                                             {lang === 'oz' && `${item.name_oz}`}
@@ -218,7 +218,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -239,7 +239,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -260,7 +260,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -281,7 +281,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -302,7 +302,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -324,7 +324,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -347,7 +347,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}
@@ -368,7 +368,7 @@ const MainDropdown = () => {
                                         <div className='lg:mx-4 '>
                                             <Link href={item.link}>
                                                 <a>
-                                                    <p className='my-2 cursor-pointer lg:text-sm text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
+                                                    <p className='my-2 cursor-pointer lg:text-lg text-xs lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4 lg:lg:whitespace-nowrap hover:bg-gray-400 hover:text-white rounded-md px-4'>
                                                         {lang === 'ru' && `${item.name_ru}`}
                                                         {lang === 'uz' && `${item.name_uz}`}
                                                         {lang === 'oz' && `${item.name_oz}`}

@@ -5,12 +5,13 @@ import location from "../../location";
 import { createStore, useStore } from 'react-hookstore';
 
 createStore('cityStore', '');
+createStore('districtStore', '');
 const SearchPlaceData = () => {
     const {t, lang} = useTranslation();
     const [menu, setMenu] = useState(false)
-    const [district, setDistrict] = useState('all')
     // const [city, setCity] = useState('')
     const [ city, setCity ] = useStore('cityStore');
+    const [ district, setDistrict ] = useStore('districtStore');
 
 
 

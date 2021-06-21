@@ -4,6 +4,7 @@ import { getData } from '../../utils/fetchingData'
 import { DataContext } from '../../store/GlobalState'
 import { addToCart } from '../../store/Actions'
 import DetailsSlider from "../../Components/DetailsSlider";
+import {AiOutlineHeart} from "react-icons/ai";
 
 const DetailProduct = (props) => {
     const [product] = useState(props.product)
@@ -11,7 +12,7 @@ const DetailProduct = (props) => {
     const [open, setOpen] = useState(false)
 
     const { state, dispatch } = useContext(DataContext)
-    const {  auth } = state
+    const {  auth, cart } = state
 
 
 console.log(state)
@@ -55,6 +56,11 @@ console.log(state)
                    }
                </div>
 
+                <button type="button" className="btn btn-dark d-block my-3 px-5"
+                        onClick={() => dispatch(addToCart(product, cart))} >
+                    <AiOutlineHeart/>
+                </button>
+
             </div>
         </div>
     )
@@ -71,3 +77,4 @@ export async function getServerSideProps({params: {id}}) {
 
 
 export default DetailProduct
+

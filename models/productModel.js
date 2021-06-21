@@ -24,7 +24,11 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     productcategory: {
-        type: Array,
+        type: String,
+        required: true
+    },
+    category: {
+        type: String,
         required: true
     },
     miniCategory: {
@@ -32,7 +36,7 @@ const productSchema = new mongoose.Schema({
         required: false
     },
     location: {
-        type:Array,
+        type:String,
         required:true
     },
     top: {

@@ -16,6 +16,8 @@ const MyProfile = () => {
     const {state, dispatch} = useContext(DataContext)
     const { auth, cart } = state
 
+
+
     console.log(auth.role)
     console.log(auth)
 
@@ -153,10 +155,20 @@ const MyProfile = () => {
     return (
         <div className='flex items-center cursor-pointer '>
            <div className='inline-block relative dropdown' onClick={() => setMenu(!menu)}>
-               <div className='flex mr-5 items-center' >
-                   <MdPersonOutline className='text-3xl mx-2'/>
-                   <p className='lg:text-md text-xs'>{t('Мой профиль')}</p>
-                   <p  className='lg:mx-2 lg:flex hidden'><BiDownArrow/></p>
+               <div className='flex mx-5 items-center ' >
+                   {
+                       auth.user.avatar ?   <img src={auth.user.avatar} alt="" className='rounded-full lg:w-8 lg:h-8 w-6 h-6 lg:mr-2 mr-1'/>
+                           :  <img src="https://res.cloudinary.com/bulutvoy/image/upload/v1622881055/sold%20commerce/people-default_wru4vb.svg" alt=""
+                                   className='rounded-full lg:w-8 lg:h-8 w-4 h-4 lg:mr-2 mr-1'/>
+                   }
+
+
+                   { auth.user.name ?  <p className='lg:text-base text-xs text-gray-500 flex'>{auth.user.name}</p>
+                       :
+                       <p className='lg:text-lg text-gray-400 lg:flex hidden'>{t('Мой профиль:')}</p>
+
+                   }
+                   <p  className='lg:mx-2 lg:flex '><BiDownArrow/></p>
                </div>
 
                {menu &&
@@ -167,15 +179,17 @@ const MyProfile = () => {
                            <div className='flex justify-center items-center'>
                                <div className='w-12 rounded-full mr-3'>
                                    {
-                                       auth.user.avatar ?   <img src={auth.user.avatar} alt=""/>
+                                       auth.user.avatar ?   <img src={auth.user.avatar} alt="" className='rounded-full w-10 h-10 lg:w-20 lg:h-12 bg-contain'/>
                                        :  <img src="https://res.cloudinary.com/bulutvoy/image/upload/v1622881055/sold%20commerce/people-default_wru4vb.svg" alt=""/>
                                    }
                                </div>
-                               <div className='text-xs lg:text-lg'>
-                                   <p>{auth.user.name}</p>
-                                   <p>{auth.user.phone}</p>
-                                   <p>{auth.user.id}</p>
-                               </div>
+                              <Link href='/profile'>
+                                  <a className='text-xs lg:text-lg'>
+                                      <p>{auth.user.name}</p>
+                                      <p>{auth.user.phone}</p>
+                                      <p>{auth.user.id}</p>
+                                  </a>
+                              </Link>
                            </div>
                            {
                                auth.user && auth.user.role === 'admin' ? adminLink() : userLink()

@@ -15,9 +15,9 @@ const CardTop = (products) => {
                             <div>
                                 <p className='font-bold text-xs  pt-2 pb-1 text-line-cut'>{product.name}</p>
                                 <div className='flex justify-between text-small'>
-                                    <p>{product.address}</p>
+                                    <p>{product.location}</p>
 
-                                    <p>{product.time}</p>
+                                    <p>{product.createdAt.replace( 'T',  ' / ').slice(0,-8)}</p>
                                 </div>
                                 <div className='flex justify-between '>
                                     <p className='text-sm font-bold'>${product.price}</p>

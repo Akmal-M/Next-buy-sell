@@ -1,21 +1,26 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Link from "next/link";
 import {MdPersonOutline} from "react-icons/md";
 import {BiDownArrow} from "react-icons/bi";
 import useTranslation from "next-translate/useTranslation";
+import {DataContext} from "../../store/GlobalState";
 
 
 const Profile = () => {
     const {t} = useTranslation();
     const [isUser] = useState(false)
     const [menu, setMenu] = useState(false)
+    const {state, dispatch} = useContext(DataContext)
+    const { auth, cart } = state
+
 
     return (
         <div className='flex items-center relative ' >
 
              <div className='dropdown inline-block relative' onClick={()=> setMenu(!menu)}>
                  <div className=' flex items-center  cursor-pointer ' >
-                     <MdPersonOutline className='lg:text-3xl mx-2' />
+                     <img src="https://res.cloudinary.com/bulutvoy/image/upload/v1622881055/sold%20commerce/people-default_wru4vb.svg" alt=""
+                     className='flex justify-center items-center mb-2 w-6 h-6 mx-1'/>
                      <div className='lg:text-lg'>{ isUser ?  `${t('Мой профиль')}` : `${t('Гость')}` }</div>
                      <p className='mx-2'><BiDownArrow/></p>
                  </div>

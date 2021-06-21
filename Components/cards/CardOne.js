@@ -12,8 +12,8 @@ const CardOne = ({product}) => {
                     <div className='px-4 pt-2'>
                         <p className='font-bold text-sm lg:py-3 py-1'>{product.title}</p>
                         <div className='flex justify-between text-xs mt-4'>
-                            <p>{product.address}</p>
-                            <p>{product.time}</p>
+                            <p>{product.location}</p>
+                            <p>{product.createdAt.replace( 'T',  ' / ').slice(0,-8)}</p>
                         </div>
                         <div className='flex justify-between lg:pt-3 py-1 lg:px-3 px-1 mt-1'>
                             <p className='lg:text-xl text-md font-bold'>${product.price}</p>

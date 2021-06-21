@@ -48,7 +48,7 @@ const  CardTwo = ({product, handleCheck}) => {
                             <div>
                                 <p className='font-bold lg:text-md text-xs  lg:py-3 py-1'>{product.title}</p>
                                 <div className='flex justify-between lg:text-xs text-small'>
-                                    <p>{product.address}</p> <p>{product.time}</p>
+                                    <p>{product.location}</p> <p>{product.createdAt.replace( 'T',  ' / ').slice(0,-8)}</p>
                                 </div>
                             </div>
                         </a>
