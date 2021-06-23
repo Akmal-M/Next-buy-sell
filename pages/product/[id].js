@@ -4,18 +4,21 @@ import { getData } from '../../utils/fetchingData'
 import { DataContext } from '../../store/GlobalState'
 import { addToCart } from '../../store/Actions'
 import DetailsSlider from "../../Components/DetailsSlider";
-import {AiOutlineHeart} from "react-icons/ai";
+import {AiFillHeart, AiFillPhone, AiOutlineHeart} from "react-icons/ai";
+import {GiPhone} from "react-icons/gi";
+import useTranslation from "next-translate/useTranslation";
 
 const DetailProduct = (props) => {
+    const {t} = useTranslation();
     const [product] = useState(props.product)
-    const [tab, setTab] = useState(0)
     const [open, setOpen] = useState(false)
 
     const { state, dispatch } = useContext(DataContext)
-    const {  auth, cart } = state
+    const {  auth, cart, notify } = state
 
 
 console.log(state)
+console.log(notify)
 
 
     return(
@@ -26,12 +29,9 @@ console.log(state)
 
             <div className="">
 
+
                 <div className="flex justify-center"  >
-
-                    {product.images.map((img, index) => (
-                       <DetailsSlider img={img}/>
-                    ))}
-
+                       <DetailsSlider product={product}/>
                 </div>
             </div>
 
@@ -46,18 +46,19 @@ console.log(state)
                    {
                        open ?
 
-                           <div className='text-2xl'>
-                                <a href={`tel: '${product.phone}'`} >{product.phone}</a>
-                           </div>
+                           <button type="button" className="bg-green-500 rounded-md text-white my-3 py-2 px-5 ">
+                               <a href={`tel: '${product.phone}'`} className='flex justify-center'> <GiPhone size={25} className='mr-2'/> {product.phone}</a>
+                           </button>
                            :
-                           <button type="button" className="bg-gray-700 rounded-md text-white my-3 px-5" onClick={() => setOpen(!open)}>
-                               Show Phone Number
+                           <button type="button" className="bg-gray-700 rounded-md text-white my-3 py-2 px-5 text-sm  lg:text-lg" onClick={() => setOpen(!open)}>
+                               {t('Показать номер телефона')}
                            </button>
                    }
                </div>
 
-                <button type="button" className="btn btn-dark d-block my-3 px-5"
-                        onClick={() => dispatch(addToCart(product, cart))} >
+                <button type="button" className=" my-3 px-5"
+                        onClick={() => dispatch(addToCart(product, cart))}>
+                    {/*{res.status(200) ? <AiFillHeart/>: <AiOutlineHeart/>}*/}
                     <AiOutlineHeart/>
                 </button>
 

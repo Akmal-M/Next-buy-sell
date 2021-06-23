@@ -1,6 +1,10 @@
 import mongoose from 'mongoose'
 
 const productSchema = new mongoose.Schema({
+    user: {
+        type: Array,
+        required:true
+    },
     title: {
         type: String,
         required: true,
@@ -37,7 +41,7 @@ const productSchema = new mongoose.Schema({
     },
     location: {
         type:String,
-        required:true
+        required:false
     },
     top: {
         type: Boolean,

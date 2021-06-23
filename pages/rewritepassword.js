@@ -2,8 +2,10 @@ import Head from 'next/head'
 import useTranslation from "next-translate/useTranslation";
 import {useRouter} from "next/router";
 import {useContext, useEffect, useState} from "react";
+import {DataContext} from "../store/GlobalState";
 
 const Rewritepassword = () => {
+
     const {t} = useTranslation();
     const initialState = { password: '', cf_password: '' }
     const [userData, setUserData] = useState(initialState)

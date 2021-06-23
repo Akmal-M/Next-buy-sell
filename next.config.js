@@ -9,6 +9,8 @@ module.exports = {
         "REFRESH_TOKEN_SECRET": "L_VV?Zp?{K8,PLr^@;T}TvDy@45Fr@/NXH5.PPqyXwRBr*=,X~[CbMEu^abYddCar>Vc>32DzRZTzdS*YMqBHET&8jB]DmzV.\"p<,jC]Z>\"4_AkUh:dXG;U']QX;N^VU~QdQyhQs*_A*Y[x[nd;NzB@:>j%ZY=k**+s^N`VrbQd\"rHNs$N-j3^;7Sk]/`869;&_V,z`(/}NkT57^p\\",
         "CLOUD_UPDATE_PRESET": "buysold",
         "CLOUD_NAME": "bulutvoy",
-        "CLOUD_API": "https://api.cloudinary.com/v1_1/bulutvoy/image/upload"
+        "CLOUD_API": "https://api.cloudinary.com/v1_1/bulutvoy/image/upload",
+        // "SMS_API":"62659c5asfu4zvd7898g1kj013e77it8v"
+        "EVERIFY_KEY":"uaV9h7Czd5eyAolkitaytuKhBVBbfSEg"
     }
 }

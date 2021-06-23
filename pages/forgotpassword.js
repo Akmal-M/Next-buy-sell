@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import useTranslation from "next-translate/useTranslation";
+import {useState} from "react";
 
 const ForgotPassword = () => {
     const {t} = useTranslation();
+    const [field, setField] = useState('')
 
     return (
         <div>

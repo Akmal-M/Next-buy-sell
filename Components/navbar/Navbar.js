@@ -52,14 +52,14 @@ const Navbar = () => {
                             {auth.user && auth.user.role === 'user' ?
                                 <Link href='/create' className=''>
                                     <a href="#"
-                                       className='lg:py-1  text-center lg:px-4 px-1 lg:text-lg ml-2 text-small   flex justify-center items-center bg-green-200 text-white hover:bg-gray-300 rounded-md hover:text-white lg:ml-20'>
+                                       className='lg:py-1  text-center lg:px-4 px-1 lg:text-lg ml-2 text-small   flex justify-center items-center bg-green-400 text-white hover:bg-green-300 rounded-md hover:text-white lg:ml-20'>
                                         {t('Подать объявление')}
                                     </a>
                                 </Link>
                                 :
                                 <Link href='/login' className=''>
                                     <a href="#"
-                                       className='lg:py-1  text-center lg:px-4 px-1 lg:text-lg ml-2 text-small   flex justify-center items-center bg-green-200 text-white hover:bg-gray-300 rounded-md hover:text-white lg:ml-20'>
+                                       className='lg:py-1  text-center lg:px-4 px-1 lg:text-lg ml-2 text-small   flex justify-center items-center bg-green-400 text-white hover:bg-green-300 rounded-md hover:text-white lg:ml-20'>
                                         {t('Подать объявление')}
                                     </a>
                                 </Link>}

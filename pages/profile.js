@@ -124,17 +124,17 @@ const Profile = () => {
                                className="form-control px-5" disabled={true} placeholder={auth.user.phone}/>
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="password">New Password</label>
-                        <input type="password" name="password" value={password} className="form-control"
-                               placeholder="Your new password" onChange={handleChange} />
-                    </div>
+                    {/*<div className="form-group">*/}
+                    {/*    <label htmlFor="password">New Password</label>*/}
+                    {/*    <input type="password" name="password" value={password} className="form-control"*/}
+                    {/*           placeholder="Your new password" onChange={handleChange} />*/}
+                    {/*</div>*/}
 
-                    <div className="form-group">
-                        <label htmlFor="cf_password">Confirm New Password</label>
-                        <input type="password" name="cf_password" value={cf_password} className="form-control"
-                               placeholder="Confirm new password" onChange={handleChange} />
-                    </div>
+                    {/*<div className="form-group">*/}
+                    {/*    <label htmlFor="cf_password">Confirm New Password</label>*/}
+                    {/*    <input type="password" name="cf_password" value={cf_password} className="form-control"*/}
+                    {/*           placeholder="Confirm new password" onChange={handleChange} />*/}
+                    {/*</div>*/}
 
                     <button className="rounded-md bg-green-500 py-1 px-5 text-white" disabled={notify.loading}
                             onClick={handleUpdateProfile}>

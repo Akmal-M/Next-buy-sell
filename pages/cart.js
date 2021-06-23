@@ -24,9 +24,9 @@ const Cart = () => {
             const updateCart = async () => {
                 for (const item of cartLocal){
                     const res = await getData(`product/${item._id}`)
-                    const { _id, title, images, price, description,location,productcategory, } = res.product
+                    const { _id, title, images, price, description,location,productcategory,createdAt,phone } = res.product
                         newArr.push({
-                            _id, title, images, price, description, location,productcategory
+                            _id, title, images, price, description, location,productcategory,createdAt,phone
                         })
                  }
 
@@ -37,27 +37,6 @@ const Cart = () => {
         }
     },[callback])
 
-
-
-    //
-    //     dispatch({ type: 'NOTIFY', payload: {loading: true} })
-    //
-    //     // postData('order', {address, mobile, cart, total}, auth.token)
-    //     //     .then(res => {
-    //     //         if(res.err) return dispatch({ type: 'NOTIFY', payload: {error: res.err} })
-    //     //
-    //     //         dispatch({ type: 'ADD_CART', payload: [] })
-    //     //
-    //     //         const newOrder = {
-    //     //             ...res.newOrder,
-    //     //             user: auth.user
-    //     //         }
-    //     //         dispatch({ type: 'ADD_ORDERS', payload: [...orders, newOrder] })
-    //     //         dispatch({ type: 'NOTIFY', payload: {success: res.msg} })
-    //     //         return router.push(`/order/${res.newOrder._id}`)
-    //     //     })
-    //
-    // }
 
     if( cart.length === 0 )
         return <img className="w-full h-full flex justify-center items-center" src="https://res.cloudinary.com/bulutvoy/image/upload/v1620465104/cart/empty-box_2_n12qzo.png" alt="empty cart"/>
