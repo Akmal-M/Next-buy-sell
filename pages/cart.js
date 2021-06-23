@@ -39,8 +39,11 @@ const Cart = () => {
 
 
     if( cart.length === 0 )
-        return <img className="w-full h-full flex justify-center items-center" src="https://res.cloudinary.com/bulutvoy/image/upload/v1620465104/cart/empty-box_2_n12qzo.png" alt="empty cart"/>
-
+        return(
+            <div className='flex justify-center items-center'>
+                <img className="w-96 h-auto flex justify-center items-center" src="https://res.cloudinary.com/bulutvoy/image/upload/v1620465104/cart/empty-box_2_n12qzo.png" alt="empty cart"/>
+            </div>
+        )
     return(
         <div className="row mx-auto">
             <Head>

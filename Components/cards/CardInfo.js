@@ -1,6 +1,12 @@
 import {IoMdHeartEmpty} from "react-icons/io";
+import {addToCart} from "../../store/Actions";
+import {useContext} from "react";
+import {DataContext} from "../../store/GlobalState";
 
 const CardInfo = ({product}) => {
+    const {state, dispatch} = useContext(DataContext)
+    const {cart, auth} = state
+
     return (
         <div className=' lg:px-0 lg:px-5 px-2 '>
 
@@ -23,7 +29,7 @@ const CardInfo = ({product}) => {
                           <div className='flex justify-between lg:py-3 py-1 lg:px-3 px-1 '>
                               <p className='lg:text-xl text-sm font-bold'>${product.price}</p>
                               <div >
-                                  <IoMdHeartEmpty className='lg:text-3xl text-xl'/>
+                                  <IoMdHeartEmpty className='lg:text-3xl text-xl' onClick={() => dispatch(addToCart(product, cart))}/>
                               </div>
                           </div>
                       </div>

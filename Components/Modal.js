@@ -64,23 +64,23 @@ const Modal = () => {
     }
 
     return(
-        <div className={show ? "modal fade show  fixed top-0 left-0 w-full h-full outline-none fade" : "modal fade  fixed top-0 left-0 w-full h-full outline-none fade"} id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog" role="document">
+        <div className={show ? "modal fade show  fixed top-0 left-0 w-full h-full outline-none fade flex justify-center" : "modal fade  fixed top-0 left-0 w-full h-full outline-none fade"} id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog relative bg-green-50 w-96 p-3 rounded-md" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title capitalize" id="exampleModalLabel">
                             {modal.length !== 0 && modal[0].title}
                         </h5>
-                        <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => setShow(!show)}>
-                            <span aria-hidden="true"><AiOutlineClose/></span>
+                        <button type="button" className="close absolute right-3 top-3" data-dismiss="modal" aria-label="Close" onClick={() => setShow(!show)}>
+                            <span aria-hidden="true"><AiOutlineClose size={20}/></span>
                         </button>
                     </div>
-                    <div className="modal-body">
-                        {t('Do you want to delete this item?')}
+                    <div className="modal-body py-5">
+                        {t('Do you want to remove this item?')}
                     </div>
-                    <div className="modal-footer" onClick={() => setShow(!show)}>
-                        <button type="button" className="py-1 px-3 rounded-md text-white bg-gray-400" data-dismiss="modal" onClick={ handleSubmit}>Yes</button>
-                        <button type="button" className="py-1 px-3 rounded-md text-white bg-purple-400" data-dismiss="modal" onClick={() => setShow(!show)}>Cancel</button>
+                    <div className="modal-footer flex justify-center" onClick={() => setShow(!show)}>
+                        <button type="button" className="py-1 px-3 rounded-md text-white bg-purple-400  mx-5" data-dismiss="modal" onClick={ handleSubmit}>{t('Yes')}</button>
+                        <button type="button" className="py-1 px-3 rounded-md text-white bg-gray-400  mx-5" data-dismiss="modal" onClick={() => setShow(!show)}>{t('Cancel')}</button>
                     </div>
                 </div>
             </div>
