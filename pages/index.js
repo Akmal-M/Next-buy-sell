@@ -80,9 +80,7 @@ const Home = (props) => {
             <Head>
                 <title>Home Page</title>
             </Head>
-
-
-
+            
             <Header/>
             <div className='bg-gray-50'>
                 {

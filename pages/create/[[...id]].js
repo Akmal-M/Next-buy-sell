@@ -40,7 +40,7 @@ const Id = () => {
 
     const [product, setProduct] = useState(initialState)
 
-    const {title, price, description,name, phone,maincategory,  productcategory, location} = product
+    const {title, price, description,name, phone, maincategory,  productcategory, location} = product
 
     const [images, setImages] = useState([])
 
@@ -158,172 +158,182 @@ const Id = () => {
                             />
                         </div>
 
-                      <div className='lg:mt-10 mt-5'>
-                          <p className="mt-4">Категория*</p>
-                          <div className='py-5 lg:py-10 grid lg:grid-cols-4 grid-cols-3 text-smaller font-bold lg:text-sm text-center'>
-                              <div className={category === 'electronic' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('electronic')}>
-                                  <p>{t('Электроника')}</p>
-                              </div>
-                              <div className={category === 'children' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('children')}>
-                                  <p>{t('Дети')}</p>
-                              </div>
-                              <div className={category === 'transport' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('transport')}>
-                                  <p>{t('Транспорт')}</p>
-                              </div>
-                              <div className={category === 'property' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('property')}>
-                                  <p>{t('Недвижимость')}</p>
-                              </div>
-                              <div className={category === 'job' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('job')}>
-                                  <p>{t('Работа')}</p>
-                              </div>
-                              <div className={category === 'services' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('services')}>
-                                  <p>{t('Услуги')}</p>
-                              </div>
-                              <div className={category === 'style' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('style')}>
-                                  <p>{t('Мода и стиль')}</p>
-                              </div>
-                              <div className={category === 'business' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('business')}>
-                                  <p>{t('Бизнес')}</p>
-                              </div>
-                              <div className={category === 'house' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('house')}>
-                                  <p>{t('Дом и дача')}</p>
-                              </div>
-                              <div className={category === 'hobbies' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer text-small lg:text-mid ' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer text-small lg:text-mid '} onClick={() => setCategory('hobbies')}>
-                                  <p>{t('Хобби и отдых')}</p>
-                              </div>
-                              <div className={category === 'animals' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('animals')}>
-                                  <p>{t('Животные')}</p>
-                              </div>
-                              <div className={category === 'exchange' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer text-small lg:text-mid  cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer text-small lg:text-mid  cursor-pointer'} onClick={() => setCategory('exchange')}>
-                                  <p>{t('Обмен, Даром')}</p>
-                              </div>
-                          </div>
+                        <div className='lg:mt-10 mt-5'>
+                            <p className="mt-4">Категория*</p>
+                            <div className='py-5 lg:py-10 grid lg:grid-cols-4 grid-cols-3 text-smaller font-bold lg:text-sm text-center'>
+                                <div className={category === 'electronic' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('electronic')}>
+                                    <p>{t('Электроника')}</p>
+                                </div>
+                                <div className={category === 'children' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('children')}>
+                                    <p>{t('Дети')}</p>
+                                </div>
+                                <div className={category === 'transport' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('transport')}>
+                                    <p>{t('Транспорт')}</p>
+                                </div>
+                                <div className={category === 'property' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('property')}>
+                                    <p>{t('Недвижимость')}</p>
+                                </div>
+                                <div className={category === 'job' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('job')}>
+                                    <p>{t('Работа')}</p>
+                                </div>
+                                <div className={category === 'services' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('services')}>
+                                    <p>{t('Услуги')}</p>
+                                </div>
+                                <div className={category === 'style' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('style')}>
+                                    <p>{t('Мода и стиль')}</p>
+                                </div>
+                                <div className={category === 'business' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('business')}>
+                                    <p>{t('Бизнес')}</p>
+                                </div>
+                                <div className={category === 'house' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('house')}>
+                                    <p>{t('Дом и дача')}</p>
+                                </div>
+                                <div className={category === 'hobbies' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer text-small lg:text-mid ' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer text-small lg:text-mid '} onClick={() => setCategory('hobbies')}>
+                                    <p>{t('Хобби и отдых')}</p>
+                                </div>
+                                <div className={category === 'animals' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer'} onClick={() => setCategory('animals')}>
+                                    <p>{t('Животные')}</p>
+                                </div>
+                                <div className={category === 'exchange' ? 'border-2 bg-green-400 text-white border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer text-small lg:text-mid  cursor-pointer' : 'border-2 border-green-400 rounded-md py-1 px-2 my-2 mx-1 lg:mx-5 cursor-pointer text-small lg:text-mid  cursor-pointer'} onClick={() => setCategory('exchange')}>
+                                    <p>{t('Обмен, Даром')}</p>
+                                </div>
+                            </div>
 
+                            <div>
+                                <p className="text-lg mt-3">Главная категория*</p>
+                                <input className="outline-none mt-2 bg-gray-50 p-2 lg:w-3/4 w-full h-12"
+                                       type="text"
+                                       placeholder="Например, дети"
+                                       name="maincategory"
+                                       value={maincategory}
+                                       onChange={handleChangeInput}
+                                />
+                            </div>
 
-                        <div className="input-group-prepend px-0 my-2 ">
-                            <select name="productcategory" id="productcategory" value={productcategory}
-                                    onChange={handleChangeInput} className="custom-select text-capitalize w-72">
-                                <option value="all">All Products</option>
-                                {
-                                    category === 'electronic' &&
-                                    categories[0].electronic.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'children' &&
-                                    categories[0].children.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'transport' &&
-                                    categories[0].transport.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'property' &&
-                                    categories[0].property.map(item => (
-                                        <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'job' &&
-                                    categories[0].job.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'services' &&
-                                    categories[0].services.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'style' &&
-                                    categories[0].stylefashion.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'business' &&
-                                    categories[0].business.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'house' &&
-                                    categories[0].house.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'hobbies' &&
-                                    categories[0].hobbies.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'animals' &&
-                                    categories[0].animals.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                                {
-                                    category === 'exchange' &&
-                                    categories[0].charity.map(item => (
-                                        <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
-                                    ))
-                                }
-                            </select>
+                            <div className="input-group-prepend px-0 my-2 ">
+                                <select name="productcategory" id="productcategory" value={productcategory}
+                                        onChange={handleChangeInput} className="custom-select text-capitalize w-72">
+                                    <option value="all">All Products</option>
+                                    {
+                                        category === 'electronic' &&
+                                        categories[0].electronic.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'children' &&
+                                        categories[0].children.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'transport' &&
+                                        categories[0].transport.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'property' &&
+                                        categories[0].property.map(item => (
+                                            <option value={item.name_uz} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'job' &&
+                                        categories[0].job.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'services' &&
+                                        categories[0].services.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'style' &&
+                                        categories[0].stylefashion.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'business' &&
+                                        categories[0].business.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'house' &&
+                                        categories[0].house.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'hobbies' &&
+                                        categories[0].hobbies.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'animals' &&
+                                        categories[0].animals.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                    {
+                                        category === 'exchange' &&
+                                        categories[0].charity.map(item => (
+                                            <option value={item.id} key={item.id}>{lang === 'uz' ? `${item.name_uz}` : lang === 'ru' ?  `${item.name_ru}` : lang ==='oz'  && `${item.name_oz}` }</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
 
 
 
 
-                    <div className='my-5 lg:my-20'>
-                           <p className="mt-4 text-xl font-bold">Фото</p>
-                           <p className="text-sm text-gray-500"> Первое фото будет на обложке. </p>
+                        <div className='my-5 lg:my-20'>
+                            <p className="mt-4 text-xl font-bold">Фото</p>
+                            <p className="text-sm text-gray-500"> Первое фото будет на обложке. </p>
 
-                           <div>
-                               <div className="col-md-6 my-4 lg:text-base text-sm ">
-                                   <div className="input-group mb-3 ">
-                                       <div className="input-group-prepend my-5">
-                                           <span className="text-base">{t('Выберите фото')}</span>
-                                       </div>
-                                       <div className="custom-file border rounded w-72 lg:w-96 text-line-cut">
-                                           <input type="file" className="custom-file-input "
-                                                  onChange={handleUploadInput} multiple accept="image/*" />
-                                       </div>
-                                   </div>
+                            <div>
+                                <div className="col-md-6 my-4 lg:text-base text-sm ">
+                                    <div className="input-group mb-3 ">
+                                        <div className="input-group-prepend my-5">
+                                            <span className="text-base">{t('Выберите фото')}</span>
+                                        </div>
+                                        <div className="custom-file border rounded w-72 lg:w-96 text-line-cut">
+                                            <input type="file" className="custom-file-input "
+                                                   onChange={handleUploadInput} multiple accept="image/*" />
+                                        </div>
+                                    </div>
 
-                                   <div className="row img-up mx-0 grid lg:grid-cols-4 grid-cols-2 lg:gap-5 gap-2">
-                                       {
-                                                   images.map((img, index) => (
-                                                       <div key={index} className="file_img my-1 relative ">
-                                                           <img src={img.url ? img.url : URL.createObjectURL(img)}
-                                                                alt="" className="img-thumbnail rounded lg:w-72   text-line-cut" />
+                                    <div className="row img-up mx-0 grid lg:grid-cols-4 grid-cols-2 lg:gap-5 gap-2">
+                                        {
+                                            images.map((img, index) => (
+                                                <div key={index} className="file_img my-1 relative ">
+                                                    <img src={img.url ? img.url : URL.createObjectURL(img)}
+                                                         alt="" className="img-thumbnail rounded lg:w-72   text-line-cut" />
 
-                                                           <span onClick={() => deleteImage(index)} className='cursor-pointer absolute z-20 top-2 right-2 bg-gray-400 text-white rounded-md p-2'>
+                                                    <span onClick={() => deleteImage(index)} className='cursor-pointer absolute z-20 top-2 right-2 bg-gray-400 text-white rounded-md p-2'>
                                                        <AiOutlineClose size={20}/>
                                                    </span>
-                                                       </div>
+                                                </div>
 
-                                                   ))
+                                            ))
 
-                                               }
-
-
-                                   </div>
+                                        }
 
 
-                               </div>
+                                    </div>
 
-                           </div>
-                       </div>
+
+                                </div>
+
+                            </div>
+                        </div>
 
 
 
@@ -342,106 +352,106 @@ const Id = () => {
                         {/*    </button>*/}
                         {/*</div>*/}
 
-                       <div className='bg-gray-100'>
-                           <p className="mt-3 px-5 py-2">Описание*</p>
-                           <TextareaCounter className=" p-2 lg:p-3  outline-none w-full focus:outline-none "
-                                            count countLimit={10000}
-                                            initialValue=""
-                                            placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления. И добавьте их в описание"
-                           value={description}
-                                            onChange={handleChangeInput}
-                           name="description"/>
+                        <div className='bg-gray-100'>
+                            <p className="mt-3 px-5 py-2">Описание*</p>
+                            <TextareaCounter className=" p-2 lg:p-3  outline-none w-full focus:outline-none "
+                                             count countLimit={10000}
+                                             initialValue=""
+                                             placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления. И добавьте их в описание"
+                                             value={description}
+                                             onChange={handleChangeInput}
+                                             name="description"/>
 
-                           <div className='text-gray-600 px-5 py-2 flex'>
-                               {
-                                   description.length < 50 ? <p>{t('Описание не менее 50 символов')} </p> :
-                                       <p>{t("До 10 000 символов")}</p>
-                               }
-                           </div>
-                       </div>
+                            <div className='text-gray-600 px-5 py-2 flex'>
+                                {
+                                    description.length < 50 ? <p>{t('Описание не менее 50 символов')} </p> :
+                                        <p>{t("До 10 000 символов")}</p>
+                                }
+                            </div>
+                        </div>
 
 
 
 
                         {
                             category === 'electronic' &&
+                            <div>
                                 <div>
-                                    <div>
-                                        <p className="text-base mt-2">Цена*</p>
-                                        <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
-                                               placeholder=""
-                                               value={price}
-                                               name="price"
-                                               onChange={handleChangeInput}/>
-                                    </div>
-                                    {/*<div>*/}
-                                    {/*    */}
-                                    {/*    <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="button"*/}
-                                    {/*           value={isnew}*/}
-                                    {/*           name="price"*/}
-                                    {/*           onChange={handleChangeInput}/>*/}
-                                    {/*</div>*/}
-
+                                    <p className="text-base mt-2">Цена*</p>
+                                    <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
+                                           placeholder=""
+                                           value={price}
+                                           name="price"
+                                           onChange={handleChangeInput}/>
                                 </div>
+                                {/*<div>*/}
+                                {/*    */}
+                                {/*    <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="button"*/}
+                                {/*           value={isnew}*/}
+                                {/*           name="price"*/}
+                                {/*           onChange={handleChangeInput}/>*/}
+                                {/*</div>*/}
+
+                            </div>
                         }
 
 
 
 
 
-                       <div className='lg:mt-20 mt-5'>
-                           <p className="text-xl font-bold mt-3">Контактная информация</p>
-                           <div>
-                               <p className="text-base mt-2">Местоположение*</p>
-                               <SearchPlaceData/>
-                               <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
-                                      placeholder="Ваше местополежение"
-                                      value={location}
-                                      name="location"
-                                      onChange={handleChangeInput}/>
-                           </div>
+                        <div className='lg:mt-20 mt-5'>
+                            <p className="text-xl font-bold mt-3">Контактная информация</p>
+                            <div>
+                                <p className="text-base mt-2">Местоположение*</p>
+                                <SearchPlaceData/>
+                                <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
+                                       placeholder="Ваше местополежение"
+                                       value={location}
+                                       name="location"
+                                       onChange={handleChangeInput}/>
+                            </div>
 
-                           <div>
-                               <p className="text-base mt-4">Контактное лицо*</p>
-                               <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
-                                      placeholder={auth.user.name} defaultValue={auth.user.name} value={name}
-                                      name='name'
-                                      onChange={handleChangeInput}/>
-                           </div>
+                            <div>
+                                <p className="text-base mt-4">Контактное лицо*</p>
+                                <input className="p-3 w-80 bg-gray-50 mt-2 outline-none" type="text"
+                                       placeholder={auth.user.name} defaultValue={auth.user.name} value={name}
+                                       name='name'
+                                       onChange={handleChangeInput}/>
+                            </div>
 
-                           <div>
-                               <p className="text-base mt-4">Номер телефона*</p>
-                               <input className="p-3 w-80 bg-gray-50 mt-2 outline-none"
-                                      placeholder="99 899  ***  ** **"
-                                      type='number'
-                                      name="phone"
-                                      //defaultValue={auth.user.phone}
-                                      value={phone}
-                                      onChange={handleChangeInput}
+                            <div>
+                                <p className="text-base mt-4">Номер телефона*</p>
+                                <input className="p-3 w-80 bg-gray-50 mt-2 outline-none"
+                                       placeholder="99 899  ***  ** **"
+                                       type='number'
+                                       name="phone"
+                                    //defaultValue={auth.user.phone}
+                                       value={phone}
+                                       onChange={handleChangeInput}
 
-                               />
-                               {
-                                   phone.length === 0 && <span className='text-red-500 text-sm'>
+                                />
+                                {
+                                    phone.length === 0 && <span className='text-red-500 text-sm'>
                                        {t('Введите ваш номер телефона')}
                                    </span>
-                               ||
-                                   phone.length < 9 && <span className='text-red-500 text-sm'>
+                                    ||
+                                    phone.length < 9 && <span className='text-red-500 text-sm'>
                                        {t('Номер телефона должен быть не менее 9 символов')}
                                    </span>
-                               ||
-                                   phone.length !== 12 &&  phone.length !== 9 && <span className='text-red-500 text-sm'>
+                                    ||
+                                    phone.length !== 12 &&  phone.length !== 9 && <span className='text-red-500 text-sm'>
                                        {t('Не правильный номер телефона')}
                                    </span>
-                               }
+                                }
 
-                           </div>
-                       </div>
+                            </div>
+                        </div>
 
 
                         <div className="flex gap-2 mt-4">
                             <input type="checkbox"
                                    className="block mt-3  bg-red-500 checked:bg-blue-600 checked:border-transparent"
-                            onClick={() => setAgree(!agree)}/>
+                                   onClick={() => setAgree(!agree)}/>
                             <p className="text-xs mt-2">
                                 Я согласен и даю согласие на получение коммерческих и маркетинговых сообщений (например,
                                 информационного бюллетеня, SMS) от innoveder Group, связанных с ними организаций и их

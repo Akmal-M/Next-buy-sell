@@ -1,7 +1,5 @@
 import {IoHeart} from "react-icons/io5";
 import Link from 'next/link'
-import {DataContext} from "../store/GlobalState";
-import {useContext} from "react";
 import {useStore} from "react-hookstore";
 
 const CartItem = ({item, dispatch, cart}) => {
