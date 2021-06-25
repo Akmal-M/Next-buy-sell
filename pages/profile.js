@@ -8,8 +8,6 @@ import { patchData } from '../utils/fetchingData'
 
 import {imageUpload} from '../utils/imageUpload'
 import {BiCamera} from "react-icons/bi";
-import {VscChromeClose} from "react-icons/vsc";
-import {BsCheckAll} from "react-icons/bs";
 
 const Profile = () => {
     const initialSate = {

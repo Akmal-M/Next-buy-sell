@@ -1,7 +1,7 @@
 const Jurisdiction = () => {
     return (
         <div>
-            Jourisdiction
+            Jurisdiction
         </div>
     );
 };

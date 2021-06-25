@@ -4,7 +4,7 @@ import { getData } from '../../utils/fetchingData'
 import { DataContext } from '../../store/GlobalState'
 import { addToCart } from '../../store/Actions'
 import DetailsSlider from "../../Components/DetailsSlider";
-import {AiFillHeart, AiFillPhone, AiOutlineHeart} from "react-icons/ai";
+import {AiOutlineHeart} from "react-icons/ai";
 import {GiPhone} from "react-icons/gi";
 import useTranslation from "next-translate/useTranslation";
 

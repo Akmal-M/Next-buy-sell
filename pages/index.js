@@ -11,7 +11,6 @@ import {CgToggleSquare} from "react-icons/cg";
 import useTranslation from "next-translate/useTranslation";
 import Header from "../Components/navbar/Header";
 import {DataContext} from "../store/GlobalState";
-import Filter from "../Components/ Filter";
 import filterSearch from "../utils/filterSearch";
 import {useRouter} from 'next/router'
 import Head from 'next/head'
