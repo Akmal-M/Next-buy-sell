@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { AiOutlineTable} from "react-icons/ai";
-import ProductsTwo from "./cards/ProductsTwo";
-import ProductsOne from "./cards/ProductsOne";
-import ProductsInfo from "./cards/ProductsInfo";
+import ProductsTwo from "/cards/ProductsTwo";
+import ProductsOne from "/cards/ProductsOne";
+import ProductsInfo from "/cards/ProductsInfo";
 import {CgToggleSquare} from "react-icons/cg";
 import {IoMdSquareOutline} from "react-icons/io";
 import {BiGridAlt} from "react-icons/bi";

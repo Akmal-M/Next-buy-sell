@@ -1,5 +1,4 @@
 import {IoMdHeartEmpty} from "react-icons/io";
-import productsData from "../../productsData";
 import Link from "next/link";
 import {useContext} from "react";
 import {DataContext} from "../../store/GlobalState";

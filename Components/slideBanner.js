@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from "./swiper";
-import CardTop from "./cards/CardTop";
 import useTranslation from "next-translate/useTranslation";
 import {IoMdHeartEmpty} from "react-icons/io";
 

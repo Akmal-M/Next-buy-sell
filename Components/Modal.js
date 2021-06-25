@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react'
+import {useContext} from 'react'
 import { DataContext } from '../store/GlobalState'
 import { deleteItem } from '../store/Actions'
 import { deleteData } from '../utils/fetchingData'

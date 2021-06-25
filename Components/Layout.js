@@ -1,5 +1,4 @@
 import Navbar from "./navbar/Navbar";
-import Header from "./navbar/Header";
 import Footer from "./Footer";
 import Notify from "./Notify";
 import Modal from "./Modal";

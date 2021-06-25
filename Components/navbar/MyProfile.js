@@ -1,12 +1,10 @@
 import React, {useContext, useState} from 'react';
 import Link from "next/link";
-import {MdPersonOutline} from "react-icons/md";
 import {BiDownArrow} from "react-icons/bi";
 import useTranslation from "next-translate/useTranslation";
 import {DataContext} from "../../store/GlobalState";
 import Cookie from 'js-cookie'
 import {useRouter} from "next/router";
-import {addToCart} from "../../store/Actions";
 
 
 const MyProfile = () => {
