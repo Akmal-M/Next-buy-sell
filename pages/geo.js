@@ -6,7 +6,6 @@ async function fetcher(path) {
     const res = await fetch(path)
     const json = await res.json()
     return json
-
 }
 
 const Geo = () => {

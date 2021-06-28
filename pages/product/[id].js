@@ -22,46 +22,48 @@ console.log(notify)
 
 
     return(
-        <div className="row detail_page container mx-auto lg:px-40">
-            <Head>
-                <title>Detail Product</title>
-            </Head>
+        <div className='lg:mx-40 lg:my-20 bg-gray-50 rounded-lg'>
+            <div className="row detail_page container mx-auto lg:px-40 lg:py-20 ">
+                <Head>
+                    <title>Detail Product</title>
+                </Head>
 
-            <div className="">
+                <div className="">
 
 
-                <div className="flex justify-center"  >
-                       <DetailsSlider product={product}/>
+                    <div className="flex justify-center"  >
+                        <DetailsSlider product={product}/>
+                    </div>
                 </div>
-            </div>
 
-            <div className="col-md-6 mt-3 px-3">
-                <h2 className="text-uppercase font-bold lg:text-3xl text-xl">{product.title}</h2>
-                <h5 className="lg:py-5 py-3 lg:text-2xl text-lg text-semibold">{product.price} $</h5>
+                <div className="col-md-6 mt-3 px-3">
+                    <h2 className="text-uppercase font-bold lg:text-3xl text-xl">{product.title}</h2>
+                    <h5 className="lg:py-5 py-3 lg:text-2xl text-lg text-semibold">{product.price} $</h5>
 
 
-                <div className="my-2">{product.description}</div>
+                    <div className="my-2">{product.description}</div>
 
-               <div className='font-bold flex justify-end'>
-                   {
-                       open ?
+                    <div className='font-bold flex justify-end'>
+                        {
+                            open ?
 
-                           <button type="button" className="bg-green-500 rounded-md text-white my-3 py-2 px-5 ">
-                               <a href={`tel: '${product.phone}'`} className='flex justify-center'> <GiPhone size={25} className='mr-2'/> {product.phone}</a>
-                           </button>
-                           :
-                           <button type="button" className="bg-gray-700 rounded-md text-white my-3 py-2 px-5 text-sm  lg:text-lg" onClick={() => setOpen(!open)}>
-                               {t('Показать номер телефона')}
-                           </button>
-                   }
-               </div>
+                                <button type="button" className="bg-green-500 rounded-md text-white my-3 py-2 px-5 ">
+                                    <a href={`tel: '${product.phone}'`} className='flex justify-center'> <GiPhone size={25} className='mr-2'/> {product.phone}</a>
+                                </button>
+                                :
+                                <button type="button" className="bg-gray-700 rounded-md text-white my-3 py-2 px-5 text-sm  lg:text-lg" onClick={() => setOpen(!open)}>
+                                    {t('Показать номер телефона')}
+                                </button>
+                        }
+                    </div>
 
-                <button type="button" className=" my-3 px-5"
-                        onClick={() => dispatch(addToCart(product, cart))}>
-                    {/*{res.status(200) ? <AiFillHeart/>: <AiOutlineHeart/>}*/}
-                    <AiOutlineHeart/>
-                </button>
+                    <button type="button" className=" my-3 px-5"
+                            onClick={() => dispatch(addToCart(product, cart))}>
+                        {/*{res.status(200) ? <AiFillHeart/>: <AiOutlineHeart/>}*/}
+                        <AiOutlineHeart size={30} className='outline-none focus:outline-none'/>
+                    </button>
 
+                </div>
             </div>
         </div>
     )
