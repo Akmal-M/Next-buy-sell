@@ -13,17 +13,14 @@ const DetailsSlider = ({product}) => {
                 slidesPerView={1}
                 loop={"true"}
                 speed={3000}
-                className='container mx-auto lg:mt-10 max-w-5xl'>
+                className='container mx-auto lg:mt-10 lg:max-w-3xl max-w-xs flex justify-center'>
                 <SwiperSlide className='flex justify-center '>
                     <div className='flex justify-center '>
                         <img src={ product.images[tab].url } alt={ product.images[tab].url }
-                             className="mt-5 lg:max-w-7xl px-2 "
+                             className="mt-5 lg:max-w-7xl max-w-xs px-2 "
                         />
                     </div>
                 </SwiperSlide>
-
-
-
             </Swiper>
         </div>
     );
