@@ -36,12 +36,12 @@ const DropdownLanguage = () => {
                 Language &&
                 <div className='dropdown-content hidden absolute bg-white shadow px-5 py-4 z-50 rounded-md'>
 
-                    <p className=' cursor-pointer pb-1' onClick={setUZ}>
+                    <p className=' cursor-pointer pb-1 pt-3' onClick={setUZ}>
                         <img className='max-h-10'
                              src="https://res.cloudinary.com/bulutvoy/image/upload/v1622300753/innoveder/main/uz_nykcg6.png"
                              alt="uz" onClick={() => setLanguage(!Language)}/>
                     </p>
-                    <p className=' cursor-pointer lg:pt-1 pt-3' onClick={setRu}>
+                    <p className=' cursor-pointer lg:pt-1 ' onClick={setRu}>
                         <img className='max-h-10'
                              src="https://res.cloudinary.com/bulutvoy/image/upload/v1622300753/innoveder/main/ru_mkggzl.png"
                              alt="ru" onClick={() => setLanguage(!Language)}/>

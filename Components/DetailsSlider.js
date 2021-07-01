@@ -91,7 +91,6 @@ const DetailsSlider = ({images}) => {
                     images[6] &&
                     <SwiperSlide className='flex justify-center '>
                         <div className='flex justify-center '>
-
                             <img src={images[6].url} alt={images[6].url}
                                  className="mt-5 lg:max-w-7xl max-w-xs px-2 object-cover "
                             />
@@ -103,7 +102,6 @@ const DetailsSlider = ({images}) => {
                     images[7] &&
                     <SwiperSlide className='flex justify-center '>
                         <div className='flex justify-center '>
-
                             <img src={images[7].url} alt={images[7].url}
                                  className="mt-5 lg:max-w-7xl max-w-xs px-2 object-cover "
                             />
@@ -126,7 +124,6 @@ const DetailsSlider = ({images}) => {
                     images[9] &&
                     <SwiperSlide className='flex justify-center '>
                         <div className='flex justify-center '>
-
                             <img src={images[9].url} alt={images[9].url}
                                  className="mt-5 lg:max-w-7xl max-w-xs px-2 object-cover "
                             />
@@ -138,7 +135,6 @@ const DetailsSlider = ({images}) => {
                     images[10] &&
                     <SwiperSlide className='flex justify-center '>
                         <div className='flex justify-center '>
-
                             <img src={images[10].url} alt={images[10].url}
                                  className="mt-5 lg:max-w-7xl max-w-xs px-2 object-cover "
                             />
