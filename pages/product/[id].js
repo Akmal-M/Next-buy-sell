@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { useState, useContext } from 'react'
-import { getData } from '../../utils/fetchingData'
-import { DataContext } from '../../store/GlobalState'
-import { addToCart } from '../../store/Actions'
+import {useState, useContext} from 'react'
+import {getData} from '../../utils/fetchingData'
+import {DataContext} from '../../store/GlobalState'
+import {addToCart} from '../../store/Actions'
 import DetailsSlider from "../../Components/DetailsSlider";
 import {AiOutlineHeart} from "react-icons/ai";
 import {GiPhone} from "react-icons/gi";
@@ -13,15 +13,16 @@ const DetailProduct = (props) => {
     const [product] = useState(props.product)
     const [open, setOpen] = useState(false)
 
-    const { state, dispatch } = useContext(DataContext)
-    const {  auth, cart, notify } = state
+    const {state, dispatch} = useContext(DataContext)
+    const {auth, cart, notify} = state
+    const images = props.product.images
+
+    console.log(state)
+    console.log(notify)
+    console.log(props)
 
 
-console.log(state)
-console.log(notify)
-
-
-    return(
+    return (
         <div className='lg:mx-40 lg:my-20 bg-gray-50 rounded-lg'>
             <div className="row detail_page container mx-auto lg:px-40 lg:py-20 ">
                 <Head>
@@ -29,11 +30,10 @@ console.log(notify)
                 </Head>
 
                 <div className="">
-
-
-                    <div className="flex justify-center"  >
-                        <DetailsSlider product={product}/>
+                    <div className="flex justify-center">
+                        <DetailsSlider images={images}/>
                     </div>
+
                 </div>
 
                 <div className="col-md-6 mt-3 px-3">
@@ -48,10 +48,13 @@ console.log(notify)
                             open ?
 
                                 <button type="button" className="bg-green-500 rounded-md text-white my-3 py-2 px-5 ">
-                                    <a href={`tel: '${product.phone}'`} className='flex justify-center'> <GiPhone size={25} className='mr-2'/> {product.phone}</a>
+                                    <a href={`tel: '${product.phone}'`} className='flex justify-center'> <GiPhone
+                                        size={25} className='mr-2'/> {product.phone}</a>
                                 </button>
                                 :
-                                <button type="button" className="bg-gray-700 rounded-md text-white my-3 py-2 px-5 text-sm  lg:text-lg" onClick={() => setOpen(!open)}>
+                                <button type="button"
+                                        className="bg-gray-700 rounded-md text-white my-3 py-2 px-5 text-sm  lg:text-lg"
+                                        onClick={() => setOpen(!open)}>
                                     {t('Показать номер телефона')}
                                 </button>
                         }
@@ -74,7 +77,7 @@ export async function getServerSideProps({params: {id}}) {
     const res = await getData(`product/${id}`)
     // server side rendering
     return {
-        props: { product: res.product }, // will be passed to the page component as props
+        props: {product: res.product}, // will be passed to the page component as props
     }
 }
 
