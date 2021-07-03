@@ -11,7 +11,6 @@ const Filter = ({state}) => {
 
     const router = useRouter()
 
-
     const handleCategory = (e) => {
         setCategory(e.target.value)
         filterSearch({router, category: e.target.value})
@@ -50,17 +49,13 @@ const Filter = ({state}) => {
             <div className="input-group-prepend col-md-2 px-0 mt-2">
                 <select className="custom-select text-capitalize"
                         value={sort} onChange={handleSort}>
-
                     <option value="-createdAt">Newest</option>
                     <option value="oldest">Oldest</option>
                     <option value="-sold">Best sales</option>
                     <option value="-price">Price: Hight-Low</option>
                     <option value="price">Price: Low-Hight</option>
-
                 </select>
             </div>
-
-
         </div>
     )
 }

@@ -14,6 +14,7 @@ import {DataContext} from "../store/GlobalState";
 import filterSearch from "../utils/filterSearch";
 import {useRouter} from 'next/router'
 import Head from 'next/head'
+import Filter from "../Components/ Filter";
 
 const Home = (props) => {
 
@@ -81,6 +82,11 @@ const Home = (props) => {
             </Head>
             
             <Header/>
+
+
+            {/*<Filter state={state}/>*/}
+
+
             <div className='bg-gray-50'>
                 {
                     auth.user && auth.user.role === 'admin' && auth.user.root &&
@@ -176,9 +182,15 @@ const Home = (props) => {
 };
 
 
-export async function getServerSideProps() {
-    const res = await getData('product')
-    console.log(res)
+export async function getServerSideProps({query}) {
+    const page = query.page || 1
+    const category = query.category || 'all'
+    const sort = query.sort || ''
+    const search = query.search || 'all'
+
+    const res = await getData(
+        `product?limit=${page * 6}&category=${category}&sort=${sort}&title=${search}`
+    )
     // server side rendering
     return {
         props: {

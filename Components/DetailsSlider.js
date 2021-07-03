@@ -1,10 +1,8 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {useState} from "react";
 import SwiperCore, {
     Pagination, Navigation
 } from 'swiper/core';
 
-// install Swiper modules
 SwiperCore.use([Pagination, Navigation]);
 
 const DetailsSlider = ({images}) => {
